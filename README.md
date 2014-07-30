@@ -1,22 +1,18 @@
-# nodeON
+# WeAreTech.io
 
-> A Node.js Web Application Skelleton
+> The sources of the [http://wearetech.io](http://wearetech.io) website.
 
-[![Build Status](https://secure.travis-ci.org/thanpolas/nodeON.png?branch=master)](http://travis-ci.org/thanpolas/nodeON)
+[![Build Status](https://secure.travis-ci.org/thanpolas/wearetech.io.png?branch=master)](http://travis-ci.org/thanpolas/wearetech.io)
 
 ## Install
 
-To use, simply Clone, Enter directory, delete `.git` folder and start over:
+To use, simply Clone, Enter directory, npm install...
 
 ```shell
-git clone git@github.com:thanpolas/nodeON.git myApp
-cd myApp
-rm -rf .git
-git init
-git add .
-git commit "Boot!"
+git clone git@github.com:thanpolas/wearetech.io.git
+cd wearetech.io
+npm install
 ```
-
 
 ## <a name='TOC'>Table of Contents</a>
 
