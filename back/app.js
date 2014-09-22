@@ -1,4 +1,4 @@
-/*
+/**
  * APP
  * Your amazing app
  * http://www.app.app
@@ -12,13 +12,11 @@
  */
 var util = require('util');
 
-var Promise = require('bluebird');
-
+var BPromise = require('bluebird');
 var log = require('logg').getLogger('app.boot');
 
 var globals = require('./core/globals');
 var AppServices = require('./app-services');
-
 var logger = require('./util/logger');
 
 /**
@@ -41,10 +39,10 @@ app.boot = null;
  * Available options to pass on the first arg:
  *
  * @param {Object=} optOpts init params.
- * @return {Promise} A dissaster.
+ * @return {BPromise} A dissaster.
  */
 app.init = function(optOpts) {
-  if (initialized) { return Promise.resolve(); }
+  if (initialized) { return BPromise.resolve(); }
   initialized = true;
 
   app.boot = AppServices.getInstance();

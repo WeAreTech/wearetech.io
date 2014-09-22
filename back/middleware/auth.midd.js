@@ -4,14 +4,14 @@
  */
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var appError = require('nodeon-error');
+var MiddlewareBase = require('nodeon-base').MiddlewareBase;
+var ControllerBase = require('nodeon-base').ControllerBase;
 
 var log = require('logg').getLogger('app.midd.Auth');
 
 var UserModel = require('../models/user.model');
 var userModel = UserModel.getInstance();
-var appError = require('../util/error');
-var Middleware = require('./middleware');
-var ControllerBase = require('../controllers/controller-base');
 
 /** @type {Object.<app.midd.Auth} Auth middleware instances. */
 var singletons = {};
@@ -25,7 +25,7 @@ var singletons = {};
  * @contructor
  * @extends {app.Middleware}
  */
-var Auth = module.exports = Middleware.extend(function (role) {
+var Auth = module.exports = MiddlewareBase.extend(function (role) {
   if (singletons[role]) {
     singletons[role].zit = 1;
     return singletons[role];
@@ -144,10 +144,16 @@ Auth.prototype._localAuth = function(email, password, done) {
  *   @param {boolean} socket If this is a socket middleware.
  */
 Auth.prototype.requiresAuth = function(opts) {
-  log.finer('requiresAuth() :: Init. Resource:', opts.resource);
-  if (!opts.resource) {
+  var resource = '';
+  if (typeof opts === 'string') {
+    resource = opts;
+  } else {
+    resource = opts.resource;
+  }
+  if (!resource) {
     throw new Error('No resource defined for requiresAuth() middleware');
   }
+  log.finer('requiresAuth() :: Init. Resource:', resource);
 
   var udo = {};
 
@@ -169,9 +175,14 @@ Auth.prototype.requiresAuth = function(opts) {
       err.message = 'You are not authenticated';
       err.type = appError.Authentication.Type.SESSION;
       var ctrl = new ControllerBase();
-      ctrl.addFlashError(req, err);
-      res.redirect(loginRoute);
-      return next(err.message);
+      if (req.is('json')) {
+        res.status(401).json(err.toApi());
+      } else {
+        ctrl.addFlashError(req, err);
+        res.redirect(loginRoute);
+        return next(err.message);
+      }
+
     }
     udo = req.user || {};
     var ownUid = udo.id;
@@ -204,6 +215,13 @@ Auth.prototype.requiresAuth = function(opts) {
     resolveAuth(socket.udo.id, onFail, next);
   }
 
+  /**
+   * The main authentication resolver decoupled by transport (web/websocket).
+   *
+   * @param {string} ownUid The user id.
+   * @param {Function} onFail On Fail callback.
+   * @param {Function} next next callback.
+   */
   function resolveAuth(ownUid, onFail, next) {
 
     if (!ownUid) {

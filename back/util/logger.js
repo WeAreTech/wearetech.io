@@ -9,17 +9,11 @@ var util = require('util');
 
 var logg = require('logg');
 var config = require('config');
-
-var file = require('./file');
+var file = require('nodeon-file');
 
 var initialized = false;
 
 var logger = module.exports = new EventEmitter();
-
-// setup local variables
-var _fileLog = config.logger.file;
-var _filename = config.logger.filename;
-var _logLevel = config.logger.level;
 
 /**
  * Initialize
@@ -30,8 +24,17 @@ logger.init = function() {
 
   logger.setLevel();
 
-  if (!config.logger.console) {
-    logg.removeConsole();
+
+  // intercept log messages before they reach the console
+  logg.removeConsole();
+  logg.rootLogger.registerWatcher(logger.interceptLogMessages);
+
+  if (config.logger.console) {
+    logg.addConsole();
+  }
+
+  if (config.logger.saveToFile) {
+    console.log('Logs will be saved to:', config.logger.filename);
   }
 
   // hook on logger
@@ -50,7 +53,7 @@ logger.init = function() {
  *
  */
 logger.setLevel = function() {
-  logg.rootLogger.setLogLevel(_logLevel);
+  logg.rootLogger.setLogLevel(config.logger.level);
 };
 
 /**
@@ -71,7 +74,7 @@ logger.setLevel = function() {
 logger._handleLog = function(logRecord) {
 
   // log level check.
-  if (_logLevel > logRecord.level) {
+  if (config.logger.level > logRecord.level) {
     return;
   }
 
@@ -80,7 +83,7 @@ logger._handleLog = function(logRecord) {
 
   var message = logg.formatRecord(logRecord, true);
 
-  if (_fileLog) {
+  if (config.logger.file) {
     logger._saveToFile(message);
   }
 
@@ -93,15 +96,45 @@ logger._handleLog = function(logRecord) {
  * @private
  */
 logger._saveToFile = function(message) {
-  if (!file.isFile(_filename)) {
+  if (!file.isFile(config.logger.filename)) {
     // try to create it...
     try {
-      file.write(_filename, '');
+      file.write(config.logger.filename, '');
     } catch(ex) {
-      console.error('\n\n********************\nFailed to write to log file! File: ', _filename, '\n\n');
+      console.error('\n\n********************\nFailed to write to log file! File: ', config.logger.filename, '\n\n');
       return;
     }
   }
-  fs.appendFile(_filename, message);
+  fs.appendFile(config.logger.filename, message);
 };
 
+/**
+ * Intercepts and reformats log messages if they contain as instance of Error.
+ *
+ * @param {Object} logRecord The Log Record.
+ */
+logger.interceptLogMessages = function(logRecord) {
+  var errorStacks = [];
+  var foundErrors = false;
+  logRecord.rawArgs.forEach(function (arg, index) {
+    if (logger.isError(arg)) {
+      errorStacks.push(arg.stack);
+      logRecord.rawArgs[index] = arg.message;
+      foundErrors = true;
+    }
+  });
+
+  if (foundErrors) {
+    var log = logg.getLogger(logRecord.name);
+    errorStacks.forEach(function (stack) {
+      log.finest('Error Stack for:', logRecord.rawArgs[0], ':', stack);
+    });
+  }
+
+  logRecord.message = logRecord.getFormattedMessage();
+};
+
+// Special treatment for objects that may look like errors.
+logger.isError = function (o) {
+  return o && typeof o === 'object' && (o instanceof Error || o.message && o.stack);
+};

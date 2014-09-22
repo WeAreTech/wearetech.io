@@ -21,7 +21,24 @@ npm install
 
 ## Overview
 
-Please wait...
+Once the project is cloned you need to install the dependent npm and bower modules:
+
+```shell
+npm install && bower install
+```
+
+## Shell Control
+
+* `grunt` Boot up the application for development workflow, it will:
+  * Launch the databases (Mongo & Redis).
+  * Launch the Node.js Application.
+  * Watch for changes on the SASS files, compile and livereload.
+  * Watch for changes on the frontend files (JS, templates, css, images, static assets) and livereload.
+  * Watch for changes on the backend files and relaunch the Node.js App.
+  * Open the browser on the launched web service.
+* `grunt start` Will start the databases (Mongo & Redis).
+* `node .` Will launch the Node.js Application.
+* `npm test` Will run all test suites (BDD, TDD, lint).
 
 ## API
 

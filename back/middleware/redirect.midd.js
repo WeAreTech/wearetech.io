@@ -1,13 +1,8 @@
 /**
  * @fileOverview Redirect middleware, forces usage of a single host.
  */
-
-var util = require('util');
-
+var MiddlewareBase = require('nodeon-base').MiddlewareBase;
 // var log = require('logg').getLogger('app.midd.Redirect');
-
-var Middleware = require('./middleware');
-var helpers = require('../util/helpers');
 
 /**
  * The Redirect middleware, forces usage of a single host.
@@ -15,11 +10,7 @@ var helpers = require('../util/helpers');
  * @contructor
  * @extends {app.Middleware}
  */
-var Redirect = module.exports = function(){
-  Middleware.apply(this, arguments);
-};
-util.inherits(Redirect, Middleware);
-helpers.addSingletonGetter(Redirect);
+var Redirect = module.exports = MiddlewareBase.extendSingleton();
 
 /**
  * Force a redicetion for the www. hostname.

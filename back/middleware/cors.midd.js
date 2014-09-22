@@ -1,13 +1,9 @@
 /**
  * @fileOverview Granular CORS control Middleware.
  */
-
-var util = require('util');
+var MiddlewareBase = require('nodeon-base').MiddlewareBase;
 
 // var log = require('logg').getLogger('app.midd.Cors');
-
-var Middleware = require('./middleware');
-var helpers = require('../util/helpers');
 
 /**
  * The Cors Middleware.
@@ -15,11 +11,7 @@ var helpers = require('../util/helpers');
  * @contructor
  * @extends {app.Middleware}
  */
-var Cors = module.exports = function(){
-  Middleware.apply(this, arguments);
-};
-util.inherits(Cors, Middleware);
-helpers.addSingletonGetter(Cors);
+var Cors = module.exports = MiddlewareBase.extendSingleton();
 
 /**
  * CORS Middleware

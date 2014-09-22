@@ -3,11 +3,11 @@
  */
 var __ = require('lodash');
 var validator = require('validator');
+var appError = require('nodeon-error');
 var log = require('logg').getLogger('app.ctrl.Forgot');
+var ControllerBase = require('nodeon-base').ControllerBase;
 
-var ControllerBase = require('../controller-base');
 var ForgotEnt = require('../../entities/user/user-forgot.ent');
-var appError = require('../../util/error');
 
 /**
  * The forgot password controller
@@ -85,7 +85,11 @@ Forgot.prototype._resetView = function(req, res) {
   var uid = req.params.uid;
   this.forgotEnt.verifyResetToken(resetToken, uid)
     .then(function(udo) {
-      res.render('user/forgot-reset', {udo: udo});
+      res.render('user/forgot-reset', {
+        udo: udo,
+        resetToken: resetToken,
+        uid: uid,
+      });
     }).catch(function() {
       res.status(401).render('user/forgot-error');
     });

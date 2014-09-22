@@ -2,7 +2,7 @@
 
 var globals = require('./back/core/globals');
 
-var Email = require('./back/modules/email');
+var Email = require('./back/services/email');
 var emailTemplate = require('./tasks/publish-email-templates.js');
 
 module.exports = function (grunt) {
@@ -146,9 +146,9 @@ module.exports = function (grunt) {
       },
       backend: ['back/**/*.js'],
       frontend: {
-        options: {
-          jshintrc: 'front/static/scripts/.jshintrc',
-        },
+        // options: {
+        //   jshintrc: 'front/static/scripts/.jshintrc',
+        // },
         src: ['front/static/scripts/**/*.js'],
       },
     },
