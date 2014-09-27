@@ -74,25 +74,6 @@ module.exports = function (grunt) {
         path: 'http://localhost:' + develPort
       }
     },
-    sass: {
-      options: {
-      },
-      dist: {
-        files: [{
-          'temp/main-sass.css': 'front/styles/boot.scss',
-
-
-          // expand: true,
-          // cwd: 'front/',
-          // src: [
-          //   'styles/*.scss',
-          //   'components/sass-bootstrap/lib/*.scss',
-          // ],
-          // dest: '../static/styles',
-          // ext: '.css',
-        }]
-      }
-    },
     cssmin: {
       dist: {
         files: {
