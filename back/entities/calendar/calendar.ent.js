@@ -15,7 +15,6 @@ var calendarModel = CalendarModel.getInstance();
 /**
  * The Calendar entity.
  *
- * @param {Object=} optUdo Optionally define the current handling Calendar.
  * @constructor
  * @extends {app.EntityBase}
  */
