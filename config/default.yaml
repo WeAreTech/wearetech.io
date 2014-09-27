@@ -3,7 +3,7 @@ webserver:
   url: "http://localhost:3000"
 
 hostname:
-  api: "api.localhost"
+  api: "*.localhost"
   website: "localhost"
 
 # Use virtual hosts for multiple hostnames, if true the engine will also require
