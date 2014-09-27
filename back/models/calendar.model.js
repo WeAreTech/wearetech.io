@@ -37,7 +37,8 @@ Calendar.Schema = {
 
   eventUrl: {type: String},
   hashtag: {type: String},
-  isApproved: {type: Boolean}, // In case it's a member submission
+  isApproved: {type: Boolean, default: true}, // In case it's a member submission
+  isFeatured: {type: Boolean, default: false},
 
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
