@@ -27,8 +27,10 @@ var User = module.exports = ModelMongo.extendSingleton();
  * @enum {number}
  */
 User.Role = {
-  USER: 1,
-  ADMIN: 2,
+  ADMIN: 1,
+  CURATOR: 20,
+  CURATOR_ASSISTANT: 30,
+  USER: 50,
 };
 
 /** @define {string} default value for nulled passwords */
@@ -48,6 +50,16 @@ User.Schema = {
   createdOn: {type: Date, default: Date.now},
   lastLogin: {type: Date, default: Date.now},
   lastIp: {type: String, default: ''},
+
+  role: {
+    type: String,
+    enum: [
+      User.Role.ADMIN,
+      User.Role.CURATOR,
+      User.Role.CURATOR_ASSISTANT,
+      User.Role.USER,
+    ],
+  },
 
   emailConfirmation: {
     key: {type: String, default: helpers.generateRandomString},
