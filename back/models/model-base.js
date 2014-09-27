@@ -19,4 +19,5 @@ Model.Collection = {
   USER: 'user',
   CITY: 'city',
   VENUE: 'venue',
+  COMMUNITY: 'community',
 };

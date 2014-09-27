@@ -67,6 +67,7 @@ Calendar.prototype.init = BPromise.method(function() {
   // define indexes
   this.schema.index({createdOn: 1});
   this.schema.index({startDate: 1});
+  this.schema.index({cityOwner: 1});
 
   // initialize model
   this.Model = mongoose.model(Model.Collection.CALENDAR, this.schema);
