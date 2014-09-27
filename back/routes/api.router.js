@@ -3,7 +3,7 @@
  */
 var log = require('logg').getLogger('app.router.api');
 
-var HomeCtrl = require('../controllers/index.ctrl');
+var HomeCtrl = require('../controllers/city/index.ctrl');
 
 var router = module.exports = {};
 
@@ -17,5 +17,4 @@ router.init = function(app) {
   var homeCtrl = HomeCtrl.getInstance();
 
   app.get('/', homeCtrl.use);
-
 };
