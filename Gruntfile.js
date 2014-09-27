@@ -187,6 +187,9 @@ module.exports = function (grunt) {
 
   }); // end grunt.initConfig();
 
+  // Load per-task config from separate files.
+  grunt.loadTasks('tasks');
+
   //
   //
   // Register tasks and aliases
