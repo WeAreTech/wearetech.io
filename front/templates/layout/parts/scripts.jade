@@ -1,3 +1,17 @@
+if glob.ga
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '#{glob.ga}', '#{glob.gaSite}');
+
+    if (!#{!!noTrack}) {
+      ga('send', 'pageview');
+    }
+
+
 script(type="text/javascript").
   window.JSON || document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min.js"><\/script>');
   var _csrf = '#{_csrf}';
@@ -5,16 +19,16 @@ script(type="text/javascript").
 //
 // facebook
 //
-div#fb-root
-script(type="text/javascript").
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=309825832497899";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
+if og
+  div#fb-root
+  script(type="text/javascript").
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{og.appId}";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
 //
 // Google+
@@ -27,15 +41,9 @@ script(type="text/javascript").
   })();
 
 
-//- script(src='/components/angular/angular.js')
-//- script(src='components/angular-resource/angular-resource.js')
-
 if glob.env == "development"
-  script.
+  script(type="text/javascript").
     var DEV = true;
 else
   script(type="text/javascript").
     var DEV = false;
-  script(src="/frontapp.min.js", type="text/javascript")
-
-
