@@ -1,32 +1,39 @@
 extends core
 
 block layout
-  .container
-    div.masthead
-      a(href='/').logo.pull-left
-        h3.muted Awesome App
-      ul.pull-right.nav.nav-pills.menu
-        li
-          a(href="#") About
-        li
-          a(href="#") Contact
 
+  div.navbar.navbar-default.navbar-fixed-top
+    div.container
+      div.navbar-header
+        button(type="button", data-toggle="collapse", data-target=".navbar-collapse").class="navbar-toggle"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href="/").navbar-brand SKG Tech
+      div.navbar-collapse.collapse
+        ul.nav.navbar-nav.navbar-right
+          li.active
+            a(href="/#agenda") Agenda
+          li.active
+            a(href="/#communities") Communities
+          li.active
+            a(href="/#contact") Contact
 
-
-    include parts/oldie
+  //- include parts/oldie
   block content
 
-  script.
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-  .container
-    footer.footer
-      span.right
-        div(data-href="https://github.com/thanpolas/nodeON", data-width="140", data-layout="standard", data-action="like", data-show-faces="false", data-share="false", data-colorscheme="dark").fb-like
-      span.right
-        a(href="https://twitter.com/share", data-url="https://github.com/thanpolas/nodeON", data-text="Check out nodeON! The Node.js Web App starter", data-via="thanpolas", data-size="medium").twitter-share-button Tweet
-      span.right
-        div(data-action="share", data-annotation="bubble", data-href="https://github.com/thanpolas/nodeON").g-plus
-      span.right.copy
-        p Spread the word&nbsp;
-
+  footer#f.footer-actual
+    div.container
+      div.row
+        div.col-lg-6.pull-left
+          p &copy;
+            a(href="https://github.com/skgtech/skgtech.github.io/graphs/contributors") skgtech contributors
+            | source under the
+            a(target="_blank", href="http://opensource.org/licenses/MIT") MIT License
+            | .
+          p.license The content property of their respective owners, the rest
+            a(target="_blank", href="http://creativecommons.org/publicdomain/zero/1.0/") Creative Commons CC0
+            | .
+        div.col-lg-4.pull-right
+          p
+            a(href="https://github.com/skgtech/skgtech.github.io") View the source of this site and contribute
