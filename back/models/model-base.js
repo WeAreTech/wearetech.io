@@ -17,4 +17,5 @@ var Model = module.exports = Model.extend();
  */
 Model.Collection = {
   USER: 'user',
+  CITY: 'city',
 };
