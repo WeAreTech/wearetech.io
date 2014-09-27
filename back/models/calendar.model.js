@@ -25,9 +25,11 @@ var Calendar = module.exports = ModelMongo.extendSingleton();
  */
 Calendar.Schema = {
   title: {type: String, required: true, trim: true},
-  venue: {type: String},
-  address: {type: String},
-  mapLink: {type: String},
+
+  venue: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: Model.Collection.VENUE,
+  },
 
   shortDescr: {type: String},
   longDescr: {type: String},
