@@ -1,5 +1,5 @@
 /**
- * APP
+ * wearetech.io
  * Your amazing app
  * http://www.app.app
  *
@@ -55,7 +55,8 @@ app.init = function(optOpts) {
   logger.init();
 
   if (!app.boot.options.log || process.env.NODE_NOLOG) {
-    logger.removeConsole();
+    // TODO figure out wtf
+    // logger.removeConsole();
   }
 
   log.info('Initializing... standAlone:', globals.isStandAlone,
