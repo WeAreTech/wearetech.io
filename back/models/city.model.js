@@ -2,13 +2,11 @@
  * @fileOverview The City Model.
  */
 
-var __ = require('lodash');
+// var __ = require('lodash');
 var BPromise = require('bluebird');
-var config = require('config');
 var mongoose = require('mongoose');
-var appError = require('nodeon-error');
-var log = require('logg').getLogger('app.model.User');
-var helpers = require('nodeon-helpers');
+// var appError = require('nodeon-error');
+var log = require('logg').getLogger('app.model.City');
 var ModelMongo = require('nodeon-base').ModelMongoBase;
 
 var Model = require('./model-base');
