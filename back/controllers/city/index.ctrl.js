@@ -22,5 +22,11 @@ var Home = module.exports = ControllerBase.extendSingleton(function(){
  * @param {Object} res The response Object.
  */
 Home.prototype._useIndex = function(req, res) {
-  res.render('city/index');
+
+  res.render('city/index', {
+    og: null, // title, site_name, url, description, image, appId, type
+    pageTitle: null,
+    ga: null, // GA id
+    gaSite: null, // Canonical GA website name
+  });
 };
