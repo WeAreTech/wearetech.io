@@ -36,6 +36,9 @@ var User = module.exports = EntityBase.extendSingleton(function() {
   this.editProfile.after(this._checkProfileEmail.bind(this));
 });
 
+/** Relay the roles enumeration */
+User.Role = UserModel.Role;
+
 /**
  * Check if password needs to be set
  *

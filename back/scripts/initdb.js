@@ -4,9 +4,9 @@
 
 var Promise = require('bluebird');
 
-var log = require('logg').getLogger('app.tasks.initdb');
+var log = require('logg').getLogger('app.scripts.initdb');
 
-var UserEntity = require('../back/entities/user/user.ent');
+var UserEntity = require('../entities/user/user.ent');
 
 var initdb = module.exports = {};
 
@@ -37,8 +37,7 @@ initdb._createAdminUser = function() {
       firstName: 'Admin',
       lastName: 'User',
       password: 'asdfgh',
-      isAdmin: true,
-      policy: 'admin',
+      role: UserEntity.Role.ADMIN,
     };
     return userEnt.delete({email: adminUdo.email}).then(function() {
       return userEnt.create(adminUdo).then(resolve, reject);
