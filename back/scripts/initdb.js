@@ -134,9 +134,9 @@ Initdb.prototype._createCommunities = Promise.method(function () {
 
   return Promise.all([
     Promise.resolve(this.communities.skg)
-      .then(this._createCommunity.bind(this, this.citySkg)),
+      .map(this._createCommunity.bind(this, this.citySkg)),
     Promise.resolve(this.communities.ath)
-      .then(this._createCommunity.bind(this, this.cityAth)),
+      .map(this._createCommunity.bind(this, this.cityAth)),
   ]);
 });
 
@@ -149,5 +149,7 @@ Initdb.prototype._createCommunities = Promise.method(function () {
  */
 Initdb.prototype._createCommunity = Promise.method(function(cityItem, communityObj) {
   communityObj.cityOwner = cityItem._id;
+  communityObj.createdBy = this.adminUdo._id;
+
   return this.communityEnt.create(communityObj);
 });
