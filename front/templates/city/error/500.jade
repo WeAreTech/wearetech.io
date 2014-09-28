@@ -1,0 +1,15 @@
+//- 500 Error page
+//-
+//- @param {Error} err Error thrown.
+
+extends ../../layout/city
+
+block content
+
+  div.error
+    div.container
+      div.row
+        div.col-lg-8.col-lg-offset-2.centered
+          h1 Ooops
+          h3 An internal error has occured.
+          p Error: #{err.message}
