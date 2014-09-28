@@ -15,6 +15,10 @@ var helpers = require('nodeon-helpers');
 
 // models
 var userModel = require('../models/user.model').getInstance();
+var cityModel = require('../models/city.model').getInstance();
+var communityModel = require('../models/community.model').getInstance();
+var venueModel = require('../models/venue.model').getInstance();
+var calendarModel = require('../models/calendar.model').getInstance();
 
 // var noop = function() {};
 
@@ -104,6 +108,10 @@ Conn.prototype._initModels = function() {
   log.finer('_initModels() :: Initializing models...');
   return BPromise.all([
     userModel.init(),
+    cityModel.init(),
+    communityModel.init(),
+    venueModel.init(),
+    calendarModel.init(),
   ]);
 };
 
