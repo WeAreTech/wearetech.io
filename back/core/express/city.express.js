@@ -55,6 +55,9 @@ CityExpress.prototype.init = BPromise.method(function(opts) {
   // initialize authentication
   authMidd.init(this.app);
 
+  // init city middleware
+  cityMidd.init(this.app);
+
   // Populate city data on the 'city' locals variable.
   this.app.use(cityMidd.populate);
 
