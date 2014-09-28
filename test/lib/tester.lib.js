@@ -12,6 +12,8 @@ Promise.longStackTraces();
 // The application.
 var app = require('../..');
 
+var Initdb = require('./initdb.lib');
+
 var tester = module.exports = {};
 
 tester.setup = null;
@@ -33,16 +35,21 @@ var init = false;
  *
  */
 tester.init = function() {
-  tester.setup(function(done) {
+  beforeEach(function(done) {
     if (init) {return done();}
     init = true;
+
+    this.initdb = new Initdb();
 
     app.init({
       log: true,
       stubMail: true,
       initDb: false,
       security: false,
-    }).then(done.bind(null, null), done);
+    })
+      .bind(this.initdb)
+      .then(this.initdb.start)
+      .then(done.bind(null, null), done);
   });
 };
 
