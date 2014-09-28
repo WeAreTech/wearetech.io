@@ -1,5 +1,5 @@
 /**
- * @fileOverview API express instance and configuration.
+ * @fileOverview Cities express instance and configuration.
  */
 var path = require('path');
 
