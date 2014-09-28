@@ -26,11 +26,14 @@ var Community = module.exports = ModelMongo.extendSingleton();
 Community.Schema = {
   name: {type: String},
   website: {type: String},
+  facebook: {type: String},
+  twitter: {type: String},
   description: {type: String},
   maintainers: [{
     name: {type: String},
     email: {type: String},
     url: {type: String},
+    twitter: {type: String},
   }],
 
   createdBy: {

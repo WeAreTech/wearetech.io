@@ -151,7 +151,7 @@ ath:
       - name: "Panagiotis Xinos"
         email: "panagiotis.xinos@gmail.com"
       - name: "Leonidas Apostolidis"
-        website: "https://twitter.com/leoapost"
+        twitter: "https://twitter.com/leoapost"
   - name: "CocoaHeads Greece"
     period: "Quarterly"
     happensAt: "2nd Thursday of each month"
@@ -160,9 +160,9 @@ ath:
     twitter: "https://twitter.com/CocoaheadsGR"
     maintainers:
       - name: "Dimitris James Tsiflitzis"
-        website: "https://twitter.com/sprimp"
+        twitter: "https://twitter.com/sprimp"
       - name: "Leonidas Apostolidis"
-        website: "https://twitter.com/leoapost"
+        twitter: "https://twitter.com/leoapost"
   - name: "Open Coffee"
     period: "Monthly"
     happensAt: "Last Friday of each month"
@@ -235,17 +235,7 @@ ath:
     description: "Hellenic Game Developers Association"
     maintainers:
       - name: "Tasos Flambouras"
-        website: "https://twitter.com/tasosflambouras"
-  - name: "GDG Athens"
-    website: "https://developers.google.com/groups/chapter/113791237868247187504/"
-    description: 'Google Developer Group (GDG) Athens aims at creating a vibrant and productive Google-focused community. We want to bring together passion 4 Innovation, to share latest developments, to ignite creativity and productivity so to create "The Playground".'
-    maintainers:
-      - name: "Panayotis Tzinis"
-        website: "https://plus.google.com/+PanayotisTzinis"
-      - name: "Andreas Daroudis"
-        website: "https://plus.google.com/100319741549578955158"
-      - name: "Pavlos-Petros Tournaris"
-        website: "https://plus.google.com/+PavlosPetrosTournaris"
+        twitter: "https://twitter.com/tasosflambouras"
   - name: "GreeceJS"
     website: "http://greecejs.org/"
     description: "A group of people who are interested on various Javascript client side (client-side, HTML, CSS) and server side (Node.js, AppEngineJS, RingoJS) topics."
@@ -266,35 +256,35 @@ ath:
     description: "This meetup is for people who build, use, explore or want to learn more about APIs. The purpose of this group is to meet and discuss ideas, new stuff, real life examples, innovations, opportunities and problems faced in the area of APIs."
     maintainers:
       - name: "George Psistakis"
-        website: "https://twitter.com/Giorgosps"
+        twitter: "https://twitter.com/Giorgosps"
       - name: "Dimitrios Tydeas Mengidis"
-        website: "https://twitter.com/dmtrsslvdr"
+        twitter: "https://twitter.com/dmtrsslvdr"
       - name: "Fotis Xenikoudakis"
-        website: "https://twitter.com/fxenik"
+        twitter: "https://twitter.com/fxenik"
       - name: "Kostas Pardalis"
-        website: "https://twitter.com/KostasPardalis"
+        twitter: "https://twitter.com/KostasPardalis"
       - name: "Michael Petychakis"
-        website: "https://twitter.com/mpetyx"
+        twitter: "https://twitter.com/mpetyx"
   - name: "Neo4j Greece"
     website: "http://www.meetup.com/Neo4j-Greece/"
     description: "Linking all Neo4j Graph Database developers around Greece to share experience and knowledge on Graph Databases, NoSQL and graph visualization techniques. A meetup(link or relationship) from developers to anyone interested in the future of database technology."
     maintainers:
       - name: "Sam Tsartsaris"
-        website: "https://twitter.com/Tsartsaris/"
+        twitter: "https://twitter.com/Tsartsaris/"
   - name: "Athens MongoDB User Group"
     period: "Monthly (or so)"
     website: http://www.meetup.com/Athens-MongoDB/
     description: "This group is a place for developers, data analysts and BI experts to learn more about the non-relational, open source, document-oriented database MongoDB. Our goal is simply to share and exchange know-how, connect and have fun - online and offline. "
     maintainers:
       - name: Thanasis Efthymiou
-        website: "https://twitter.com/Thanasis_E"
+        twitter: "https://twitter.com/Thanasis_E"
       - name: Alex Giamas
-        website: "https://twitter.com/agiamas"
+        twitter: "https://twitter.com/agiamas"
       - name: Ioannis Charitopoulo­s
   - name: "Athens Scala Meetup"
     period: "Monthly"
     description: "This is a group for anyone interested in the Scala programming language, functional programming and programming languages in general."
     maintainers:
       - name: "Spiros Tzavellas"
-        website: "https://twitter.com/sptz45"
+        twitter: "https://twitter.com/sptz45"
 
