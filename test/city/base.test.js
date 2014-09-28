@@ -7,7 +7,7 @@ var expect = chai.expect;
 var tester = require('../lib/tester.lib');
 var Web = require('../lib/web.lib');
 
-describe('City Base Tests', function() {
+describe.only('City Base Tests', function() {
   tester.init();
 
   beforeEach(function() {
@@ -15,7 +15,7 @@ describe('City Base Tests', function() {
     this.req = web.req;
   });
 
-  it.only('Will get a 200 on the website frontpage', function(done) {
+  it('Will get a 200 on the website frontpage', function(done) {
     this.req.get('/')
       .expect(200, done);
   });
@@ -26,4 +26,12 @@ describe('City Base Tests', function() {
         done();
       });
   });
+  it('Will get a 404 if the city does not exist', function(done) {
+    var web = new Web('http://missing.localhost:3000');
+    web.req.get('/')
+      .expect(404)
+      .expect(/Wrong Turn/, done);
+  });
+
+
 });
