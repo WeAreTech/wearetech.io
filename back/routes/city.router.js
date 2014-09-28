@@ -1,7 +1,7 @@
 /**
  * @fileOverview Routes for City.
  */
-var log = require('logg').getLogger('app.router.api');
+var log = require('logg').getLogger('app.router.city');
 
 var HomeCtrl = require('../controllers/city/index.ctrl');
 

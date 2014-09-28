@@ -2,8 +2,8 @@
  * @fileOverview City websocket routes.
  *
  */
-// var log = require('logg').getLogger('app.router.socket.api');
-var SocketVersionApi = require('../controllers/socket/api-version.ctrl');
+// var log = require('logg').getLogger('app.router.socket.city');
+var SocketVersionApi = require('../controllers/socket/city-version.ctrl');
 var socketPubsubCtrl = require('../controllers/socket/socket-pubsub.ctrl').getInstance();
 var psutil = require('../services/pubsub-util.service');
 

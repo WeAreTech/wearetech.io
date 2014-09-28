@@ -1,10 +1,10 @@
 /**
- * @fileOverview API Socket 'version' call, returns API version.
+ * @fileOverview City Socket 'version' call, returns API version.
  */
 var ControllerBase = require('nodeon-base').ControllerBase;
 
 /**
- * The API Socket 'version' call, returns API version.
+ * The City Socket 'version' call, returns API version.
  *
  * @contructor
  * @extends {app.ControllerBase}
@@ -19,5 +19,5 @@ var Version = module.exports = ControllerBase.extendSingleton();
  * @param {Function} resp Callback with response to client.
  */
 Version.prototype.get = function(socket, data, resp) {
-  resp('api-0.1');
+  resp('city-0.1');
 };
