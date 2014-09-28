@@ -1,5 +1,5 @@
 /**
- * @fileOverview Routes for API.
+ * @fileOverview Routes for City.
  */
 var log = require('logg').getLogger('app.router.api');
 

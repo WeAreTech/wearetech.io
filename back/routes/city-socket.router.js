@@ -1,5 +1,5 @@
 /**
- * @fileOverview API websocket routes.
+ * @fileOverview City websocket routes.
  *
  */
 // var log = require('logg').getLogger('app.router.socket.api');
