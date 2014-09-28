@@ -16,6 +16,7 @@ var AuthMidd = require('../../middleware/auth.midd');
 var authMidd = new AuthMidd(globals.Roles.CITY);
 var corsMidd = require('../../middleware/cors.midd').getInstance();
 var cityRouter = require('../../routes/city.router');
+var cityMidd = require('../../middleware/city.midd').getInstance();
 
 var CityExpress = module.exports = cip.extendSingleton(function () {
   /** @type {express} The express instance */
@@ -54,6 +55,9 @@ CityExpress.prototype.init = BPromise.method(function(opts) {
   // initialize authentication
   authMidd.init(this.app);
 
+  // Populate city data on the 'city' locals variable.
+  this.app.use(cityMidd.populate);
+
   // add the routes
   cityRouter.init(this.app, opts);
 
@@ -62,6 +66,9 @@ CityExpress.prototype.init = BPromise.method(function(opts) {
 
   // pretty print for jade when on development
   this.app.locals.pretty = globals.isDev;
+
+  // declare the identity of the vhost
+  this.app.locals.isCity = true;
 
   return BPromise.all([
     sessConnectBPromise,
