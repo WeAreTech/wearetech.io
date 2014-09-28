@@ -9,7 +9,7 @@ var EntityBase = require('nodeon-base').EntityBase;
 
 // var log = require('logg').getLogger('app.ent.Venue');
 
-var VenueModel = require('../../models/Venue.model');
+var VenueModel = require('../models/venue.model');
 var venueModel = VenueModel.getInstance();
 
 /**

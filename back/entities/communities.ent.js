@@ -9,7 +9,7 @@ var EntityBase = require('nodeon-base').EntityBase;
 
 // var log = require('logg').getLogger('app.ent.Community');
 
-var CommunityModel = require('../../models/Community.model');
+var CommunityModel = require('../models/community.model');
 var communityModel = CommunityModel.getInstance();
 
 /**
