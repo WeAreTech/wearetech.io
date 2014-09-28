@@ -31,7 +31,7 @@ globals.Environments = {
  * @enum {string}
  */
 globals.Roles = {
-  API: 'api',
+  CITY: 'city',
   WEBSITE: 'website',
 };
 
@@ -39,7 +39,7 @@ globals.Roles = {
 globals.WebsocketNamespace = {
   ROOT: '/',
   WEBSITE: '/website',
-  API: '/api',
+  CITY: '/city',
 };
 
 
@@ -69,36 +69,10 @@ globals.getEnvironment = function() {
 };
 
 /**
- * Matches the environment to a role.
- *
- * @param {app.core.globals.Environments=} optEnv optionally define an environment.
- * @return {app.core.globals.Roles} The current role.
- */
-globals.getRole = function(optEnv) {
-  var role = null;
-
-  switch(optEnv || globals.getEnvironment()) {
-  case globals.Environments.DEVELOPMENT:
-    role = globals.Roles.WEB;
-    break;
-  case globals.Environments.DEV_API:
-    role = globals.Roles.API;
-    break;
-  default:
-    role = globals.Roles.WEB;
-    break;
-  }
-
-  return role;
-};
-
-/**
  * The current environment canonicalized based on supported envs.
  * @type {app.core.globals.Environments}
  */
 globals.env = globals.getEnvironment();
-
-globals.role = globals.getRole(globals.env);
 
 /** @type {boolean} If we are on development environment */
 globals.isDev = [
@@ -135,8 +109,8 @@ globals.getRoleFromNS = function (namespace) {
   case globals.WebsocketNamespace.WEBSITE:
     role = globals.Roles.WEBSITE;
     break;
-  case globals.WebsocketNamespace.API:
-    role = globals.Roles.API;
+  case globals.WebsocketNamespace.CITY:
+    role = globals.Roles.CITY;
     break;
   default:
     role = globals.Roles.WEBSITE;

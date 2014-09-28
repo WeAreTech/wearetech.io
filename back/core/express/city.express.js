@@ -8,16 +8,16 @@ var express = require('express');
 var flash = require('connect-flash');
 var BPromise = require('bluebird');
 
-var log = require('logg').getLogger('app.core.express.api');
+var log = require('logg').getLogger('app.core.express.City');
 
 var globals = require('../globals');
 var SessionStore = require('../session-store.core');
 var AuthMidd = require('../../middleware/auth.midd');
-var authMidd = new AuthMidd(globals.Roles.API);
+var authMidd = new AuthMidd(globals.Roles.CITY);
 var corsMidd = require('../../middleware/cors.midd').getInstance();
-var apiRouter = require('../../routes/api.router');
+var cityRouter = require('../../routes/city.router');
 
-var ApiExpress = module.exports = cip.extendSingleton(function () {
+var CityExpress = module.exports = cip.extendSingleton(function () {
   /** @type {express} The express instance */
   this.app = express();
 
@@ -26,12 +26,12 @@ var ApiExpress = module.exports = cip.extendSingleton(function () {
 });
 
 /**
- * Initialize the API express instance.
+ * Initialize the City express instance.
  *
  * @param {Object} opts Options as defined in app.init().
  * @return {BPromise(express)} a promise with the express instance.
  */
-ApiExpress.prototype.init = BPromise.method(function(opts) {
+CityExpress.prototype.init = BPromise.method(function(opts) {
   log.info('init() :: Initializing webserver...');
 
   this.app.set('views', path.join(__dirname + '/../../../front/templates/'));
@@ -43,7 +43,7 @@ ApiExpress.prototype.init = BPromise.method(function(opts) {
   this.app.use(corsMidd.allowCrossDomain.bind(corsMidd));
 
   // Session store
-  this.sessionStore = new SessionStore(globals.Roles.API);
+  this.sessionStore = new SessionStore(globals.Roles.CITY);
   var sessConnectBPromise = this.sessionStore.connect();
   this.app.use(this.sessionStore.use());
 
@@ -55,7 +55,7 @@ ApiExpress.prototype.init = BPromise.method(function(opts) {
   authMidd.init(this.app);
 
   // add the routes
-  apiRouter.init(this.app, opts);
+  cityRouter.init(this.app, opts);
 
   // setup view globals
   this.app.locals.glob = globals.viewGlobals;

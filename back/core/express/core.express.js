@@ -14,7 +14,7 @@ var webserver = require('../webserver.core');
 var SocketServer = require('../websocketServer.core');
 var socketServer = SocketServer.getInstance();
 var globals = require('../globals');
-var ExpressApi = require('./api.express');
+var ExpressCity = require('./city.express');
 var ExpressWebsite = require('./website.express');
 
 var log = require('logg').getLogger('app.core.express');
@@ -28,11 +28,11 @@ var ExpressApp = module.exports = cip.extendSingleton(function() {
   /** @type {express} The express instance */
   this.app = express();
 
-  /** @type {?app.core.ExpressApi} The express API instance */
-  this.expressApi = null;
+  /** @type {?app.core.ExpressCity} The express API instance */
+  this.expressCity = null;
 
   if (config.usevhosts) {
-    this.expressApi = ExpressApi.getInstance();
+    this.expressCity = ExpressCity.getInstance();
   }
 
   this.expressWebsite = ExpressWebsite.getInstance();
@@ -53,7 +53,7 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
   ];
 
   if (config.usevhosts) {
-    boot.push(this.expressApi.init(opts));
+    boot.push(this.expressCity.init(opts));
   }
 
   return BPromise.all(boot)

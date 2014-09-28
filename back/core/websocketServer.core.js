@@ -10,7 +10,7 @@ var log = require('logg').getLogger('app.core.Socket');
 
 var SockAuth = require('../middleware/websocket/websocket-auth.midd');
 var webRouter = require('../routes/web-socket.router');
-var apiRouter = require('../routes/api-socket.router');
+var cityRouter = require('../routes/city-socket.router');
 var globals = require('./globals');
 
 var CeventEmitter = cip.cast(EventEmitter);
@@ -37,7 +37,7 @@ Sock.prototype.init = function(http) {
 
   // initialize routers
   webRouter.init();
-  apiRouter.init();
+  cityRouter.init();
 
   this.io = socketio(http, {
     // allow all transports
@@ -72,7 +72,7 @@ Sock.prototype.listen = function(optNamespace) {
     break;
   case globals.WebsocketNamespace.API:
     io = this.io.of(ns);
-    socketRouter = apiRouter;
+    socketRouter = cityRouter;
     break;
   default:
     io = this.io;
