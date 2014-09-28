@@ -14,7 +14,7 @@ require('./util/validator');
 require('./core/feature-toggle.core');
 
 var Email = require('./services/email');
-var initdb = require('./scripts/initdb');
+var Initdb = require('./scripts/initdb');
 var expressApp = require('./core/express/core.express').getInstance();
 var database = require('./core/database.core').getInstance();
 
@@ -84,12 +84,16 @@ AppServices.prototype.initServices = function() {
   var boot = [
     database.init.bind(database),
   ];
-  if (this.options.initdb && !process.env.NOINITDB) {
+
+  if (this.options.initDb && !process.env.NOINITDB) {
+    var initdb = new Initdb();
     boot.push(initdb.start.bind(initdb));
   }
+
   if (this.options.webserver) {
     boot.push(expressApp.init.bind(expressApp, this.options));
   }
+
   if (this.options.email) {
     boot.push(email.init);
   }

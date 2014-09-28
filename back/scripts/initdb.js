@@ -13,9 +13,9 @@ var CityEntity = require('../entities/city.ent');
 var CommunityEntity = require('../entities/community.ent');
 
 var Initdb = module.exports = cip.extend(function () {
-  this.userEnt = UserEntity.getInstance();
-  this.cityEnt = CityEntity.getInstance();
-  this.communityEnt = CommunityEntity.getInstance();
+  this.userEnt = null;
+  this.cityEnt = null;
+  this.communityEnt = null;
 
   /** @type {?Array.<Object>} Cities to populate. */
   this.cities = null;
@@ -38,6 +38,11 @@ var Initdb = module.exports = cip.extend(function () {
  */
 Initdb.prototype.start = Promise.method(function() {
   log.fine('start() :: Starting DB Population...');
+
+  this.userEnt = UserEntity.getInstance();
+  this.cityEnt = CityEntity.getInstance();
+  this.communityEnt = CommunityEntity.getInstance();
+
   return this._readDataFiles()
     .bind(this)
     .then(this._createAdminUser);
