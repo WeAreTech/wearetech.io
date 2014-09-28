@@ -6,21 +6,136 @@ extends ../layout/city
 
 block content
 
-  div.jumbotron
-    h1 City View
-    p This is just a cool copy placeholder
-    p Why don't you&nbsp
-      a(href="https://github.com/thanpolas/nodeON") check out the source code
-    .container
+  div#hello.rowbar-one
+      div.container
+        div.row
+          div.col-lg-8.col-lg-offset-2.centered
+            h1 SKG Tech
+            h2 THESSALONIKI DEVELOPERS & TECHIES
+            p This is&nbsp;
+              a(href="https://github.com/skgtech/skgtech.github.io") an open website
+            | about the community of Thessaloniki's developers and techies. Meet the community and find out about upcoming events and meetups.
+        div.row
+          div.col-lg-8.col-lg-offset-4.centered.share
+            ul.nav
+              li
+                a(href="https://twitter.com/share", data-url="http://skgtech.io/", data-text="Thessaloniki Upcoming Events and Meetups", data-size="medium", via="SKG_Tech" related="SKG_Tech").twitter-share-buttonTweet
+              li
+                a(href="https://twitter.com/SKG_Tech", data-show-count="false", data-lang="en").twitter-follow-button Follow @SKG_Tech
+              li
+                div(data-action="share", data-annotation="bubble", data-href="http://skgtech.io").g-plus
+              li
+                div(data-href="https://www.facebook.com/skgtech.io", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
 
-  div.container
+  div#fb-root
+
+  div#agenda.rowbar-two
+    div.container
+      div.row
+        div.col-lg-10
+          h3THESSALONIKI MEETUP AGENDA
+      div.row
+        div#calendar-link.col-lg-10
+          a(target="_blank", href="https://www.google.com/calendar/embed?src=2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com&ctz=Europe/Athens") Powered by Google Calendar
+          | |
+          a(target="_blank", href="https://www.google.com/calendar/feeds/2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com/public/basic") RSS
+          | |
+          a(target="_blank", href="https://www.google.com/calendar/ical/2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com/public/basic.ics") iCal
+          | |
+          a(href="/submit-event/") How to submit an event
+
+      div#agenda-items
+        div.row
+          div.col-lg-10
+            img(src="/assets/img/loader-bar.gif")
+      div.row
+        //- {% unless site.data.pinnedAgenda.empty? %}
+        //-   {% for item in site.data.pinnedAgenda %}
+        //-     {% capture rowIterer %}{% cycle 1, 2 %}{% endcapture %}
+        //-     div.col-lg-5"
+        //-       {% include widgets/agenda.html item=item %}
+        //-     </div>
+        //-     {% if '2' == rowIterer %}
+        //-     </div>
+        //-     div.row"
+        //-     {% endif %}
+        //-   {% endfor %}
+        //- {% endunless %}
+
+  div#agenda-tpl.hide
+    div.col-lg-5
+      div.panel.panel-danger
+        div.panel-heading
+          h3.panel-title
+        div.panel-body
+          ul
+            li.agenda-tpl-when
+              b When
+              | :
+              span
+            li.agenda-tpl-venue
+              b Venue
+              | :
+              span
+            li.agenda-tpl-address
+              b Address
+              | :
+              span
+            li.agenda-tpl-info
+              b More Info
+              | :
+              a(href="", target="_blank")
+            li.agenda-tpl-language
+              b Language
+              | :
+              span
+            li.agenda-tpl-about
+              b About
+              | :
+              span
+          div.cal-btns
+            a(title="Add the event to your Google Calendar", href="", target="_blank", rel="nofollow").glyphicon.glyphicon-plus.addcal
+            a(title="View the event at Google Calendar", href="", target="_blank", rel="nofollow").glyphicon.glyphicon-share-alt.viewcal
+
+  div#agenda-error.hide
     div.row
-      div.col-sm-6
-        h2 Awesome speak
-        p Scenester Intelligentsia shabby chic slow-carb viral street art. Church-key food truck Pitchfork, Truffaut Etsy biodiesel 90's Godard wayfarers photo booth Blue Bottle hashtag
-        p Normcore tote bag paleo, vegan roof party yr pickled High Life cred selvage gluten-free cliche distillery. Lomo chillwave viral, banh mi selvage
+      div.col-lg-6
+        div.alert.alert-danger Oh Snap! Something went horribly wrong :( Please refresh!
 
-      div.col-sm-6
-        h2 More Awesome speak
-        p Scenester Intelligentsia shabby chic slow-carb viral street art. Church-key food truck Pitchfork, Truffaut Etsy biodiesel 90's Godard wayfarers photo booth Blue Bottle hashtag
-        p Normcore tote bag paleo, vegan roof party yr pickled High Life cred selvage gluten-free cliche distillery. Lomo chillwave viral, banh mi selvage
+  div#communities.rowbar-one
+    div.container
+      div.row
+        div.col-lg-10
+          h3 THESSALONIKI TECH COMMUNITIES
+      div.row
+        //- {% for meetup in site.data.communities %}
+        //-   {% capture rowIter %}{% cycle 3, 4 %}{% endcapture %}
+          //- div.col-lg-5
+            //- {% include widgets/meetup.html meetup=meetup %}
+          //- </div>
+          //- {% if '2' == rowIter %}
+          //- </div>
+          //- div.row"
+          //- {% endif %}
+        //- {% endfor %}
+
+  div#contact.rowbar-two
+    div.container
+      div.row
+        div.col-lg-10
+          h3 STAY IN TOUCH
+          p
+            a(type="button", target="_blank", href="https://groups.google.com/forum/#!forum/skg-developers").btn.btn-default.btn-lg
+              span.glyphicon.glyphicon-globe
+            | Signup on the mailing list
+          p
+            a(type="button", href="/submit-event/").btn.btn-default.btn-lg
+              span.glyphicon.glyphicon-wrench
+            | Submit an Event
+          p.social
+            a(href="https://facebook.com/skgtech.io")
+              i.fa.fa-facebook
+          p.social
+            a(href="https://twitter.com/SKG_Tech")
+              i.fa.fa-twitter
+
