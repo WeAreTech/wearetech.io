@@ -1,4 +1,4 @@
 - name: "Thessaloniki"
-  hostname: "skgtech.io"
+  hostname: "skg.localhost"
 - name: "Athens"
-  hostname: "athtech.org"
+  hostname: "ath.localhost"
