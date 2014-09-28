@@ -8,9 +8,9 @@ var cip = require('cip');
 var file = require('nodeon-file');
 var log = require('logg').getLogger('app.test.Initdb');
 
-var UserEntity = require('../entities/user/user.ent');
-var CityEntity = require('../entities/city.ent');
-var CommunityEntity = require('../entities/community.ent');
+var UserEntity = require('../../back/entities/user/user.ent');
+var CityEntity = require('../../back/entities/city.ent');
+var CommunityEntity = require('../../back/entities/community.ent');
 
 var Initdb = module.exports = cip.extend(function () {
   this.userEnt = null;
