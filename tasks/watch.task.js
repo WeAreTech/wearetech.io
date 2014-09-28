@@ -50,6 +50,4 @@ module.exports = function(grunt) {
       }
     },
   });
-
 };
-

@@ -6,9 +6,7 @@ module.exports = function(grunt) {
     dist: {
       files: {
         'front/static/scripts/city.src.js': ['front/styles-city/app.js'],
-      },
+      }
     }
   });
-
 };
-
