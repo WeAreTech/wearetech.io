@@ -45,7 +45,10 @@ Initdb.prototype.start = Promise.method(function() {
 
   return this._readDataFiles()
     .bind(this)
-    .then(this._createAdminUser);
+    .then(this.nukeDb)
+    .then(this._createAdminUser)
+    .then(this._createCities)
+    .then(this._createCommunities);
 });
 
 /**
@@ -73,9 +76,9 @@ Initdb.prototype._readDataFiles = Promise.method(function() {
 Initdb.prototype.nukeDb = Promise.method(function() {
   log.finer('nukeDb() :: Nuking the db records...');
   return Promise.all([
-    this.userEnt.delete(),
-    this.cityEnt.delete(),
-    this.communityEnt.delete(),
+    this.userEnt.delete({}),
+    this.cityEnt.delete({}),
+    this.communityEnt.delete({}),
   ]);
 });
 
