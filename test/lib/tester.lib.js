@@ -40,6 +40,7 @@ tester.init = function() {
     app.init({
       log: true,
       stubMail: true,
+      initDb: false,
       security: false,
     }).then(done.bind(null, null), done);
   });
