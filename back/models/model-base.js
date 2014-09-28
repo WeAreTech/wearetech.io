@@ -20,4 +20,5 @@ Model.Collection = {
   CITY: 'city',
   VENUE: 'venue',
   COMMUNITY: 'community',
+  CALENDAR: 'calendar',
 };
