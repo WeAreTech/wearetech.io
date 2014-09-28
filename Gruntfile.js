@@ -30,45 +30,6 @@ module.exports = function (grunt) {
         }
       },
     },
-    watch: {
-      frontend: {
-        options: {
-          livereload: true
-        },
-        files: [
-          // triggering livereload when the .css file is updated
-          // (compared to triggering when sass completes)
-          // allows livereload to not do a full page refresh
-          'front/static/styles/*.css',
-          'front/templates/**/*.jade',
-          'front/static/scripts/*.js',
-          'front/static/*.js',
-          'front/static/img/**/*'
-        ]
-      },
-      stylesSass: {
-        files: [
-          'front/styles/**/*.scss'
-        ],
-        tasks: [
-          'sass',
-          'cssmin'
-        ]
-      },
-      web: {
-        files: [
-          'backend/**/*.js',
-          'config/*',
-          'test/**/*.js',
-        ],
-        tasks: [
-          'express:web'
-        ],
-        options: {
-          nospawn: true, // Without this option specified express won't be reloaded
-        }
-      },
-    },
     open: {
       server: {
         path: 'http://localhost:' + develPort
@@ -78,10 +39,17 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'front/static/styles/main.css': [
-            'temp/main-sass.css',
+            'front/static/styles/main.src.css',
           ]
         }
-      }
+      },
+      city: {
+        files: {
+          'front/static/styles/city.css': [
+            'front/static/styles/city.src.css',
+          ]
+        }
+      },
     },
     parallel: {
       web: {
@@ -96,7 +64,10 @@ module.exports = function (grunt) {
           args: ['open:server'],
         }, {
           grunt: true,
-          args: ['watch:stylesSass']
+          args: ['watch:stylesMain']
+        }, {
+          grunt: true,
+          args: ['watch:stylesCity']
         }, {
           grunt: true,
           args: ['watch:web']

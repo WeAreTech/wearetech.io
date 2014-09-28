@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.config('sass', {
     main: {
       files: [{
-        'temp/main-sass.css': 'front/styles/boot.scss',
+        'front/static/styles/main.src.css': 'front/styles/boot.scss',
       }]
     },
     city: {
