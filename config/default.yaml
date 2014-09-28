@@ -3,7 +3,7 @@ webserver:
   url: "http://localhost:3000"
 
 hostname:
-  api: "*.localhost"
+  city: "*.localhost"
   website: "localhost"
 
 # Use virtual hosts for multiple hostnames, if true the engine will also require
@@ -47,10 +47,10 @@ redis:
     host: "localhost"
     port: 6379
     prefix: "appSessionWeb:"
-  sessionApi:
+  sessionCity:
     host: "localhost"
     port: 6379
-    prefix: "appSessionApi:"
+    prefix: "appSessionCity:"
   kansas:
     port: 6379
     host: "localhost"
@@ -67,9 +67,9 @@ cookies:
     session:
       secret: "zzz"
       maxAge: null
-  api:
-    # domain: ".api.localhost"
-    name: 'api'
+  city:
+    # domain: ".city.localhost"
+    name: 'city'
     session:
       secret: "xxx"
       maxAge: null

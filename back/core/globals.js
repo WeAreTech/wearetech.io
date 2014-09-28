@@ -79,9 +79,6 @@ globals.isDev = [
   globals.Environments.DEVELOPMENT,
 ].indexOf(globals.env) >= 0;
 
-/** @type {boolean} If the server is running in API mode */
-globals.isApi = globals.role === globals.Roles.API;
-
 /** @type {boolean} Determines if we are on heroku. */
 globals.isHeroku = false;
 if ([

@@ -87,7 +87,7 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
 
     if (config.usevhosts) {
       socketServer.listen(globals.WebsocketNamespace.API);
-      this.app.use(vhost(config.hostname.api, appApi));
+      this.app.use(vhost(config.hostname.city, appApi));
     }
 
     this.app.use(vhost(config.hostname.website, appWebserver));

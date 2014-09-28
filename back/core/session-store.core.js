@@ -38,9 +38,9 @@ var Session = module.exports = cip.extend(function(role) {
     this.params.cookie = config.cookies.website;
     this.params.redis = config.redis.sessionWebsite;
     break;
-  case globals.Roles.API:
-    this.params.cookie = config.cookies.api;
-    this.params.redis = config.redis.sessionApi;
+  case globals.Roles.CITY:
+    this.params.cookie = config.cookies.city;
+    this.params.redis = config.redis.sessionCity;
     break;
   }
 });
