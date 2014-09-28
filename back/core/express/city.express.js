@@ -59,7 +59,7 @@ CityExpress.prototype.init = BPromise.method(function(opts) {
   cityMidd.init(this.app);
 
   // Populate city data on the 'city' locals variable.
-  this.app.use(cityMidd.populate);
+  this.app.use(cityMidd.populate.bind(cityMidd));
 
   // add the routes
   cityRouter.init(this.app, opts);
