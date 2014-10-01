@@ -30,6 +30,20 @@ City.Schema = {
     type: mongoose.Schema.Types.ObjectId,
     ref: Model.Collection.USER,
   },
+  twitter: {type: String},
+  facebook: {type: String},
+  calendarUrl: {type: String},
+  forumUrl: {type: String},
+  og: {
+    title: {type: String},
+    siteName: {type: String},
+    url: {type: String},
+    description: {type: String},
+    image: {type: String},
+    appId: {type: String},
+    type: {type: String},
+  },
+  ga: {type: String},
 
   createdOn: {type: Date, default: Date.now},
 };

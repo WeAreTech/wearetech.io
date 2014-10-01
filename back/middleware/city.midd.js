@@ -42,6 +42,7 @@ City.prototype.populate = function(req, res, next) {
       } else {
         // populate city
         req.city = result;
+        res.locals.city = result;
         next();
       }
     })
@@ -84,6 +85,6 @@ City.prototype.handleError = function(err, req, res) {
       req.json(localErr.toApi());
     }
   } else {
-    res.render('city/error/500', {err: err});
+    res.render('city/error/500', {error: err});
   }
 };

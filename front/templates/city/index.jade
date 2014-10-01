@@ -2,7 +2,7 @@
 //-
 //-
 
-extends ../layout/city
+extends layout/city-layout
 
 block content
 
@@ -11,22 +11,22 @@ block content
         div.container
           div.row
             div.col-lg-8.col-lg-offset-2.centered
-              h1 SKG Tech
-              h2 THESSALONIKI DEVELOPERS & TECHIES
+              h1= city.headerTitle
+              h2 #{ city.name.toUpperCase() } DEVELOPERS & TECHIES
               p This is&nbsp;
                 a(href="https://github.com/skgtech/skgtech.github.io") an open website
-                | &nbsp; about the community of Thessaloniki's developers and techies. Meet the community and find out about upcoming events and meetups.
+                | &nbsp; about the community of #{ city.name }'s developers and techies. Meet the community and find out about upcoming events and meetups.
           div.row
             div.col-lg-8.col-lg-offset-4.centered.share
               ul.nav
                 li
-                  a(href="https://twitter.com/share", data-url="http://skgtech.io/", data-text="Thessaloniki Upcoming Events and Meetups", data-size="medium", via="SKG_Tech" related="SKG_Tech").twitter-share-button Tweet
+                  a(href="https://twitter.com/share", data-url="#{ city.hostname }", data-text="#{ city.name } Upcoming Events and Meetups", data-size="medium", via="#{ city.twitter }" related="#{ city.twitter }").twitter-share-button Tweet
                 li
-                  a(href="https://twitter.com/SKG_Tech", data-show-count="false", data-lang="en").twitter-follow-button Follow @SKG_Tech
+                  a(href="https://twitter.com/#{ city.twitter }", data-show-count="false", data-lang="en").twitter-follow-button Follow @#{ city.twitter }
                 li
-                  div(data-action="share", data-annotation="bubble", data-href="http://skgtech.io").g-plus
+                  div(data-action="share", data-annotation="bubble", data-href="#{ city.hostname }").g-plus
                 li
-                  div(data-href="https://www.facebook.com/skgtech.io", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
+                  div(data-href="https://www.facebook.com/#{ city.facebook }", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
 
     div#fb-root
 
@@ -34,14 +34,14 @@ block content
       div.container
         div.row
           div.col-lg-10
-            h3 THESSALONIKI MEETUP AGENDA
+            h3 #{ city.name.toUpperCase() } MEETUP AGENDA
         div.row
           div#calendar-link.col-lg-10
-            a(target="_blank", href="https://www.google.com/calendar/embed?src=2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com&ctz=Europe/Athens") Powered by Google Calendar
+            a(target="_blank", href="https://www.google.com/calendar/embed?src=#{ city.calendarUrl }&ctz=Europe/Athens") Powered by Google Calendar
             |  |&nbsp;
-            a(target="_blank", href="https://www.google.com/calendar/feeds/2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com/public/basic") RSS
+            a(target="_blank", href="https://www.google.com/calendar/feeds/#{ city.calendarUrl }/public/basic") RSS
             |  |&nbsp;
-            a(target="_blank", href="https://www.google.com/calendar/ical/2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com/public/basic.ics") iCal
+            a(target="_blank", href="https://www.google.com/calendar/ical/#{ city.calendarUrl }/public/basic.ics") iCal
             |  |&nbsp;
             a(href="/submit-event/") How to submit an event
 
@@ -49,20 +49,6 @@ block content
           div.row
             div.col-lg-10
               img(src="/img/loader-bar.gif")
-        div.row
-          //- {% unless site.data.pinnedAgenda.empty? %}
-          //-   {% for item in site.data.pinnedAgenda %}
-          //-     {% capture rowIterer %}{% cycle 1, 2 %}{% endcapture %}
-          //-     div.col-lg-5"
-          //-       {% include widgets/agenda.html item=item %}
-          //-     </div>
-          //-     {% if '2' == rowIterer %}
-          //-     </div>
-          //-     div.row"
-          //-     {% endif %}
-          //-   {% endfor %}
-          //- {% endunless %}
-
     div#agenda-tpl.hide
       div.col-lg-5
         div.panel.panel-danger
@@ -107,26 +93,52 @@ block content
       div.container
         div.row
           div.col-lg-10
-            h3 THESSALONIKI TECH COMMUNITIES
-        div.row
-          //- {% for meetup in site.data.communities %}
-          //-   {% capture rowIter %}{% cycle 3, 4 %}{% endcapture %}
-            //- div.col-lg-5
-              //- {% include widgets/meetup.html meetup=meetup %}
-            //- </div>
-            //- {% if '2' == rowIter %}
-            //- </div>
-            //- div.row"
-            //- {% endif %}
-          //- {% endfor %}
+            h3 #{ city.name.toUpperCase() } TECH COMMUNITIES
 
+          - var i = -2
+          while i <= communities.length
+            - i += 2
+            div.row
+              each community in communities.slice(i, i + 2)
+                div.col-lg-5
+                  div.panel.panel-info
+                    div.panel-heading
+                      h3.panel-title= community.name
+                    div.panel-body
+                      ul
+                        li
+                          b Period
+                          | : #{ community.period }
+                        if community.happensAt
+                          li
+                            b Happens On
+                            | : #{ community.happensAt }
+                        li
+                          b Website
+                          | :
+                          a(href="#{ community.website }", target="_blank") #{ community.website }
+                        li
+                          b Description
+                          | : #{ community.description }
+                        li
+                          b Maintainers
+                          | :
+                          ul.maintainers
+                            each maintainer in community.maintainers
+                              li
+                                if maintainer.email
+                                  a(href="mailto:#{ maintainer.email }") #{ maintainer.name }
+                                else if maintainer.website
+                                  a(href="#{ maintainer.website }") #{ maintainer.name }
+                                else
+                                  | #{ maintainer.name }
     div#contact.rowbar-two
       div.container
         div.row
           div.col-lg-10
             h3 STAY IN TOUCH
             p
-              a(type="button", target="_blank", href="https://groups.google.com/forum/#!forum/skg-developers").btn.btn-default.btn-lg
+              a(type="button", target="_blank", href="#{ city.forumUrl }").btn.btn-default.btn-lg
                 span.glyphicon.glyphicon-globe
                 | Signup on the mailing list
             p
@@ -134,9 +146,9 @@ block content
                 span.glyphicon.glyphicon-wrench
                 | Submit an Event
             p.social
-              a(href="https://facebook.com/skgtech.io")
+              a(href="https://facebook.com/#{ city.facebook }")
                 i.fa.fa-facebook
             p.social
-              a(href="https://twitter.com/SKG_Tech")
+              a(href="https://twitter.com/#{ city.twitter }")
                 i.fa.fa-twitter
 

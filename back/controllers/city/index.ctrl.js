@@ -1,9 +1,12 @@
 /**
  * @fileOverview GET / City page.
  */
-// var log = require('logg').getLogger('app.ctrl.city.Index');
 
+var log = require('logg').getLogger('app.ctrl.city.Index');
 var ControllerBase = require('nodeon-base').ControllerBase;
+
+var CommunitiesEnt = require('../../entities/community.ent');
+
 
 /**
  * The City home page.
@@ -12,8 +15,37 @@ var ControllerBase = require('nodeon-base').ControllerBase;
  * @extends {app.ControllerBase}
  */
 var Home = module.exports = ControllerBase.extendSingleton(function(){
+  this.use.push(this._fetchCommunities.bind(this));
   this.use.push(this._useIndex.bind(this));
 });
+
+/**
+ * Will fetch all communities of the city.
+ *
+ * @param {Object} req The request Object.
+ * @param {Object} res The response Object.
+ * @param {Function} next Pass control.
+ * @private
+ */
+Home.prototype._fetchCommunities = function (req, res, next) {
+  CommunitiesEnt.getInstance().read({cityOwner: req.city._id})
+    .bind(this)
+    .then(function(result) {
+      if (!result) {
+        res.locals.communities = [];
+      } else {
+        res.locals.communities = result;
+      }
+      next();
+    })
+    .catch(function (err) {
+      log.warn('_fetchCommunities() :: Error on fetching communities:', err);
+      if (typeof err.toApi === 'function') {
+        err = err.toApi();
+      }
+      res.status(500).render('city/error/500', {error: err});
+    });
+};
 
 /**
  * The index page.

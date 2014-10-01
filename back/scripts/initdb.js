@@ -6,6 +6,7 @@ var path = require('path');
 var Promise = require('bluebird');
 var cip = require('cip');
 var file = require('nodeon-file');
+var config = require('config');
 var log = require('logg').getLogger('app.scripts.Initdb');
 
 var UserEntity = require('../entities/user/user.ent');
@@ -63,7 +64,7 @@ Initdb.prototype._readDataFiles = Promise.method(function() {
   ])
     .bind(this)
     .spread(function (cities, communities) {
-      this.cities = cities;
+      this.cities = config.data.city;
       this.communities = communities;
     });
 });

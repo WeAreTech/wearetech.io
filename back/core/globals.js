@@ -91,6 +91,7 @@ if ([
 /** @type {Object} Global variables available to views */
 globals.viewGlobals = {
   ga: config.ga,
+  isDev: globals.isDev,
   env: globals.env,
 };
 
