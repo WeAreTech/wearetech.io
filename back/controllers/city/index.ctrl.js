@@ -43,7 +43,7 @@ Home.prototype._fetchCommunities = function (req, res, next) {
       if (typeof err.toApi === 'function') {
         err = err.toApi();
       }
-      res.status(500).json(err);
+      res.status(500).render('city/error/500', {error: err});
     });
 };
 
