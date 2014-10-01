@@ -122,7 +122,7 @@ data:
     forumUrl: "https://groups.google.com/forum/#!forum/skg-developers"
     og:
       title: "Thessaloniki tech and developer Meetups"
-      site_name: "SKGTech"
+      siteName: "SKGTech"
       url: "skg.localhost"
       description: "Thessaloniki tech and developer Meetups"
       image: "https://pbs.twimg.com/profile_images/453243331691020288/pk_2bTE9.png"
