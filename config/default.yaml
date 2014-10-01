@@ -114,6 +114,11 @@ websocket:
 data:
   city:
     - name: "Thessaloniki"
+    headerTitle: "SKGTech"
     hostname: "skg.localhost"
+    twitter: "SKG_Tech"
+    facebook: "skgtech.io"
+    calendarUrl: "2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com"
+    forumUrl: "https://groups.google.com/forum/#!forum/skg-developers"
     - name: "Athens"
     hostname: "ath.localhost"
