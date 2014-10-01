@@ -109,6 +109,40 @@ block content
           div.col-lg-10
             h3 THESSALONIKI TECH COMMUNITIES
         div.row
+          each community in communities
+            div.col-lg-5
+              div.panel.panel-info
+                div.panel-heading
+                  h3.panel-title= community.name
+                div.panel-body
+                  ul
+                    li
+                      b Period
+                      | : #{ community.period }
+                    if community.happensAt
+                      li
+                        b Happens On
+                        | : #{ community.happensAt }
+                    li
+                      b Website
+                      | :
+                      a(href="#{ community.website }", target="_blank") #{ community.website }
+                    li
+                      b Description
+                      | : #{ community.description }
+                    li
+                      b Maintainers
+                      | :
+                      ul.maintainers
+                        each maintainer in community.maintainers
+                          li
+                            if maintainer.email
+                              a(href="mailto:#{ maintainer.email }") #{ maintainer.name }
+                            else if maintainer.website
+                              a(href="#{ maintainer.website }") #{ maintainer.name }
+                            else
+                              | #{ maintainer.name }
+
           //- {% for meetup in site.data.communities %}
           //-   {% capture rowIter %}{% cycle 3, 4 %}{% endcapture %}
             //- div.col-lg-5

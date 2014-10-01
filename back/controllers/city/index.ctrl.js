@@ -5,7 +5,7 @@
 var log = require('logg').getLogger('app.ctrl.city.Index');
 var ControllerBase = require('nodeon-base').ControllerBase;
 
-var CommunitiesEnt = require('../../entities/communitity.ent');
+var CommunitiesEnt = require('../../entities/community.ent');
 
 
 /**
@@ -30,11 +30,11 @@ var Home = module.exports = ControllerBase.extendSingleton(function(){
 Home.prototype._fetchCommunities = function (req, res, next) {
   CommunitiesEnt.getInstance().read({cityOwner: req.city._id})
     .bind(this)
-    .then(function(res) {
-      if (!res) {
+    .then(function(result) {
+      if (!result) {
         res.locals.communities = [];
       } else {
-        res.locals.communities = res;
+        res.locals.communities = result;
       }
       next();
     })
