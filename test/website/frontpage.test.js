@@ -1,6 +1,7 @@
 /**
  * @fileOverview Frontpage tests.
  */
+// var sinon = require('sinon');
 var chai = require('chai');
 var expect = chai.expect;
 
@@ -21,5 +22,11 @@ describe('Frontpage', function() {
         expect(req.header).to.not.have.property('x-powered-by');
         done();
       });
+  });
+  it('Can access the site from 127.0.0.1', function(done) {
+    var web = new Web('127.0.0.1:3000');
+    this.req = web.req;
+    this.req.get('/')
+      .expect(200, done);
   });
 });
