@@ -2,7 +2,7 @@
 
 > The sources of the [http://wearetech.io](http://wearetech.io) website.
 
-[![Build Status](https://secure.travis-ci.org/wearetech/wearetech.io.png?branch=master)](http://travis-ci.org/wearetech/wearetech.io)
+[![Build Status](https://travis-ci.org/WeAreTech/wearetech.io.svg?branch=master)](https://travis-ci.org/WeAreTech/wearetech.io)
 
 ## Install
 
