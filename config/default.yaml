@@ -110,3 +110,10 @@ websocket:
   # This should be the same between the client and the server.
   # WARNING: do not change this value or socket.io breaks (!)
   resource: "socket.io"
+
+data:
+  city:
+    - name: "Thessaloniki"
+    hostname: "skg.localhost"
+    - name: "Athens"
+    hostname: "ath.localhost"
