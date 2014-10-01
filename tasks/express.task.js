@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     },
     web: {
       options: {
-        script: 'back/app.js',
+        script: '.',
       }
     },
   });
