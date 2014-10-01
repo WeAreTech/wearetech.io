@@ -57,7 +57,7 @@ City.prototype.populate = function(req, res, next) {
  * @param {Object} res The response Object.
  */
 City.prototype.handleNotFound = function(req, res) {
-  req.status(404);
+  res.status(404);
   if (req.is('json')) {
     var err = new appError.Error('City not found');
     req.json(err.toApi());
@@ -75,7 +75,7 @@ City.prototype.handleNotFound = function(req, res) {
  * @param {Object} res The response Object.
  */
 City.prototype.handleError = function(err, req, res) {
-  req.status(500);
+  res.status(500);
   if (req.is('json')) {
     if (err instanceof appError.Error) {
       req.json(err.toApi());
