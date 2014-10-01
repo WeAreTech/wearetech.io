@@ -3,7 +3,8 @@ node_js:
   - 0.10
 addons:
   hosts:
-    - api.localhost
+    - skg.localhost
+    - ath.localhost
 services:
   - mongodb
   - redis
