@@ -22,3 +22,4 @@ var Calendar = module.exports = EntityBase.extendSingleton(function() {
   this.setModel(calendarModel.Model);
 });
 
+Calendar.STUB = 1;

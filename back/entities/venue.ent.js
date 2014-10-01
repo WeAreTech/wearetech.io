@@ -22,3 +22,4 @@ var Venue = module.exports = EntityBase.extendSingleton(function() {
   this.setModel(venueModel.Model);
 });
 
+Venue.STUB = 1;

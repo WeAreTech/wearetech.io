@@ -22,3 +22,4 @@ var City = module.exports = EntityBase.extendSingleton(function() {
   this.setModel(cityModel.Model);
 });
 
+City.STUB = 1;

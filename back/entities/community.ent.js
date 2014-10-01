@@ -22,3 +22,4 @@ var Community = module.exports = EntityBase.extendSingleton(function() {
   this.setModel(communityModel.Model);
 });
 
+Community.STUB = 1;
