@@ -7,10 +7,17 @@
 ## Install
 
 To use, Clone, Enter directory, npm install...
+Note: You need Python 2 for the node-gyp dependency.
 
 ```shell
 git clone git@github.com:wearetech/wearetech.io.git
 cd wearetech.io
+npm install
+```
+
+In case of bcrypt, node-gyp, or python version error
+```shell
+export PYTHON=python2
 npm install
 ```
 
