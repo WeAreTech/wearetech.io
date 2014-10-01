@@ -2,29 +2,25 @@
 
 > The sources of the [http://wearetech.io](http://wearetech.io) website.
 
-[![Build Status](https://secure.travis-ci.org/thanpolas/wearetech.io.png?branch=master)](http://travis-ci.org/thanpolas/wearetech.io)
+[![Build Status](https://secure.travis-ci.org/wearetech/wearetech.io.png?branch=master)](http://travis-ci.org/wearetech/wearetech.io)
 
 ## Install
 
-To use, simply Clone, Enter directory, npm install...
+To use, Clone, Enter directory, npm install...
 
 ```shell
-git clone git@github.com:thanpolas/wearetech.io.git
+git clone git@github.com:wearetech/wearetech.io.git
 cd wearetech.io
 npm install
 ```
 
-## <a name='TOC'>Table of Contents</a>
+### Create required localhost entries
 
-1. [Overview](#overview)
-1. [API](#api)
+Because wearetech.io uses multiple hostnames on the same Node instance you need to edit your `/etc/hosts` file and add two new entries so you will be able to access the two pre-existing cities:
 
-## Overview
-
-Once the project is cloned you need to install the dependent npm and bower modules:
-
-```shell
-npm install && bower install
+```
+127.0.0.1 ath.localhost
+127.0.0.1 skg.localhost
 ```
 
 ## Shell Control
@@ -39,12 +35,8 @@ npm install && bower install
 * `grunt start` Will start the databases (Mongo & Redis).
 * `node .` Will launch the Node.js Application.
 * `npm test` Will run all test suites (BDD, TDD, lint).
-
-## API
-
-One more to go back without onez has together we know!
-
-**[[⬆]](#TOC)**
+* `grunt sass:main` Compile main website (wearetech.io) styles.
+* `grunt sass:city` Compile city website (city.wearetech.io) styles.
 
 ## Release History
 
@@ -53,4 +45,4 @@ One more to go back without onez has together we know!
 
 ## License
 
-Copyright (c) 2014 Thanasis Polychronakis. Licensed under the MIT license.
+Copyright (c) 2014 Thanasis Polychronakis, [Contributors](https://github.com/WeAreTech/wearetech.io/graphs/contributors). Licensed under the MIT license.
