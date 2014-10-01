@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         args: ['open:server'],
       }, {
         grunt: true,
-        args: ['watch:stylesSass']
+        args: ['watch:stylesMain']
       }, {
         grunt: true,
         args: ['watch:stylesCity']
