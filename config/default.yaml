@@ -131,4 +131,18 @@ data:
     ga: "UA-41787746-3"
 
     - name: "Athens"
+    headerTitle: "ATHTech"
     hostname: "ath.localhost"
+    twitter: "ATHTechGR"
+    facebook: "athtech.org"
+    calendarUrl: "oo1mlkql8sma2b3pkg6i23qtdc@group.calendar.google.com"
+    forumUrl: "https://groups.google.com/forum/#!forum/ath-developers"
+    og:
+      title: "Athens tech and developer Meetups"
+      siteName: "ATHTech"
+      url: "ath.localhost"
+      description: "Athens tech and developer Meetups"
+      image: "https://pbs.twimg.com/profile_images/460206458559139840/JAVly4k1.jpeg"
+      appId: "698696243515776"
+      type: "website"
+    ga: "UA-50423318-1"
