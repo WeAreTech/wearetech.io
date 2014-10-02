@@ -23,8 +23,8 @@ module.exports = function(grunt) {
         'front/styles/**/*.scss'
       ],
       tasks: [
-        'sass:dist',
-        'cssmin:dist'
+        'sass:main',
+        'cssmin:main'
       ]
     },
     stylesCity: {
