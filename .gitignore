@@ -7,3 +7,4 @@ dump.rdb
 config/runtime*
 
 .idea/
+front/static/components
