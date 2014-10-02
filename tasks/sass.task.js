@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         'front/static/styles/main.src.css': 'front/styles/boot.scss',
       }]
     },
-    city: {
+    cities: {
       files: [{
         'front/static/styles/city.src.css': 'front/styles-city/boot.scss',
       }]

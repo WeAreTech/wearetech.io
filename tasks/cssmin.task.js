@@ -3,14 +3,14 @@
  */
 module.exports = function(grunt) {
   grunt.config('cssmin', {
-    dist: {
+    main: {
       files: {
         'front/static/styles/main.css': [
           'front/static/styles/main.src.css',
         ]
       }
     },
-    city: {
+    cities: {
       files: {
         'front/static/styles/city.css': [
           'front/static/styles/city.src.css',

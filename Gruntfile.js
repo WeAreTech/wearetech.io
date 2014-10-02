@@ -22,8 +22,10 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('css', 'SASS and combine minify', [
-    'sass:dist',
-    'cssmin:dist'
+    'sass:main',
+    'cssmin:main',
+    'sass:cities',
+    'cssmin:cities'
   ]);
 
   grunt.registerTask('deploy', 'Nodejitsu deploy ops', [
