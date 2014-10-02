@@ -7,21 +7,22 @@ extends layout/default
 
 block content
 
-  div.jumbotron
-    h1 Hello World
-    p This is just a cool copy placeholder
-    p Why don't you&nbsp
-      a(href="https://github.com/thanpolas/nodeON") check out the source code
-    .container
-
-  div.container
-    div.row
-      div.col-sm-6
-        h2 Awesome speak
-        p Scenester Intelligentsia shabby chic slow-carb viral street art. Church-key food truck Pitchfork, Truffaut Etsy biodiesel 90's Godard wayfarers photo booth Blue Bottle hashtag
-        p Normcore tote bag paleo, vegan roof party yr pickled High Life cred selvage gluten-free cliche distillery. Lomo chillwave viral, banh mi selvage
-
-      div.col-sm-6
-        h2 More Awesome speak
-        p Scenester Intelligentsia shabby chic slow-carb viral street art. Church-key food truck Pitchfork, Truffaut Etsy biodiesel 90's Godard wayfarers photo booth Blue Bottle hashtag
-        p Normcore tote bag paleo, vegan roof party yr pickled High Life cred selvage gluten-free cliche distillery. Lomo chillwave viral, banh mi selvage
+  .container.landing
+    .row
+      .col-sm-3
+        img(src="img/logo-cropped.png").logo
+      .col-sm-9
+        h1.brand WeAreTech.io
+        p.slogan.lead More awesomeness to come. Stay tuned.
+        p Help us spread the word&nbsp;
+          | <a class="twitter-share-button"
+          |    href="https://twitter.com/share">
+          |Tweet
+          |</a>
+          |<script type="text/javascript">
+          |window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));</script>
+        p
+          | Want a sneak peak? Checkout
+          a(href="http://skgtech.io")  SKGTech.io
+          |  and
+          a(href="http://athtech.org")  ATHTech.io
