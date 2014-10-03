@@ -74,7 +74,6 @@ cookies:
       secret: "xxx"
       maxAge: null
 
-
 users:
   # Durations in milliseconds:
   # 1 day:      86400000
