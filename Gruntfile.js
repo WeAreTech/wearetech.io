@@ -34,7 +34,12 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', 'Build frontend app', [
+    'browserify:city',
     'css',
+  ]);
+
+  grunt.registerTask('heroku:heroku', [
+    'build',
   ]);
 
   grunt.registerTask('frontend', [
