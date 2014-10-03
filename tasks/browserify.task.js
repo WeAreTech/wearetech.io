@@ -3,8 +3,8 @@
  */
 module.exports = function(grunt) {
   grunt.config('browserify', {
-    dist: {
-      city: {
+    city: {
+      files: {
         'front/static/scripts/city.src.js': ['front/js-city/app.js'],
       }
     }
