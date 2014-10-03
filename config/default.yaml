@@ -38,7 +38,7 @@ mongo:
   reconnectTime: 500
 
 redis:
-  namespace: "app:"
+  namespace: "wetech:"
   main:
     host: "localhost"
     port: 6379
