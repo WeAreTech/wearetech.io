@@ -45,6 +45,16 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 * `grunt sass:main` Compile main website (wearetech.io) styles.
 * `grunt sass:city` Compile city website (city.wearetech.io) styles.
 
+## Deployment Checklist
+
+* ❏ Update the [Release History](#release-history)
+* ❏ Run: `grunt release`, this will:
+  * Bump the version to the next patch.
+  * Commit the change.
+  * Issue tag based on new version.
+  * Push to origin the new tag.
+  * Travis-ci will deploy on heroku the tagged version.
+
 ## Release History
 
 - **v0.0.5**, *04/Oct/2014*
