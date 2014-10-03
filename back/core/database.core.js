@@ -146,7 +146,7 @@ Conn.prototype._connectMongo = function() {
       }
     };
 
-    log.fine('_connectMongo() :: Connecting using url:', mongoUri, mongoOpts);
+    log.fine('_connectMongo() :: Connecting using url:', mongoUri);
     mongoose.connect(mongoUri, mongoOpts);
     var db = self.db = mongoose.connection.db;
 
