@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "nodeON",
-  "version": "0.1.0",
-  "description": "A Node.js Web Application Skelleton",
+  "name": "wearetech",
+  "version": "0.0.1",
+  "description": "The Sources of http://wearetech.io website.",
   "main": "back/app.js",
   "scripts": {
     "start": "node back/app.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:thanpolas/nodeON.git"
+    "url": "git@github.com:wearetech/wearetech.io.git"
   },
   "engines": {
     "node": "0.10.x"
