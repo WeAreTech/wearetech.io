@@ -4,6 +4,7 @@ body,
 html {
   background: #79c9ab;
   font-size: 16px;
+  text-align: center;
 }
 
 .landing {
@@ -17,11 +18,11 @@ html {
     color: #79c9ab;
     border-radius: 25px;
     margin-top: 20px;
+    max-width: 200px;
   }
 
   .brand {
-    font-size: 5em;
-    margin-top: 0;
+    font-size: 2em;
   }
 
   .slogan {
@@ -39,6 +40,10 @@ html {
 
 @media (min-width: 768px) {
 
+  body {
+    text-align: left;
+  }
+
   .landing {
     position: absolute;
     top: 0;
@@ -51,5 +56,10 @@ html {
     font-weight: 300;
     color: white;
     font-family: 'Roboto', sans-serif;
+
+    .brand {
+      font-size: 5em;
+      margin-top: 0;
+    }
   }
 }
