@@ -51,7 +51,8 @@ var Session = module.exports = cip.extend(function(role) {
  * @return {BPromise} A promise.
  */
 Session.prototype.connect = function() {
-  log.fine('connect() :: Connecting to:', this.params.redis);
+  log.fine('connect() :: Connecting to:', this.params.redis.host + ':' +
+    this.params.redis.port, 'user:', this.params.redis.user);
   var self = this;
   return new BPromise(function(resolve, reject) {
     // Sessions stored in redis
