@@ -1,10 +1,19 @@
 language: node_js
 node_js:
-  - 0.10
+- 0.10
 addons:
   hosts:
-    - skg.localhost
-    - ath.localhost
+  - skg.localhost
+  - ath.localhost
 services:
-  - mongodb
-  - redis
+- mongodb
+- redis
+deploy:
+  provider: heroku
+  api_key:
+    secure: xzjKp+ZiRUIF/1mDouvK4GFKMofeD1DuuFKvnmUOB360OZD+Sfw9ZMc/AEsmMombivtfbiqjKjJ8KQakwsPiJ/GZNfIyjQnm2g9yxz0g0Y1JRUTut4+zKSTUhDE1Y557f3RpWWbpAdT+0OtNpP1VXimMuvJLJMheVTA5sDBNjso=
+  app: wearetech
+  on:
+    repo: WeAreTech/wearetech.io
+    all_branches: true
+    tags: true
