@@ -8,3 +8,5 @@ config/runtime*
 
 .idea/
 front/static/components
+
+env-prod.js
