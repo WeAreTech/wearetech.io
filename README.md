@@ -47,6 +47,8 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
+- **v0.0.3**, *04/Oct/2014*
+    - Test auto-deploy from travis.ci
 - **v0.0.1**, *04/Oct/2014*
     - Big Bang
 
