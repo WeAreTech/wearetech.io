@@ -6,6 +6,7 @@
   "main": "back/app.js",
   "scripts": {
     "start": "node back/app.js",
+    "postinstall": "./node_modules/.bin/napa && ./node_modules/.bin/bower install",
     "test": "./node_modules/.bin/mocha -b test/user -u bdd -R spec && ./node_modules/.bin/mocha -b test/website -u bdd -R spec && ./node_modules/.bin/grunt jshint:backend"
   },
   "repository": {
