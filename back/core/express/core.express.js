@@ -88,18 +88,12 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
     if (config.usevhosts) {
       socketServer.listen(globals.WebsocketNamespace.API);
       this.app.use(vhost(config.hostname.city, appApi));
+      // SKIN it for now..
+      this.app.use(vhost('skgtech.io', appApi));
+      this.app.use(vhost('athtech.org', appApi));
     }
 
-    this.app.use(function (req, res, next) {
-      console.log(req.headers);
-      next();
-    });
-
     this.app.use(vhost(config.hostname.website, appWebserver));
-
-    // SKIN it for now..
-    this.app.use(vhost('skgtech.io', appWebserver));
-    this.app.use(vhost('athtech.org', appWebserver));
 
     // ultimate fallback if no vhost triggers, use main web app again:
     this.app.use(appWebserver);
