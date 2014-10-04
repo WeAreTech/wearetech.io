@@ -18,3 +18,38 @@ logger:
   console: true
   filename: "./logs/app.log"
 
+data:
+  city:
+    - name: "Thessaloniki"
+    headerTitle: "SKGTech"
+    hostname: "skgtech.io"
+    twitter: "SKG_Tech"
+    facebook: "skgtech.io"
+    calendarUrl: "2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com"
+    forumUrl: "https://groups.google.com/forum/#!forum/skg-developers"
+    og:
+      title: "Thessaloniki tech and developer Meetups"
+      siteName: "SKGTech"
+      url: "skgtech.io"
+      description: "Thessaloniki tech and developer Meetups"
+      image: "https://pbs.twimg.com/profile_images/453243331691020288/pk_2bTE9.png"
+      appId: "698696243515776"
+      type: "website"
+    ga: "UA-41787746-3"
+
+    - name: "Athens"
+    headerTitle: "ATHTech"
+    hostname: "athtech.org"
+    twitter: "ATHTechGR"
+    facebook: "athtech.org"
+    calendarUrl: "oo1mlkql8sma2b3pkg6i23qtdc@group.calendar.google.com"
+    forumUrl: "https://groups.google.com/forum/#!forum/ath-developers"
+    og:
+      title: "Athens tech and developer Meetups"
+      siteName: "ATHTech"
+      url: "athtech.org"
+      description: "Athens tech and developer Meetups"
+      image: "https://pbs.twimg.com/profile_images/460206458559139840/JAVly4k1.jpeg"
+      appId: "698696243515776"
+      type: "website"
+    ga: "UA-50423318-1"
