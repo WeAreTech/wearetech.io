@@ -92,6 +92,10 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
 
     this.app.use(vhost(config.hostname.website, appWebserver));
 
+    // SKIN it for now..
+    this.app.use(vhost('skgtech.io', appWebserver));
+    this.app.use(vhost('athtech.org', appWebserver));
+
     // ultimate fallback if no vhost triggers, use main web app again:
     this.app.use(appWebserver);
 
