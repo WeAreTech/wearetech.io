@@ -13,10 +13,10 @@ block content
           h1 How to Submit an Event
     div.row
       div.col-lg-8
-        p #{ city.headerTitle } is using a&nbsp;
+        p #{ city.hostname } is using a&nbsp;
           a(href="https://www.google.com/calendar/embed?src=#{ city.calendarUrl }&ctz=Europe/Athens") Public Google Calendar
           | &nbsp; for storing and reading the events and meetups.
-        p What you need to do is create a new Calendar event from your Gmail account and invite the #{ city.headerTitle } Public Calendar:
+        p What you need to do is create a new Calendar event from your Gmail account and invite the #{ city.hostname } Public Calendar:
 
         h2 Creating the Event
         h3 Event Name, Location, Time
@@ -39,11 +39,11 @@ block content
         p All of the above fields are optional, however, at least one has to be defined. Here's an example <em>Description</em> event field from the OpenThessaloniki event:
         pre Venue: 2nd Floor, Office 3<br>Info: http://www.openthessaloniki.org/<br>Map: https://www.google.com/maps?q=Ethnikis+Antistaseos+17,+Kalamaria,+Thessaloniki,+Greece&hl=en&sll=40.621193,22.954988&sspn=0.024365,0.039783&hnear=Leoforos+Ethnikis+Antistaseos+17,+Kalamaria,+Thessaloniki,+Greece&t=m&z=16&iwloc=A<br>About: A meetup about Open Data.
 
-        h3 Inviting #{ city.headerTitle } Calendar
+        h3 Inviting #{ city.hostname } Calendar
         img(src="http://f.cl.ly/items/322O1e3U2k1D123e211d/Screen%20Shot%202014-04-11%20at%2011.51.59%20AM.png")
         p You need to paste the following email address in the "Add Guests" field and press the "Add" button:
         pre #{ city.calendarUrl }
-        p We know this is hard to remember so if you are a frequent event organizer then it would make sense to create a new contact "#{ city.headerTitle } Calendar" and save the email there.
+        p We know this is hard to remember so if you are a frequent event organizer then it would make sense to create a new contact "#{ city.hostname } Calendar" and save the email there.
         p That was it, you can now <em>Save</em> the new event and as soon as we accept the invitation it will automatically be propagated to the live&nbsp;
           a(href="http://#{ city.hostname }") #{ city.hostname }
           | &nbsp; website.
