@@ -1,6 +1,10 @@
 webserver:
   port: 80
 
+hostname:
+  city: "*.wearetech.io"
+  website: "wearetech.io"
+
 # Google Analytics key
 ga: "UA-xxxxxx-2"
 
