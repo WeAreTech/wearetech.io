@@ -57,6 +57,8 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
+- **v0.0.6**, *04/Oct/2014*
+    - Edit page title on main site.
 - **v0.0.5**, *04/Oct/2014*
     - Test auto-deploy from travis.ci
 - **v0.0.1**, *04/Oct/2014*
