@@ -34,6 +34,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', 'Build frontend app', [
+    'browserify:main',
     'browserify:city',
     'css',
   ]);
