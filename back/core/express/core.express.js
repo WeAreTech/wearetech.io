@@ -90,6 +90,11 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
       this.app.use(vhost(config.hostname.city, appApi));
     }
 
+    this.app.use(function (req, res, next) {
+      console.log(req.headers);
+      next();
+    });
+
     this.app.use(vhost(config.hostname.website, appWebserver));
 
     // SKIN it for now..
