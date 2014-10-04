@@ -10,3 +10,4 @@ config/runtime*
 front/static/components
 
 env-prod.js
+env-staging.js
