@@ -1,0 +1,49 @@
+//- how to submit file
+//-
+//-
+
+extends layout/city-layout
+
+block content
+
+  div.page.container
+    div.row
+      div.col-lg-8
+        div.page-header
+          h1 How to Submit an Event
+    div.row
+      div.col-lg-8
+        p #{ city.headerTitle } is using a&nbsp;
+          a(href="https://www.google.com/calendar/embed?src=#{ city.calendarUrl }&ctz=Europe/Athens") Public Google Calendar
+          | &nbsp; for storing and reading the events and meetups.
+        p What you need to do is create a new Calendar event from your Gmail account and invite the #{ city.headerTitle } Public Calendar:
+
+        h2 Creating the Event
+        h3 Event Name, Location, Time
+        h4 Create a new event in your calendar. Use a short and descriptive name. Define the duration of the event.
+        img(src= "http://f.cl.ly/items/0P3p1330263a3A201s0H/Screen%20Shot%202014-04-11%20at%2011.40.03%20AM.png")
+        p In the <strong>Where</strong> field you need to enter a Google Maps resolvable address, meaning an address that Google Maps can resolve to a location.
+        h5 A Good Address
+        pre Mitropoleos 110, Thessaloniki, 54621, Greece
+        h5 A Bad Address
+        pre Mitropoleos 110, 2nd floor
+
+        h3 The Event Description
+        img(src="http://f.cl.ly/items/3B2Z0j232P35433Z2c1F/Screen%20Shot%202014-04-11%20at%2011.43.53%20AM.png")
+        p The event description has a special role for the #{ city.hostname } website. It is used as the data entry field; The #{ city.hostname } engine will parse the description and look for specific keywords that will then use to render the event. The fields have a unique name and are separated using a colon from their values. Here are all the possible fields:
+        ul
+          li <strong>Venue:</strong> This is a free text field. It is the place you name a particular venue and any special instructions on where to find the meetup (i.e. 2nd floor, Office #3).
+          li <strong>Info:</strong> This field expects a url that points to the events homepage.
+          li <strong>Map:</strong> This field expects a Google Maps url that points directly to a Google Maps link with the exact location of the event.
+          li <strong>About:</strong> A free text description of the event.
+        p All of the above fields are optional, however, at least one has to be defined. Here's an example <em>Description</em> event field from the OpenThessaloniki event:
+        pre Venue: 2nd Floor, Office 3<br>Info: http://www.openthessaloniki.org/<br>Map: https://www.google.com/maps?q=Ethnikis+Antistaseos+17,+Kalamaria,+Thessaloniki,+Greece&hl=en&sll=40.621193,22.954988&sspn=0.024365,0.039783&hnear=Leoforos+Ethnikis+Antistaseos+17,+Kalamaria,+Thessaloniki,+Greece&t=m&z=16&iwloc=A<br>About: A meetup about Open Data.
+
+        h3 Inviting #{ city.headerTitle } Calendar
+        img(src="http://f.cl.ly/items/322O1e3U2k1D123e211d/Screen%20Shot%202014-04-11%20at%2011.51.59%20AM.png")
+        p You need to paste the following email address in the "Add Guests" field and press the "Add" button:
+        pre #{ city.calendarUrl }
+        p We know this is hard to remember so if you are a frequent event organizer then it would make sense to create a new contact "#{ city.headerTitle } Calendar" and save the email there.
+        p That was it, you can now <em>Save</em> the new event and as soon as we accept the invitation it will automatically be propagated to the live&nbsp;
+          a(href="http://#{ city.hostname }") #{ city.hostname }
+          | &nbsp; website.
