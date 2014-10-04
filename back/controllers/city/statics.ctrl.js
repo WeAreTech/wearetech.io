@@ -25,5 +25,5 @@ var Statics = module.exports = ControllerBase.extendSingleton(function(){
  */
 Statics.prototype._getSubmitEvent = function(req, res) {
 
-  res.render('city/submit-event', {  });
+  res.render('city/submit-event');
 };
