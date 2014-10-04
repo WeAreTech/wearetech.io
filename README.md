@@ -57,7 +57,8 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
-- **v0.0.7**, *04/Oct/2014*
+- **v0.0.8**, *04/Oct/2014*
+    - Added how-to-submit event page.
     - Added OG tags for main site.
     - Edit page title on main site.
 - **v0.0.5**, *04/Oct/2014*
