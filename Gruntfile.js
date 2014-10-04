@@ -38,9 +38,8 @@ module.exports = function (grunt) {
     'css',
   ]);
 
-  grunt.registerTask('heroku:heroku', [
-    'build',
-  ]);
+  grunt.registerTask('heroku:heroku', ['build']);
+  grunt.registerTask('heroku:heroku-staging', ['build']);
 
   grunt.registerTask('frontend', [
     'parallel:web',
