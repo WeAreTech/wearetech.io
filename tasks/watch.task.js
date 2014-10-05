@@ -18,6 +18,15 @@ module.exports = function(grunt) {
         'front/static/img/**/*'
       ]
     },
+    scripts: {
+      files: [
+        'front/js-main/**/*.js',
+        'front/js-city/**/*.js'
+      ],
+      tasks: [
+        'js'
+      ]
+    },
     stylesMain: {
       files: [
         'front/styles/**/*.scss'

@@ -12,7 +12,10 @@ module.exports = function(grunt) {
         args: ['watch:frontend']
       }, {
         grunt: true,
-        args: ['open:server'],
+        args: ['open:server']
+      }, {
+        grunt: true,
+        args: ['watch:scripts']
       }, {
         grunt: true,
         args: ['watch:stylesMain']
