@@ -37,6 +37,7 @@ router.init = function(app) {
   // }
 
   app.get('/', homeCtrl.use);
+  app.get('/available/', homeCtrl.checkIfAvailableForRegistration);
 
   app.get('/tpl/:tpl', function(req, res) {
     var template = req.route.params.tpl;
