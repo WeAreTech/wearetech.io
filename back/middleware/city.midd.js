@@ -34,16 +34,26 @@ City.prototype.init = function() {
  * @param {Function(Error=)} next passing control to the next middleware.
  */
 City.prototype.populate = function(req, res, next) {
-  this.cityEnt.readOne({hostname: req.hostname})
+
+  // get the domain name out of the hostname
+  var domainName = this.getDomainName(req.hostname);
+
+  this.cityEnt.readOne({domainName: domainName})
     .bind(this)
     .then(function (result) {
       if (!result) {
         this.handleNotFound(req, res);
       } else {
-        // populate city
-        req.city = result;
-        res.locals.city = result;
-        next();
+        // check if there's a hostname match
+        if (req.hostname === result.hostname) {
+          // populate city
+          req.city = result;
+          res.locals.city = result;
+          next();
+        } else {
+          // not a match, redirect to proper
+          res.redirect(301, result.hostname);
+        }
       }
     })
     .catch(function(err) {
