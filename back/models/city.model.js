@@ -45,7 +45,7 @@ City.Schema = {
     type: {type: String},
   },
   ga: {type: String},
-
+  redirects: {type: Object},
   createdOn: {type: Date, default: Date.now},
 };
 
