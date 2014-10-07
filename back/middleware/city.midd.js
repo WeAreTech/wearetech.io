@@ -52,7 +52,7 @@ City.prototype.populate = function(req, res, next) {
           next();
         } else {
           // not a match, redirect to proper
-          res.redirect(301, result.hostname);
+          res.redirect(301, req.protocol + '://' + result.hostname);
         }
       }
     })
