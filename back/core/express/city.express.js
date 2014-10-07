@@ -61,6 +61,9 @@ CityExpress.prototype.init = BPromise.method(function(opts) {
   // Populate city data on the 'city' locals variable.
   this.app.use(cityMidd.populate.bind(cityMidd));
 
+  // Handle city specific redirects
+  this.app.use(cityMidd.redirects.bind(cityMidd));
+
   // add the routes
   cityRouter.init(this.app, opts);
 

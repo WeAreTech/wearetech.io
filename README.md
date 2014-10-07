@@ -4,26 +4,23 @@
 
 [![Build Status](https://travis-ci.org/WeAreTech/wearetech.io.svg?branch=master)](https://travis-ci.org/WeAreTech/wearetech.io)
 
-## Install
-
-To use, Clone, Enter directory, npm install...
-Note: You need Python 2 for the node-gyp dependency.
+## Install & Use
 
 ```shell
 git clone git@github.com:wearetech/wearetech.io.git
 cd wearetech.io
-npm install
+npm install && bower install
+grunt build
+grunt
 ```
 
-In case of bcrypt, node-gyp, or python version error
-```shell
-export PYTHON=python2
-npm install
-```
+Note: You need Python 2 for the node-gyp dependency.
+In case of bcrypt, node-gyp, or Python version error, run `export PYTHON=python2` before `npm install`, with python2 pointing to the binary file of Python 2.
+
 
 ### Create required localhost entries
 
-Because wearetech.io uses multiple hostnames on the same Node instance you need to edit your `/etc/hosts` file and add two new entries so you will be able to access the two pre-existing cities:
+Because wearetech.io uses multiple hostnames on the same Node instance you need to edit your `/etc/hosts` file and add two new entries, so as you can access the two pre-existing cities:
 
 ```
 127.0.0.1 ath.localhost
@@ -57,7 +54,10 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
-- **v0.0.9**, *04/Oct/2014*
+- **v0.0.11**, *07/Oct/2014*
+    - Added city wide redirects (www.skgtech.io --> skgtech.io).
+    - Added city specific redirects in the model (skgtech.io/together --> together.skgtech.io).
+- **v0.0.10**, *04/Oct/2014*
     - Replaced city header title with city subdomain in the Submit Event page
     - Added how-to-submit event page.
     - Added OG tags for main site.

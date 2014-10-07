@@ -1,6 +1,8 @@
 /**
  * @fileOverview City Middleware.
  */
+var url = require('url');
+
 var MiddlewareBase = require('nodeon-base').MiddlewareBase;
 var appError = require('nodeon-error');
 
@@ -27,23 +29,33 @@ City.prototype.init = function() {
 };
 
 /**
- * City Middleware
+ * City Middleware, populates city data to req object and views.
  *
  * @param {Object} req The request Object.
  * @param {Object} res The response Object.
  * @param {Function(Error=)} next passing control to the next middleware.
  */
 City.prototype.populate = function(req, res, next) {
-  this.cityEnt.readOne({hostname: req.hostname})
+
+  // get the domain name out of the hostname
+  var domainName = this.getDomainName(req.hostname);
+
+  this.cityEnt.readOne({domainName: domainName})
     .bind(this)
     .then(function (result) {
       if (!result) {
         this.handleNotFound(req, res);
       } else {
-        // populate city
-        req.city = result;
-        res.locals.city = result;
-        next();
+        // check if there's a hostname match
+        if (req.hostname === result.hostname) {
+          // populate city
+          req.city = result;
+          res.locals.city = result;
+          next();
+        } else {
+          // not a match, redirect to proper
+          res.redirect(301, req.protocol + '://' + result.hostname);
+        }
       }
     })
     .catch(function(err) {
@@ -86,5 +98,33 @@ City.prototype.handleError = function(err, req, res) {
     }
   } else {
     res.render('city/error/500', {error: err});
+  }
+};
+
+/**
+ * Returns the domain name of each hostname, last two parts.
+ *
+ * @param {string} hostname The hostname to parse.
+ * @return {string} The last two parts representing the domain name.
+ */
+City.prototype.getDomainName = function (hostname) {
+  var parts = hostname.split('.');
+  return parts.slice(parts.length -2).join('.');
+};
+
+/**
+ * Handles city specific redirects.
+ *
+ * @param {Object} req The request Object.
+ * @param {Object} res The response Object.
+ * @param {Function(Error=)} next passing control to the next middleware.
+ */
+City.prototype.redirects = function (req, res, next) {
+  var parts = url.parse(req.url);
+  var slashlessPathname = parts.pathname.substr(1);
+  if (slashlessPathname in req.city.redirects) {
+    res.redirect(301, req.city.redirects[slashlessPathname]);
+  } else {
+    next();
   }
 };

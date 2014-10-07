@@ -27,6 +27,7 @@ City.Schema = {
   name: {type: String, required: true, trim: true},
   headerTitle: {type: String, required: true, trim: true},
   hostname: {type: String, required: true, trim: true},
+  domainName: {type: String, required: true, trim: true},
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: Model.Collection.USER,
@@ -46,7 +47,7 @@ City.Schema = {
     type: {type: String},
   },
   ga: {type: String},
-
+  redirects: {type: Object},
   createdOn: {type: Date, default: Date.now},
 };
 
