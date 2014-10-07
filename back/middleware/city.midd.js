@@ -1,6 +1,8 @@
 /**
  * @fileOverview City Middleware.
  */
+var url = require('url');
+
 var MiddlewareBase = require('nodeon-base').MiddlewareBase;
 var appError = require('nodeon-error');
 
@@ -27,7 +29,7 @@ City.prototype.init = function() {
 };
 
 /**
- * City Middleware
+ * City Middleware, populates city data to req object and views.
  *
  * @param {Object} req The request Object.
  * @param {Object} res The response Object.
@@ -108,4 +110,21 @@ City.prototype.handleError = function(err, req, res) {
 City.prototype.getDomainName = function (hostname) {
   var parts = hostname.split('.');
   return parts.slice(parts.length -2).join('.');
+};
+
+/**
+ * Handles city specific redirects.
+ *
+ * @param {Object} req The request Object.
+ * @param {Object} res The response Object.
+ * @param {Function(Error=)} next passing control to the next middleware.
+ */
+City.prototype.redirects = function (req, res, next) {
+  var parts = url.parse(req.url);
+  var slashlessPathname = parts.pathname.substr(1);
+  if (slashlessPathname in req.city.redirects) {
+    res.redirect(301, req.city.redirects[slashlessPathname]);
+  } else {
+    next();
+  }
 };
