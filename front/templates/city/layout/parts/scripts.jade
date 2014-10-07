@@ -2,7 +2,7 @@ script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 script.
   window.jQuery || document.write('<script src="components/jquery/dist/jquery.min.js"><\\/script>')
 
-if !glob.isDev
+if !glob.isDev && city
   script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -35,7 +35,7 @@ script(type="text/javascript").
 //-
 //- facebook
 //-
-if city.og
+if city && city.og
   div#fb-root
   script(type="text/javascript").
     (function(d, s, id) {
