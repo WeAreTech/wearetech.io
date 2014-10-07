@@ -32,7 +32,15 @@ Register.prototype.init = function() {
       $.get(url, function(response){
         if(response.city && response.city != null) {
           $('.user-registration-form').removeClass('hidden');
-          $('.form-title').text($('.form-title').text() + place.formatted_address)
+          $('.form-title').html($('.form-title').text() + '<br/>' + place.formatted_address);
+
+
+          $('<input>').attr({
+            type: 'hidden',
+            name: 'cityName',
+            value: place.formatted_address
+          }).appendTo($('.user-registration-form form'));
+
         }
       });
     }
