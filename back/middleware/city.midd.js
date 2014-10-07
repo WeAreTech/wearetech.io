@@ -98,3 +98,14 @@ City.prototype.handleError = function(err, req, res) {
     res.render('city/error/500', {error: err});
   }
 };
+
+/**
+ * Returns the domain name of each hostname, last two parts.
+ *
+ * @param {string} hostname The hostname to parse.
+ * @return {string} The last two parts representing the domain name.
+ */
+City.prototype.getDomainName = function (hostname) {
+  var parts = hostname.split('.');
+  return parts.slice(parts.length -2).join('.');
+};
