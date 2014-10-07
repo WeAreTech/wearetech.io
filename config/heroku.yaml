@@ -27,6 +27,7 @@ data:
     - name: "Thessaloniki"
     headerTitle: "SKGTech"
     hostname: "skgtech.io"
+    domainName: "skgtech.io"
     twitter: "SKG_Tech"
     facebook: "skgtech.io"
     calendarUrl: "2ul10sd9g30mnk1vpmcnnp5qv4%40group.calendar.google.com"
@@ -43,7 +44,8 @@ data:
 
     - name: "Athens"
     headerTitle: "ATHTech"
-    hostname: "athtech.org"
+    hostname: "www.athtech.org"
+    domainName: "athtech.org"
     twitter: "ATHTechGR"
     facebook: "athtech.org"
     calendarUrl: "oo1mlkql8sma2b3pkg6i23qtdc@group.calendar.google.com"
