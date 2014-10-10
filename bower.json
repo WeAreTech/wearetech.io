@@ -1,5 +1,5 @@
 {
-  "name": "nodeON",
+  "name": "wearetech",
   "version": "0.0.0",
   "homepage": "https://github.com/thanpolas/check-connectivity",
   "authors": [
@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "sass-bootstrap": "~3.0.2",
+    "sass-bootstrap": "~3.2.0",
     "jquery": "~2.1.1"
   }
 }
