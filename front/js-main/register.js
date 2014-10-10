@@ -1,3 +1,6 @@
+/**
+ * @fileOverview City Registration app
+ */
 var Register = module.exports = function() {};
 
 /**
