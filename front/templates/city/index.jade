@@ -14,7 +14,7 @@ block content
               h1= city.headerTitle
               h2 #{ city.name.toUpperCase() } DEVELOPERS & TECHIES
               p This is&nbsp;
-                a(href="https://github.com/skgtech/skgtech.github.io") an open website
+                a(href="https://github.com/WeAreTech/wearetech.io") an open website
                 | &nbsp; about the community of #{ city.name }'s developers and techies. Meet the community and find out about upcoming events and meetups.
           div.row
             div.col-lg-8.col-lg-offset-4.centered.share
@@ -27,8 +27,6 @@ block content
                   div(data-action="share", data-annotation="bubble", data-href="#{ city.hostname }").g-plus
                 li
                   div(data-href="https://www.facebook.com/#{ city.facebook }", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
-
-    div#fb-root
 
     div#agenda.rowbar-two
       div.container
@@ -58,27 +56,27 @@ block content
             ul
               li.agenda-tpl-when
                 b When
-                | :
+                | :&nbsp;
                 span
               li.agenda-tpl-venue
                 b Venue
-                | :
+                | :&nbsp;
                 span
               li.agenda-tpl-address
                 b Address
-                | :
+                | :&nbsp;
                 span
               li.agenda-tpl-info
                 b More Info
-                | :
+                | :&nbsp;
                 a(href="", target="_blank")
               li.agenda-tpl-language
                 b Language
-                | :
+                | :&nbsp;
                 span
               li.agenda-tpl-about
                 b About
-                | :
+                | :&nbsp;
                 span
             div.cal-btns
               a(title="Add the event to your Google Calendar", href="", target="_blank", rel="nofollow").glyphicon.glyphicon-plus.addcal
