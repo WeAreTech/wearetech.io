@@ -6,4 +6,11 @@ include ../mixins/search-city.mix.jade
 
 extends layout/city
 block content
-  mixin searchCity
+  div.page.container
+    div.row
+      div.col-lg-8
+        div.page-header
+          h1 Find your city's tech vibe
+    div.row
+      div.col-xs-12
+        mixin searchCity
