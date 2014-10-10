@@ -1,7 +1,7 @@
 /**
  * @fileOverview Main App entry point
  */
-var Register = require('./register');
+var Available = require('./Available');
 
-var register = new Register();
-register.init();
+var available = new Available();
+available.init();

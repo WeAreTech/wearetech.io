@@ -1,13 +1,12 @@
 /**
  * @fileOverview City Registration app
  */
-var Register = module.exports = function() {};
+var Available = module.exports = function() {};
 
 /**
- * Initialize the register view.
- *
+ * Initialize the Available view.
  */
-Register.prototype.init = function() {
+Available.prototype.init = function() {
   this.$cityControl = $('#city');
 
   var input = document.getElementById('city');
