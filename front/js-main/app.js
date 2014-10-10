@@ -3,5 +3,10 @@
  */
 var Available = require('./Available');
 
-var available = new Available();
-available.init();
+/**
+ * @Todo: better include method
+ */
+if (window.location.href.match(/available/)) {
+  var available = new Available();
+  available.init();
+}

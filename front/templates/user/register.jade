@@ -6,7 +6,6 @@ extends ../layout/parts/header-main
 extends ../layout/default
 include ../mixins/register.mix.jade
 include ../mixins/alert-message.mix.jade
-include ../mixins/search-city.min.jade
 
 block content
   .container
@@ -18,5 +17,4 @@ block content
         - if (error)
             mixin alertMessage('danger', errorMessage)
 
-        mixin searchCity
         mixin userRegistration
