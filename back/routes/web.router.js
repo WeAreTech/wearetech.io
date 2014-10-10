@@ -39,7 +39,12 @@ router.init = function(app) {
   // }
 
   app.get('/', homeCtrl.use);
-  app.get('/available/', availableCtrl.use);
+  app.get('/available/',
+          [
+            featureMidd.has('cityAvailable'),
+            availableCtrl.use
+          ]
+  );
 
   app.get('/tpl/:tpl', function(req, res) {
     var template = req.route.params.tpl;
