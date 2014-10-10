@@ -7,6 +7,9 @@ var Available = module.exports = function () {};
  * Initialize the Available view.
  */
 Available.prototype.init = function () {
+
+  $('.search-city-form').on('submit', function () { return false; });
+
   this._initAutocomplete();
 };
 
@@ -34,9 +37,9 @@ Available.prototype._initAutocomplete = function () {
       map.setZoom(15);
 
       var marker = new google.maps.Marker({
-                                            position: place.geometry.location,
-                                            animation: google.maps.Animation.DROP
-                                          });
+        position: place.geometry.location,
+        animation: google.maps.Animation.DROP
+      });
 
       marker.setMap(map);
     }
