@@ -5,3 +5,29 @@
 extends layout/city
 
 block content
+
+  div.navbar-wrapper
+    div.container
+      div.navbar.navbar-static-top
+        div.container
+           div.navbar-header
+            div.navbar-collapse.collapse
+              ul.nav.navbar-nav
+                li.active
+                  a(href="#calendar") Calendar
+                li
+                  a(href="#communities") Communities
+                li
+                  a(href="#contact") Contact
+
+  div#city-header
+    div.jumbotron.text-center
+      div.container
+        div.logo-wrapper
+          img(src="assets/wearetech-logo.png")
+        div.city-name
+          h2 THESSALONIKI
+        div.city-description
+          h3 This is an open website about the community of Thessaloniki's developers and techies. Meet the community and find out about upcoming events and meetups.
+        div.social-circles-wrapper
+          div.social-circle
