@@ -13,6 +13,7 @@ var LoginCtrl = require('../controllers/user/login.ctrl');
 var VerifyCtrl = require('../controllers/user/verify.ctrl');
 var ProfileCtrl = require('../controllers/user/editProfile.ctrl');
 var ForgotCtrl = require('../controllers/user/forgot.ctrl');
+var AvailableCtrl = require('../controllers/available.ctrl');
 
 var router = module.exports = {};
 
@@ -24,6 +25,7 @@ var router = module.exports = {};
 router.init = function(app) {
   log.fine('init() :: initializing routes...');
   var homeCtrl = HomeCtrl.getInstance();
+  var availableCtrl = AvailableCtrl.getInstance();
   var registerCtrl = RegisterCtrl.getInstance();
   var loginCtrl = LoginCtrl.getInstance();
   var verifyCtrl = VerifyCtrl.getInstance();
@@ -37,6 +39,12 @@ router.init = function(app) {
   // }
 
   app.get('/', homeCtrl.use);
+  app.get('/available/',
+          [
+            featureMidd.has('cityAvailable'),
+            availableCtrl.use
+          ]
+  );
 
   app.get('/tpl/:tpl', function(req, res) {
     var template = req.route.params.tpl;

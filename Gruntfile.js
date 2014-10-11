@@ -28,12 +28,18 @@ module.exports = function (grunt) {
     'cssmin:cities'
   ]);
 
+  grunt.registerTask('js', 'Build Client JS', [
+    'browserify:main',
+    'browserify:city',
+  ]);
+
   grunt.registerTask('deploy', 'Nodejitsu deploy ops', [
     'build',
     'shell:deploy',
   ]);
 
   grunt.registerTask('build', 'Build frontend app', [
+    'browserify:main',
     'browserify:city',
     'css',
   ]);

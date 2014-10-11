@@ -10,6 +10,7 @@ var toggles = module.exports = {};
 features.load({
   // Use any arbitrary name to toggle features
   user: true,
+  cityAvailable: true
 
   // howto exclude from production
   // notReadyYet: globals.env !== globals.Environments.HEROKU,

@@ -25,6 +25,7 @@ var City = module.exports = ModelMongo.extendSingleton();
  */
 City.Schema = {
   name: {type: String, required: true, trim: true},
+  headerTitle: {type: String, required: true, trim: true},
   hostname: {type: String, required: true, trim: true},
   domainName: {type: String, required: true, trim: true},
   createdBy: {
@@ -35,6 +36,7 @@ City.Schema = {
   facebook: {type: String},
   calendarUrl: {type: String},
   forumUrl: {type: String},
+  placeId: {type: String},
   og: {
     title: {type: String},
     siteName: {type: String},
