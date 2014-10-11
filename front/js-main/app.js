@@ -1,7 +1,7 @@
 /**
  * @fileOverview Main App entry point
  */
-var Available = require('./Available');
+var Available = require('./available');
 
 /**
  * @Todo: better include method
