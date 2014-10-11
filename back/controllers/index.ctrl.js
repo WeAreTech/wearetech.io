@@ -1,11 +1,9 @@
 /**
  * @fileOverview GET / Home page.
  */
-var log = require('logg').getLogger('app.ctrl.Homepage');
+//var log = require('logg').getLogger('app.ctrl.Homepage');
 
 var ControllerBase = require('nodeon-base').ControllerBase;
-
-var CitiesEnt = require('../entities/city.ent');
 
 /**
  * The home page.
