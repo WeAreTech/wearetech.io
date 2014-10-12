@@ -59,20 +59,11 @@ block content
             div.row
               div.col-lg-12.sidebar-schedule
                 h2 The Schedule
-                table.table.table-hover.table-schedule
-                  tr
-                    td.subevent Warmup
-                    td.hours.text-right 18:30 - 19:00
-                  tr
-                    td.subevent Main Event
-                    td.hours.text-right 19:00 - 20:30
-                  tr
-                    td.subevent Networking
-                    td.hours.text-right 20:30 - 22:00
-                  tr
-                    td.subevent Beer time!
-                      p.subevent-description @Terra Antiqua Art Cafe
-                    td.hours.text-right 22:00 - drunk ;)
+                table.table.table-schedule
+                  each what, period in together.schedule
+                    tr
+                      td.subevent!= what
+                      td.hours.text-right= period
                 div.lightning-talks
                   h4 Lightning Talks
                   p Throughout the event there will be
