@@ -11,7 +11,7 @@ skg:
       "18:30 - 19:00": "Warmup"
       "19:00 - 20:30": "Main Event"
       "20:30 ~ 22:00": "Networking"
-      "~22:00 - ...": "Beers <a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a>"
+      "~22:00 - ???": "Beers <a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a>"
     stacks:
       "1": "Keynote"
       "2": "Metal"
