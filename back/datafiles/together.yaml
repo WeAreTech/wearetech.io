@@ -7,7 +7,7 @@ skg:
     venueName: "Thessaloniki City Hall"
     tagline: "All the Tech Communities of Thessaloniki in one place at the same time!"
     mapLink: "https://maps.google.com/?ll=40.623831,22.955267&spn=0.003046,0.004973&t=m&z=18&iwloc=lyrftr:m,16051082708899861943,40.62346,22.95383"
-    hashtag: "skgwrt"
+    hashtag: "#WeAreTogether"
     whoWeAre: "SKGTech is a group of developers who aim to empower the local tech communities by <a href=\"http://skgtech.io/#communities\" target=\"_blank\">making teams aware of each other</a> and providing an easily accessible <a href=\"http://skgtech.io/#agenda\" target=\"_blank\">calendar of events & meetups of Thessaloniki.</a>"
     schedule:
       "18:30 - 19:00": "Warmup"

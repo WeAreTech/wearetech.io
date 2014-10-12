@@ -40,10 +40,13 @@ $together-color: #61C9A9;
   background-image: url('/img/skg-together-bg.jpg');
 
   .main-panel {
-    margin-top: 100px;
+    margin: 100px 0;
     .inner {
       padding-left: 20px;
       padding-right: 20px;
+      .inner-item {
+        padding-top: 16px;
+      }
     }
     .panel-header {
       background-color: $together-color;
@@ -58,13 +61,19 @@ $together-color: #61C9A9;
     }
     .panel-body {
       background-color: #FFF;
-      ul li {
-        float: left;
-        list-style: none;
-        padding-right: 10px;
-        img {
-          padding-right: 6px;
-          margin-top: -4px;
+      .hashtag-nu a {
+        color: $together-color;
+      }
+      ul {
+        padding: 0;
+        li {
+          float: left;
+          list-style: none;
+          padding-right: 10px;
+          img {
+            padding-right: 6px;
+            margin-top: -4px;
+          }
         }
       }
     }
