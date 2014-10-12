@@ -9,7 +9,7 @@ var EntityBase = require('nodeon-base').EntityBase;
 
 // var log = require('logg').getLogger('app.ent.Together');
 
-var TogetherModel = require('../models/Together.model');
+var TogetherModel = require('../models/together.model');
 var togetherModel = TogetherModel.getInstance();
 
 /**
