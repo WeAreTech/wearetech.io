@@ -151,4 +151,22 @@ $mail-section-color: #000;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 16px;
   }
+
+  .lightning-talks {
+    .lightning-image {
+      width: 75px;
+    }
+    .lightning-copy {
+      width: 280px;
+
+      h3 {
+        color: #000;
+        margin-top: 0;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
 }
