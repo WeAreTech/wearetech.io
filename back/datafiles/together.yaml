@@ -1,0 +1,44 @@
+skg:
+  - dateStart: "07 Apr 2014 18:30"
+    dateEnd: "07 Apr 2014 22:00"
+    upcoming: true
+    venueName: "Thessaloniki City Hall"
+    tagline: "All the Tech Communities of Thessaloniki in one place at the same time!"
+    mapLink: "https://maps.google.com/?ll=40.623831,22.955267&spn=0.003046,0.004973&t=m&z=18&iwloc=lyrftr:m,16051082708899861943,40.62346,22.95383"
+    hashtag: "skgwrt"
+    whoWeAre: "SKGTech is a group of developers who aim to empower the local tech communities by <a href=\"http://skgtech.io/#communities\" target=\"_blank\">making teams aware of each other</a> and providing an easily accessible <a href=\"http://skgtech.io/#agenda\" target=\"_blank\">calendar of events & meetups of Thessaloniki.</a>"
+    schedule:
+      "18:30 - 19:00": "Warmup"
+      "19:00 - 20:30": "Main Event"
+      "20:30 ~ 22:00": "Networking"
+      "~22:00 - ...": "Beers <a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a>"
+    stacks:
+      "1": "Keynote"
+      "2": "Metal"
+      "3": "Developers"
+      "4": "Global"
+      "5": "Design"
+      "6": "Methodologies"
+      "7": "Connectors"
+    speakers:
+      Keynote:
+        - name: "SKGTech"
+          url: "http://skgtech.io"
+      Metal:
+        - name: "MAKE DIY"
+        - name: "Arduino"
+      Developers:
+        - name: Ruby
+        - name: Java
+        - name: iOS
+      Global:
+        - name: Mozilla
+      Design:
+        - name: Behance
+      Methodologies:
+        - name: Agile
+        - name: "#steki"
+      Connectors:
+        - name: "Open Thessaloniki"
+        - name: "Open Coffee"
+
