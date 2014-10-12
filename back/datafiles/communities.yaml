@@ -60,7 +60,7 @@ skg:
         website: "http://onlysoftware.wordpress.com/"
   - name: "Arduino Meetup Group"
     period: "TBA"
-    description: " Talks, presentations, panel discussions, hands-on workshops, open days, or show-and-tell events. Everybody is welcome."
+    description: "Talks, presentations, panel discussions, hands-on workshops, open days, or show-and-tell events. Everybody is welcome."
     website: "http://www.meetup.com/Thessaloniki-Arduino"
     maintainers:
       - name: "Stavros Kalapothas (@Stavros_IT)"
