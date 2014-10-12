@@ -50,29 +50,24 @@ block content
                 h2 What we care about!
                 p All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!
                 h3 Participate
-                p Communities, teams and individuals
+                p Communities / teams / individuals who are interested in new technologies in our city. The participation is FREE.
                 h3 Purpose
-                p The main purpose of this event is to meet
+                p To meet each other, exchange ideas/thoughts/experience, meet existing communities and their actions and why not to organize new/our own tech communities
                 h3 Who we are
-                p We are SKGTech, a group of developers who aim to empower
+                p!=together.whoWeAre
           div.col-lg-4
             div.row
               div.col-lg-12.sidebar-schedule
                 h2 The Schedule
-                table.table.table-hover.table-schedule
-                  tr
-                    td.subevent Warmup
-                    td.hours.text-right 18:30 - 19:00
-                  tr
-                    td.subevent Main Event
-                    td.hours.text-right 19:00 - 20:30
-                  tr
-                    td.subevent Networking
-                    td.hours.text-right 20:30 - 22:00
-                  tr
-                    td.subevent Beer time!
-                      p.subevent-description @Terra Antiqua Art Cafe
-                    td.hours.text-right 22:00 - drunk ;)
+                table.table.table-schedule
+                  each what, period in together.schedule
+                    tr
+                      td.subevent!= what
+                      td.hours.text-right= period
                 div.lightning-talks
-                  h4 Lightning Talks
-                  p Throughout the event there will be
+                  div.lightning-image.pull-left
+                    img(src="/img/lightningtalks-icon.svg")
+                  div.lightning-copy.pull-left
+                    h3 LIGHTNING TALKS
+                    p Throughout the event there will be lightning talks by anyone that is looking for fellow peers to start a new tech community.&nbsp;
+                      a(href="mailto:#{ together.contactEmail }") Ping to talk!

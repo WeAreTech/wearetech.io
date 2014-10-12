@@ -33,7 +33,7 @@ Together.Schema = {
   mapLink: {type: String},
   hashtag: {type: String},
   whoWeAre: {type: String},
-
+  contactEmail: {type: String},
   // Schedule is an object with the time range as key and the event as value.
   // i.e. {'18:30 - 19:00': 'Warmup'}
   schedule: {type: Object},

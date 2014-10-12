@@ -3,6 +3,7 @@
 //
 
 $together-color: #61C9A9;
+$mail-section-color: #000;
 
 .together-navbar {
   padding: 10px 0;
@@ -70,6 +71,7 @@ $together-color: #61C9A9;
       background-color: #FFF;
       .hashtag-nu a {
         color: $together-color;
+        font-weight: 500;
       }
       ul {
         padding: 0;
@@ -88,12 +90,14 @@ $together-color: #61C9A9;
 }
 
 .together .main-section {
+  color: $mail-section-color;
+
   .description-panel {
     padding-right: 130px;
   }
 
   h2 {
-    color: #888;
+    color: $mail-section-color;
     font-family: Lato, Helvetica, Arial, sans-serif;
     font-weight: 300;
     margin: 30px 0;
@@ -108,7 +112,7 @@ $together-color: #61C9A9;
   p {
     font-size: 16px;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    color: #888;
+    color: $mail-section-color;
     font-weight: 400;
   }
 
@@ -144,7 +148,26 @@ $together-color: #61C9A9;
   }
 
   .hours {
+    width: 50%;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 16px;
   }
+
+  .lightning-talks {
+    .lightning-image {
+      width: 75px;
+    }
+    .lightning-copy {
+      width: 280px;
+
+      h3 {
+        color: #000;
+        margin-top: 0;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
 }

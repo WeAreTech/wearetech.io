@@ -9,11 +9,12 @@ skg:
     mapLink: "https://maps.google.com/?ll=40.623831,22.955267&spn=0.003046,0.004973&t=m&z=18&iwloc=lyrftr:m,16051082708899861943,40.62346,22.95383"
     hashtag: "#WeAreTogether"
     whoWeAre: "SKGTech is a group of developers who aim to empower the local tech communities by <a href=\"http://skgtech.io/#communities\" target=\"_blank\">making teams aware of each other</a> and providing an easily accessible <a href=\"http://skgtech.io/#agenda\" target=\"_blank\">calendar of events & meetups of Thessaloniki.</a>"
+    contactEmail: "hello@skgtech.io"
     schedule:
-      "18:30 - 19:00": "Warmup"
-      "19:00 - 20:30": "Main Event"
+      "~22:00 - Drunk": "Beers <p class=\"subevent-description\"><a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a></p>"
       "20:30 ~ 22:00": "Networking"
-      "~22:00 - ???": "Beers <a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a>"
+      "19:00 - 20:30": "Main Event"
+      "18:30 - 19:00": "Warmup"
     stacks:
       "1": "Keynote"
       "2": "Metal"
