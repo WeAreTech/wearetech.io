@@ -49,6 +49,7 @@ Initdb.prototype.start = Promise.method(function() {
     .then(this.nukeDb)
     .then(this._createAdminUser)
     .then(this._createCities)
+    .then(this._createTogether)
     .then(this._createCommunities);
 });
 
@@ -124,6 +125,16 @@ Initdb.prototype._createCities = Promise.method(function () {
       this.cityAth = ath;
     });
 });
+
+/**
+ * Create the together events.
+ *
+ * @return {Promise} A promise.
+ */
+Initdb.prototype._createTogether = Promise.method(function () {
+
+});
+
 
 /**
  * Create community records.
