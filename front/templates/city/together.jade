@@ -83,16 +83,21 @@ block content
                 h2.text-center
                   img(src="/img/Speakers-icon.svg")
                   | &nbsp;Speaker Lineup
-                div.speakers-subtitle
-                  h3 Keynote
-                div.speakers-item
-                  h4 SKGTech
-                  p All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!
-                div.speakers-subtitle
-                  h3 Hardware
-                div.speakers-item
-                  h4 MAKE DIY
-                  p Co-Working Space, meeting point, community!
-                  hr
-                  h4 Arduino
-                  p Talks, presentations, panel discussions, hands-on workshops, open days, or show-and-tell events. Everybody is welcome.
+
+                each stack in together.stacks
+                  div.speakers-subtitle
+                    h3 #{ stack }
+                  each speakers, speakerStack in together.speakers
+                    if speakerStack == stack
+                      each speaker, index in speakers
+                        div.speakers-item
+                          h4
+                            if speaker.url
+                              a(href="#{ speaker.url }", target="_blank")= speaker.name
+                            else
+                              | #{ speaker.name }
+                          if speaker.description
+                            p= speaker.description
+                          if speakers.length > 1 && index !== speakers.length -1
+                            hr
+
