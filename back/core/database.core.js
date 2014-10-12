@@ -19,6 +19,7 @@ var cityModel = require('../models/city.model').getInstance();
 var communityModel = require('../models/community.model').getInstance();
 var venueModel = require('../models/venue.model').getInstance();
 var calendarModel = require('../models/calendar.model').getInstance();
+var togetherModel = require('../models/together.model').getInstance();
 
 // var noop = function() {};
 
@@ -112,6 +113,7 @@ Conn.prototype._initModels = function() {
     communityModel.init(),
     venueModel.init(),
     calendarModel.init(),
+    togetherModel.init(),
   ]);
 };
 
