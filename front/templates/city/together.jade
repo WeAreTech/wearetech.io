@@ -7,7 +7,7 @@ extends layout/together
 block content
 
   div.together
-    div.top-section
+    div#venue.top-section
       div.container
         div.row.main-panel
           div.col-lg-8.col-lg-offset-2
@@ -41,11 +41,11 @@ block content
                           div(data-href="#{ city.hostname }/together", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
                     div.pull-right.hashtag-nu
                       a(href="https://twitter.com/search?f=realtime&q=%23#{ together.hashtag.substr(1) }&src=typd") #{ together.hashtag }
-    div.main-section
+    div#schedule.main-section
       div.container
         div.row
           div.col-lg-8
-            div.row
+            div.row.section-top-margin
               div.col-lg-12.description-panel
                 h2 What we care about!
                 p All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!
@@ -56,7 +56,7 @@ block content
                 h3 Who we are
                 p!=together.whoWeAre
           div.col-lg-4
-            div.row
+            div.row.section-top-margin
               div.col-lg-12.sidebar-schedule
                 h2 The Schedule
                 table.table.table-schedule
@@ -74,9 +74,9 @@ block content
                   h4 Lightning Talks
                   p Throughout the event there will be
 
-    div.speakers-section
+    div#speakers.speakers-section
       div.container
-        div.row
+        div.row.section-top-margin
           div.col-lg-8.col-lg-offset-2
             div.row
               div.col-lg-12.panel-speakers

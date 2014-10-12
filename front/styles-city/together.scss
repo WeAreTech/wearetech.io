@@ -92,6 +92,7 @@ $mail-section-color: #000;
 }
 
 .together .main-section {
+  margin-top: 60px;
   color: $mail-section-color;
 
   .description-panel {
@@ -172,6 +173,10 @@ $mail-section-color: #000;
     }
   }
 
+}
+
+.together .section-top-margin {
+  margin-top: 90px;
 }
 
 .together .speakers-section {
