@@ -37,7 +37,7 @@ Home.prototype._fetchEvent = function (req, res, next) {
       if (!result) {
         this.show404();
       } else {
-        res.locals.communities = result;
+        res.locals.together = result;
         next();
       }
     })
