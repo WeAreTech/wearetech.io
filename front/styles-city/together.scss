@@ -38,14 +38,21 @@ $together-color: #61C9A9;
 
 .together .top-section {
   background-image: url('/img/skg-together-bg.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position-y: 80%;
 
   .main-panel {
-    margin: 100px 0;
+    margin: 150px 0;
     .inner {
       padding-left: 20px;
       padding-right: 20px;
       .inner-item {
-        padding-top: 16px;
+        // padding-top: 16px;
+      }
+      .main-item {
+        padding-top: 40px;
+        padding-bottom: 40px;
       }
     }
     .panel-header {
