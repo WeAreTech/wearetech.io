@@ -28,19 +28,41 @@ skg:
           url: "http://skgtech.io"
       Metal:
         - name: "MAKE DIY"
+          url: "http://make.gr"
         - name: "Arduino"
+          url: "http://www.meetup.com/Thessaloniki-Arduino/"
       Developers:
         - name: Ruby
+          url: "https://github.com/thessrb/meetup"
         - name: Java
+          url: "http://www.meetup.com/Thessaloniki-Java-Meetup-Group/"
+        - name: Node.js
+          url: "http://www.meetup.com/Thessaloniki-Node-js-Meetup/"
+        - name: Python
+          url: "https://pythess.microco.sm/"
         - name: iOS
+          url: "http://www.meetup.com/iOS-Devs-Gr"
+        - name: Drupal
+          url: "https://groups.drupal.org/node/401713"
       Global:
         - name: Mozilla
+          url: "mozilla-greece.org"
       Design:
         - name: Behance
+          url: "http://www.meetup.com/BehanceReviews/Behance-Thessaloniki/"
+        - name: Κ.Ε.Φ.Τ.Ε.δες
+          url: "https://www.facebook.com/groups/944048262277738/"
       Methodologies:
         - name: Agile
+          url: "http://www.meetup.com/Agile-Greece/"
         - name: "#steki"
+          url: "https://plus.google.com/u/0/communities/102219974234763232117"
       Connectors:
+        - name: SKG Startupers
+          url: "http://www.meetup.com/SKG-Startupers/"
+        - name: OKFN
+          url: "http://okfn.gr/"
         - name: "Open Thessaloniki"
+          url: "http://www.openthessaloniki.org/"
         - name: "Open Coffee"
-
+          url: "http://opencoffee.gr/"
