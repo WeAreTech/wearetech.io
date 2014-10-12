@@ -21,4 +21,5 @@ Model.Collection = {
   VENUE: 'venue',
   COMMUNITY: 'community',
   CALENDAR: 'calendar',
+  TOGETHER: 'together',
 };

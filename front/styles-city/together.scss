@@ -1,0 +1,230 @@
+//
+// Very ad-hoc styles to get out the page ASAP
+//
+
+$together-color: #61C9A9;
+$mail-section-color: #000;
+
+.together-navbar {
+  padding: 10px 0;
+  margin: 0;
+
+  .navbar-brand {
+    height: 75px;
+    padding-top: 0;
+  }
+}
+.together-menu {
+  margin-top: 38px;
+  li a {
+    padding-bottom: 0;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    &:hover {
+      color: $together-color !important;
+    }
+  }
+}
+
+.together {
+  margin-top: 90px;
+  color: #888;
+  a {
+    color: #888;
+    &:hover {
+      color: $together-color !important;
+    }
+  }
+}
+
+.together .top-section {
+  background-image: url('/img/skg-together-bg.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position-y: 80%;
+
+  .main-panel {
+    margin: 150px 0;
+    .inner {
+      padding-left: 20px;
+      padding-right: 20px;
+      .inner-item {
+        // padding-top: 16px;
+      }
+      .main-item {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+    .panel-header {
+      background-color: $together-color;
+      header {
+        h2 {
+          padding: 20px;
+          padding-left: 0;
+          margin: 0;
+          font-family: Lato, Helvetica, Arial, sans-serif;
+          color: #fff;
+        }
+      }
+    }
+    .panel-body {
+      background-color: #FFF;
+      .hashtag-nu a {
+        color: $together-color;
+        font-weight: 500;
+      }
+      ul {
+        padding: 0;
+        li {
+          float: left;
+          list-style: none;
+          padding-right: 10px;
+          img {
+            padding-right: 6px;
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.together .main-section {
+  color: $mail-section-color;
+
+  .description-panel {
+    // padding-right: 130px;
+  }
+
+  h2 {
+    color: $mail-section-color;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 30px 0;
+  }
+
+  h3 {
+    color: $together-color;
+    font-weight: 300;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: $mail-section-color;
+    font-weight: 400;
+  }
+
+  td {
+    padding: 15px 20px;
+    border-top: 1px solid #eaeaea;
+  }
+
+  td:before {
+    border-top: 2px solid #f51c40;
+  }
+
+  tr {
+
+  }
+
+  .table-schedule {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+  }
+
+  .subevent {
+    color: $together-color;
+    font-size: 24px;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  .subevent-description {
+    color: #c3c3c3;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .hours {
+    width: 50%;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .lightning-talks {
+    .lightning-image {
+      width: 75px;
+    }
+    .lightning-copy {
+      width: 280px;
+
+      h3 {
+        color: #000;
+        margin-top: 0;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+
+.together .speakers-section {
+  background-color: #fff;
+
+  h2 {
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #888;
+    margin: 80px 0;
+  }
+
+  h3 {
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: $together-color;
+    // margin: 0;
+  }
+
+  .speakers-subtitle {
+    margin: 50px 0 30px 0;
+    background-color: #000;
+    padding: 5px 0 20px 30px;
+    border-radius: 40px;
+    h3 {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+  }
+
+  .speakers-item {
+    margin: 0 50px;
+
+    h4 {
+      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      color: #888;
+      font-weight: 500;
+    }
+
+    p {
+      color: 888;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    }
+
+    hr {
+      border-color: #eaeaea;
+      margin: 20px 20px;
+    }
+  }
+}

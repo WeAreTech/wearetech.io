@@ -3,7 +3,8 @@
  */
 
 // Third party
-@import "../static/components/sass-bootstrap/lib/bootstrap.scss";
+@import "../static/components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+
 @import "bolt-theme.scss";
 
 // wearetech city styles
@@ -17,5 +18,6 @@
 @import "social-icons.scss";
 
 @import "font-awesome.scss";
+@import "together.scss";
 // @import "syntaxHighlight-solar.scss";
 // @import "responsive.scss";

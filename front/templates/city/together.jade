@@ -1,0 +1,103 @@
+//- Together event page
+//-
+//-
+
+extends layout/together
+
+block content
+
+  div.together
+    div.top-section
+      div.container
+        div.row.main-panel
+          div.col-lg-8.col-lg-offset-2
+            div.row
+              div.col-lg-12.panel-header
+                header
+                  h2 #{ together.name }
+            div.row
+              div.col-lg-12.inner.panel-body
+                div.row
+                  div.col-lg-12.inner-item
+                    ul
+                      li
+                        img(src="/img/calendar-icon.svg")
+                        | #{ together.dateText }
+                      li
+                        img(src="/img/map-icon.svg")
+                        a(href="#{ together.mapLink }", target="_blank") #{ together.venueName }
+                div.row
+                  div.col-lg-12.main-item
+                    p #{ together.tagline }
+                div.row
+                  div.col-lg-12.inner-item
+                    div.social-share.pull-left
+                      ul.nav
+                        li
+                          a(href="https://twitter.com/share", data-url="#{ city.hostname }/together", data-text="All #{ city.name } Communities in one place at the same time! #WeAreTogether", data-size="medium", via="#{ city.twitter }" related="#{ city.twitter }").twitter-share-button Tweet
+                        li
+                          div(data-action="share", data-annotation="bubble", data-href="#{ city.hostname }/together").g-plus
+                        li
+                          div(data-href="#{ city.hostname }/together", data-layout="button_count", data-action="like", data-show-faces="false", data-share="false", data-width="200").fb-like
+                    div.pull-right.hashtag-nu
+                      a(href="https://twitter.com/search?f=realtime&q=%23#{ together.hashtag.substr(1) }&src=typd") #{ together.hashtag }
+    div.main-section
+      div.container
+        div.row
+          div.col-lg-8
+            div.row
+              div.col-lg-12.description-panel
+                h2 What we care about!
+                p All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!
+                h3 Participate
+                p Communities / teams / individuals who are interested in new technologies in our city. The participation is FREE.
+                h3 Purpose
+                p To meet each other, exchange ideas/thoughts/experience, meet existing communities and their actions and why not to organize new/our own tech communities
+                h3 Who we are
+                p!=together.whoWeAre
+          div.col-lg-4
+            div.row
+              div.col-lg-12.sidebar-schedule
+                h2 The Schedule
+                table.table.table-schedule
+                  each what, period in together.schedule
+                    tr
+                      td.subevent!= what
+                      td.hours.text-right= period
+                div.lightning-talks
+                  div.lightning-image.pull-left
+                    img(src="/img/lightningtalks-icon.svg")
+                  div.lightning-copy.pull-left
+                    h3 LIGHTNING TALKS
+                    p Throughout the event there will be lightning talks by anyone that is looking for fellow peers to start a new tech community.&nbsp;
+                      a(href="mailto:#{ together.contactEmail }") Ping to talk!
+                  h4 Lightning Talks
+                  p Throughout the event there will be
+
+    div.speakers-section
+      div.container
+        div.row
+          div.col-lg-8.col-lg-offset-2
+            div.row
+              div.col-lg-12.panel-speakers
+                h2.text-center
+                  img(src="/img/Speakers-icon.svg")
+                  | &nbsp;Speaker Lineup
+
+                each stack in together.stacks
+                  div.speakers-subtitle
+                    h3 #{ stack }
+                  each speakers, speakerStack in together.speakers
+                    if speakerStack == stack
+                      each speaker, index in speakers
+                        div.speakers-item
+                          h4
+                            if speaker.url
+                              a(href="#{ speaker.url }", target="_blank")= speaker.name
+                            else
+                              | #{ speaker.name }
+                          if speaker.description
+                            p= speaker.description
+                          if speakers.length > 1 && index !== speakers.length -1
+                            hr
+

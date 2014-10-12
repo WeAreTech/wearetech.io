@@ -12,11 +12,13 @@ var log = require('logg').getLogger('app.scripts.Initdb');
 var UserEntity = require('../entities/user/user.ent');
 var CityEntity = require('../entities/city.ent');
 var CommunityEntity = require('../entities/community.ent');
+var TogetherEntity = require('../entities/together.ent');
 
 var Initdb = module.exports = cip.extend(function () {
   this.userEnt = null;
   this.cityEnt = null;
   this.communityEnt = null;
+  this.togetherEnt = null;
 
   /** @type {?Array.<Object>} Cities to populate. */
   this.cities = null;
@@ -27,6 +29,9 @@ var Initdb = module.exports = cip.extend(function () {
 
   /** @type {?Object} Communities to populate */
   this.communities = null;
+
+  /** @type {?Object} Together events to populate */
+  this.togetherEvents = null;
 
   /** @type {?mongoose.Document} Admin user UDO */
   this.adminUdo = null;
@@ -43,12 +48,14 @@ Initdb.prototype.start = Promise.method(function() {
   this.userEnt = UserEntity.getInstance();
   this.cityEnt = CityEntity.getInstance();
   this.communityEnt = CommunityEntity.getInstance();
+  this.togetherEnt = TogetherEntity.getInstance();
 
   return this._readDataFiles()
     .bind(this)
     .then(this.nukeDb)
     .then(this._createAdminUser)
     .then(this._createCities)
+    .then(this._createTogether)
     .then(this._createCommunities);
 });
 
@@ -59,13 +66,14 @@ Initdb.prototype.start = Promise.method(function() {
  */
 Initdb.prototype._readDataFiles = Promise.method(function() {
   return Promise.all([
-    file.readYaml(path.join(__dirname, '../datafiles', 'cities.yaml')),
+    file.readYaml(path.join(__dirname, '../datafiles', 'together.yaml')),
     file.readYaml(path.join(__dirname, '../datafiles', 'communities.yaml')),
   ])
     .bind(this)
-    .spread(function (cities, communities) {
+    .spread(function (togetherEvents, communities) {
       this.cities = config.data.city;
       this.communities = communities;
+      this.togetherEvents = togetherEvents;
     });
 });
 
@@ -80,6 +88,7 @@ Initdb.prototype.nukeDb = Promise.method(function() {
     this.userEnt.delete({}),
     this.cityEnt.delete({}),
     this.communityEnt.delete({}),
+    this.togetherEnt.delete({}),
   ]);
 });
 
@@ -122,6 +131,23 @@ Initdb.prototype._createCities = Promise.method(function () {
     .spread(function (skg, ath) {
       this.citySkg = skg;
       this.cityAth = ath;
+    });
+});
+
+/**
+ * Create the together events.
+ *
+ * @return {Promise} A promise.
+ */
+Initdb.prototype._createTogether = Promise.method(function () {
+  log.finer('_createTogether() :: Creating Together events...');
+
+  return Promise.resolve(this.togetherEvents.skg)
+    .bind(this)
+    .map(function (togetherEvent) {
+      togetherEvent.cityOwner = this.citySkg._id;
+      togetherEvent.createdBy = this.adminUdo._id;
+      return this.togetherEnt.create(togetherEvent);
     });
 });
 
