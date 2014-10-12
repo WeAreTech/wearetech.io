@@ -10,8 +10,18 @@ block content
     div.top-section
       div.container
         div.row.main-panel
-          div.col-lg-8.col-lg-offset2
+          div.col-lg-8.col-lg-offset-2
             div.row
-              div.col-lg-12
-                header #{ together.name }
+              div.col-lg-12.inner.panel-header
+                header
+                  h2 #{ together.name }
+            div.row
+              div.col-lg-12.inner.panel-body
+                ul
+                  li
+                    img(src="/img/calendar-icon.svg")
+                    | #{ together.dateText }
+                  li
+                    img(src="/img/map-icon.svg")
+                    a(href="#{ together.mapLink }", target="_blank") #{ together.venueName }
 

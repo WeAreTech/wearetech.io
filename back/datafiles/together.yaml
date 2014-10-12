@@ -1,5 +1,6 @@
 skg:
   - name: "2nd We Are Together"
+    dateText: "Friday, Nov 7th 18:30 - 22:00"
     dateStart: "07 Apr 2014 18:30"
     dateEnd: "07 Apr 2014 22:00"
     upcoming: true

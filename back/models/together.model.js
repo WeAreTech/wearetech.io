@@ -24,6 +24,7 @@ var Together = module.exports = ModelMongo.extendSingleton();
  */
 Together.Schema = {
   name: {type: String},
+  dateText: {type: String},
   dateStart: {type: Date},
   dateEnd: {type: Date},
   upcoming: {type: Boolean},
