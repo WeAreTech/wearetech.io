@@ -54,6 +54,8 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
+- **v0.0.12**, *12/Oct/2014*
+    - Created the `/together` pages on cities.
 - **v0.0.11**, *07/Oct/2014*
     - Added city wide redirects (www.skgtech.io --> skgtech.io).
     - Added city specific redirects in the model (skgtech.io/together --> together.skgtech.io).
