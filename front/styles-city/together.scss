@@ -89,13 +89,62 @@ $together-color: #61C9A9;
 
 .together .main-section {
   .description-panel {
+    padding-right: 130px;
   }
-  
+
   h2 {
-    color: #aaa;
+    color: #888;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 30px 0;
+  }
+
+  h3 {
+    color: $together-color;
+    font-weight: 300;
     font-family: Lato, Helvetica, Arial, sans-serif;
   }
-  h3 {
-    color: $together-color
+
+  p {
+    font-size: 16px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #888;
+    font-weight: 400;
+  }
+
+  td {
+    padding: 15px 20px;
+    border-top: 1px solid #eaeaea;
+  }
+
+  td:before {
+    border-top: 2px solid #f51c40;
+  }
+
+  tr {
+
+  }
+
+  .table-schedule {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+  }
+
+  .subevent {
+    color: $together-color;
+    font-size: 24px;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  .subevent-description {
+    color: #c3c3c3;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .hours {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
   }
 }
