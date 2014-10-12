@@ -35,14 +35,14 @@ Home.prototype._fetchEvent = function (req, res, next) {
     .bind(this)
     .then(function(result) {
       if (!result) {
-        res.locals.communities = [];
+        this.show404();
       } else {
         res.locals.communities = result;
+        next();
       }
-      next();
     })
     .catch(function (err) {
-      log.warn('_fetchCommunities() :: Error on fetching communities:', err);
+      log.warn('_fetchEvent() :: Error on fetching together event:', err);
       if (typeof err.toApi === 'function') {
         err = err.toApi();
       }
@@ -51,14 +51,14 @@ Home.prototype._fetchEvent = function (req, res, next) {
 };
 
 /**
- * The index page.
+ * The Together view.
  *
  * @param {Object} req The request Object.
  * @param {Object} res The response Object.
  */
-Home.prototype._useIndex = function(req, res) {
+Home.prototype._showTogether = function(req, res) {
 
-  res.render('city/index', {
+  res.render('city/together', {
     og: null, // title, site_name, url, description, image, appId, type
     pageTitle: null,
     ga: null, // GA id
