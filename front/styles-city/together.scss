@@ -1,1 +1,34 @@
-// skg-together-bg.jpg
+//
+// Very ad-hoc styles to get out the page ASAP
+//
+
+$together-color: #61C9A9;
+
+.together-navbar {
+  padding: 10px 0;
+  margin: 0;
+
+  .navbar-brand {
+    padding-top: 0;
+  }
+}
+.together-menu {
+  margin-top: 38px;
+  li a {
+    padding-bottom: 0;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    &:hover {
+      color: $together-color !important;
+    }
+  }
+}
+
+.together {
+  margin-top: 90px;
+}
+
+.together .top-section {
+  background-image: url('/img/skg-together-bg.jpg');
+}

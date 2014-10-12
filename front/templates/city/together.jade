@@ -6,6 +6,12 @@ extends layout/together
 
 block content
 
-  div.page.container.together
+  div.together
     div.top-section
-      h1 Hello World
+      div.container
+        div.row.main-panel
+          div.col-lg-8.col-lg-offset2
+            div.row
+              div.col-lg-12
+                header #{ together.name }
+
