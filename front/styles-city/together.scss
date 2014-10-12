@@ -86,3 +86,16 @@ $together-color: #61C9A9;
     }
   }
 }
+
+.together .main-section {
+  .description-panel {
+  }
+  
+  h2 {
+    color: #aaa;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    color: $together-color
+  }
+}
