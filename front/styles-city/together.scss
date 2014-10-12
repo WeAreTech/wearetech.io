@@ -3,6 +3,7 @@
 //
 
 $together-color: #61C9A9;
+$mail-section-color: #000;
 
 .together-navbar {
   padding: 10px 0;
@@ -88,12 +89,14 @@ $together-color: #61C9A9;
 }
 
 .together .main-section {
+  color: $mail-section-color;
+
   .description-panel {
     padding-right: 130px;
   }
 
   h2 {
-    color: #888;
+    color: $mail-section-color;
     font-family: Lato, Helvetica, Arial, sans-serif;
     font-weight: 300;
     margin: 30px 0;
@@ -108,7 +111,7 @@ $together-color: #61C9A9;
   p {
     font-size: 16px;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    color: #888;
+    color: $mail-section-color;
     font-weight: 400;
   }
 
