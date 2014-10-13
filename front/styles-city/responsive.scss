@@ -15,6 +15,11 @@
 // --------------------------------------------------
 @media (max-width: 767px) {
 
+  .together-menu li a {
+    padding: 20px;
+    font-size: 22px;
+    display: block;
+  }
   body {
     padding: 0;
   }
