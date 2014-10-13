@@ -31,6 +31,9 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .together {
+  h2 {
+    font-size: 36px;
+  }
   margin-top: 90px;
   color: $default-body-color;
   a {
@@ -72,7 +75,6 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
           margin: 0;
           font-family: $head-font;
           color: $together-color;
-          font-size: 36px;
           font-weight: 400;
         }
       }
