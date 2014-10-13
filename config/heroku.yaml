@@ -43,7 +43,6 @@ data:
     ga: "UA-41787746-3"
     redirects:
       together-apr-2014: "http://together.skgtech.io/together-apr-2014/"
-
     - name: "Athens"
     headerTitle: "ATHTech"
     hostname: "www.athtech.org"
