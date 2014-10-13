@@ -57,7 +57,8 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
   background-position-y: 80%;
 
   .main-panel {
-    margin: 150px 0;
+    margin-top: 150px;
+    margin-bottom: 150px;
     .inner {
       padding-left: 20px;
       padding-right: 20px;
@@ -69,11 +70,12 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       }
       .main-item {
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 80px;
       }
     }
     .panel-header {
       background-color: $mail-section-color;
+      height: 86px;
       header {
         h2 {
           padding: 20px;
@@ -86,11 +88,12 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       }
     }
     .panel-body {
+      height: 215px;
       background-color: #FFF;
       .hashtag-nu a {
         font-size: 16px;
         color: $together-color;
-        font-weight: 500;
+        font-weight: 700;
       }
       ul {
         padding: 0;
