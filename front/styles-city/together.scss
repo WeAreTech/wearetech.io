@@ -270,6 +270,19 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 22px;
     display: block;
   }
+
+  .together .speakers-section .speakers-item {
+    margin: 0 30px;
+  }
+
+  #f {
+    padding-top: 40px;
+
+    .contribute-statement {
+      padding-top: 20px;
+      float: none;
+    }
+  }
 }
 
 
@@ -278,4 +291,5 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
   .together-navbar .navbar-brand img {
     max-width: 200px;
   }
+
 }
