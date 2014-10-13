@@ -4,6 +4,8 @@
 
 $together-color: #61C9A9;
 $mail-section-color: #000;
+$head-font: Lato, Helvetica, Arial, sans-serif;
+$content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together-navbar {
   padding: 10px 0;
@@ -18,7 +20,7 @@ $mail-section-color: #000;
   margin-top: 38px;
   li a {
     padding-bottom: 0;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
     font-size: 18px;
     font-weight: normal;
     &:hover {
@@ -51,6 +53,9 @@ $mail-section-color: #000;
       padding-right: 20px;
       .inner-item {
         // padding-top: 16px;
+        font-family: $content-font;
+        font-weight: 500;
+        font-size: 20px;
       }
       .main-item {
         padding-top: 40px;
@@ -58,14 +63,16 @@ $mail-section-color: #000;
       }
     }
     .panel-header {
-      background-color: $together-color;
+      background-color: $mail-section-color;
       header {
         h2 {
           padding: 20px;
           padding-left: 0;
           margin: 0;
-          font-family: Lato, Helvetica, Arial, sans-serif;
-          color: #fff;
+          font-family: $head-font;
+          color: $together-color;
+          font-size: 36px;
+          font-weight: 400;
         }
       }
     }
@@ -101,7 +108,7 @@ $mail-section-color: #000;
 
   h2 {
     color: $mail-section-color;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
     font-weight: 300;
     margin: 30px 0;
   }
@@ -109,12 +116,12 @@ $mail-section-color: #000;
   h3 {
     color: $together-color;
     font-weight: 300;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
   }
 
   p {
     font-size: 16px;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: $content-font;
     color: $mail-section-color;
     font-weight: 400;
   }
@@ -140,19 +147,19 @@ $mail-section-color: #000;
   .subevent {
     color: $together-color;
     font-size: 24px;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
     font-weight: 300;
   }
 
   .subevent-description {
     color: #c3c3c3;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: $content-font;
     font-size: 14px;
   }
 
   .hours {
     width: 50%;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: $content-font;
     font-size: 16px;
   }
 
@@ -183,7 +190,7 @@ $mail-section-color: #000;
   background-color: #fff;
 
   h2 {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
     font-weight: 300;
     font-size: 36px;
     color: #888;
@@ -191,7 +198,7 @@ $mail-section-color: #000;
   }
 
   h3 {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: $head-font;
     font-weight: 300;
     font-size: 24px;
     color: $together-color;
@@ -214,7 +221,7 @@ $mail-section-color: #000;
     margin: 0 50px;
 
     h4 {
-      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      font-family: $content-font;
       font-size: 20px;
       color: #888;
       font-weight: 500;
@@ -224,7 +231,7 @@ $mail-section-color: #000;
       color: 888;
       font-size: 16px;
       font-weight: 400;
-      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      font-family: $content-font;
     }
 
     hr {
