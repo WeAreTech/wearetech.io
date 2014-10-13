@@ -9,8 +9,12 @@ $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together-navbar {
+  .container {
+    padding-top: 12px;
+  }
   padding: 10px 0;
   margin: 0;
+  height: 110px;
 
   .navbar-brand {
     height: 75px;
@@ -20,10 +24,12 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 .together-menu {
   margin-top: 38px;
   li a {
+    padding-left:0;
+    padding-right: 10px;
     padding-bottom: 0;
     font-family: $head-font;
     font-size: 18px;
-    font-weight: normal;
+    font-weight: 100;
     &:hover {
       color: $together-color !important;
     }
