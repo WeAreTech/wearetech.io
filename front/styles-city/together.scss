@@ -4,6 +4,7 @@
 
 $together-color: #79c9ab;
 $mail-section-color: #000;
+$default-body-color: #555;
 $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
@@ -31,9 +32,9 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together {
   margin-top: 90px;
-  color: #888;
+  color: $default-body-color;
   a {
-    color: #888;
+    color: $default-body-color;
     &:hover {
       color: $together-color !important;
     }
@@ -194,7 +195,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     font-family: $head-font;
     font-weight: 300;
     font-size: 36px;
-    color: #888;
+    color: $default-body-color;
     margin: 80px 0;
   }
 
@@ -224,12 +225,12 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     h4 {
       font-family: $content-font;
       font-size: 20px;
-      color: #888;
+      color: $default-body-color;
       font-weight: 500;
     }
 
     p {
-      color: 888;
+      color: $default-body-color;
       font-size: 16px;
       font-weight: 400;
       font-family: $content-font;
