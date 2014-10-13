@@ -56,6 +56,11 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 - **v0.0.13**, *13/Oct/2014*
     - Update main panel styling.
+    - Mobile improvements :
+        - Opacity added to main panel
+        - Footer top padding removed
+        - Logo gets a max-width for lower resolutions
+        - Left/right margins decreased on lower resolutions
 - **v0.0.12**, *12/Oct/2014*
     - Created the `/together` pages on cities.
 - **v0.0.11**, *07/Oct/2014*
