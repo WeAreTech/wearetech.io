@@ -2,7 +2,7 @@
 // Very ad-hoc styles to get out the page ASAP
 //
 
-$together-color: #61C9A9;
+$together-color: #79c9ab;
 $mail-section-color: #000;
 $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
@@ -58,7 +58,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
         font-size: 20px;
       }
       .main-item {
-        padding-top: 40px;
+        padding-top: 20px;
         padding-bottom: 40px;
       }
     }
@@ -79,6 +79,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     .panel-body {
       background-color: #FFF;
       .hashtag-nu a {
+        font-size: 16px;
         color: $together-color;
         font-weight: 500;
       }
