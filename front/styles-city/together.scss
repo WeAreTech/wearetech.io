@@ -51,10 +51,8 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .together .top-section {
-  background-image: url('/img/skg-together-bg.jpg');
-  background-repeat:no-repeat;
+  background: url('/img/skg-together-bg.jpg') 0 -180px no-repeat;
   background-size:cover;
-  background-position-y: 80%;
 
   .main-panel {
     margin-top: 150px;
