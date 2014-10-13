@@ -14,7 +14,7 @@ block content
             div.row
               div.col-lg-12.panel-header
                 header
-                  h2 #{ together.name }
+                  h2!= together.name
             div.row
               div.col-lg-12.inner.panel-body
                 div.row
@@ -44,10 +44,10 @@ block content
     div#schedule.main-section
       div.container
         div.row
-          div.col-lg-8
+          div.col-lg-5
             div.row.section-top-margin
               div.col-lg-12.description-panel
-                h2 What we care about!
+                h2 What we are about!
                 p All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!
                 h3 Participate
                 p Communities / teams / individuals who are interested in new technologies in our city. The participation is FREE.
@@ -55,15 +55,17 @@ block content
                 p To meet each other, exchange ideas/thoughts/experience, meet existing communities and their actions and why not to organize new/our own tech communities
                 h3 Who we are
                 p!=together.whoWeAre
-          div.col-lg-4
+          div.col-lg-4.col-lg-offset-3
             div.row.section-top-margin
               div.col-lg-12.sidebar-schedule
                 h2 The Schedule
                 table.table.table-schedule
                   each what, period in together.schedule
                     tr
+                      td.side-table
                       td.subevent!= what
                       td.hours.text-right= period
+                      td.side-table
                 div.lightning-talks
                   div.lightning-image.pull-left
                     img(src="/img/lightningtalks-icon.svg")
@@ -75,7 +77,7 @@ block content
     div#speakers.speakers-section
       div.container
         div.row.section-top-margin
-          div.col-lg-8.col-lg-offset-2
+          div.col-lg-6.col-lg-offset-3
             div.row
               div.col-lg-12.panel-speakers
                 h2.text-center

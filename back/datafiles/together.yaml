@@ -1,11 +1,11 @@
 skg:
-  - name: "2nd We Are Together"
+  - name: "2<sup>nd</sup> We Are Together"
     dateText: "Friday, Nov 7th 18:30 - 22:00"
     dateStart: "07 Apr 2014 18:30"
     dateEnd: "07 Apr 2014 22:00"
     upcoming: true
     venueName: "Thessaloniki City Hall"
-    tagline: "All the Tech Communities of Thessaloniki in one place at the same time!"
+    tagline: "All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!"
     mapLink: "https://maps.google.com/?ll=40.623831,22.955267&spn=0.003046,0.004973&t=m&z=18&iwloc=lyrftr:m,16051082708899861943,40.62346,22.95383"
     hashtag: "#WeAreTogether"
     whoWeAre: "SKGTech is a group of developers who aim to empower the local tech communities by <a href=\"http://skgtech.io/#communities\" target=\"_blank\">making teams aware of each other</a> and providing an easily accessible <a href=\"http://skgtech.io/#agenda\" target=\"_blank\">calendar of events & meetups of Thessaloniki.</a>"
