@@ -137,41 +137,42 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
 
-  td {
-    padding: 15px 20px;
-    border-top: 1px solid #eaeaea;
-  }
-
-  td:before {
-    border-top: 2px solid #f51c40;
-  }
-
-  tr {
-
-  }
-
   .table-schedule {
     background-color: #fff;
-    border: 1px solid #eaeaea;
-  }
+    td {
+      border: 0;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    td:before {
+      // border-top: 2px solid #f51c40;
+    }
+    .side-table {
+      width: 5%;
+    }
 
-  .subevent {
-    color: $together-color;
-    font-size: 24px;
-    font-family: $head-font;
-    font-weight: 300;
-  }
-
-  .subevent-description {
-    color: #c3c3c3;
-    font-family: $content-font;
-    font-size: 14px;
-  }
-
-  .hours {
-    width: 50%;
-    font-family: $content-font;
-    font-size: 16px;
+    .subevent {
+      border-top: 1px solid #eaeaea;
+      padding-right: 0;
+      width: 50%;
+      color: $together-color;
+      font-size: 24px;
+      font-family: $head-font;
+      font-weight: 300;
+    }
+    .subevent-description {
+      color: #c3c3c3;
+      font-family: $content-font;
+      font-size: 14px;
+    }
+    .hours {
+      border-top: 1px solid #eaeaea;
+      padding-left: 0;
+      padding-top: 22px;
+      width: 40%;
+      font-family: $content-font;
+      font-size: 16px;
+    }
   }
 
   .lightning-talks {
@@ -186,7 +187,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
         margin-top: 0;
       }
       p {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
   }
