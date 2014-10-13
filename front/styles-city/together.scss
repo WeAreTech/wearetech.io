@@ -3,7 +3,7 @@
 //
 
 $together-color: #79c9ab;
-$mail-section-color: #000;
+$main-section-color: #000;
 $default-body-color: #555;
 $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
@@ -51,7 +51,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .together .top-section {
-  background: url('/img/skg-together-bg.jpg') 0 -180px no-repeat;
+  background: url('/img/skg-together-bg.jpg') 0 50% no-repeat;
   background-size:cover;
 
   .main-panel {
@@ -68,11 +68,11 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       }
       .main-item {
         padding-top: 20px;
-        padding-bottom: 60px;
+        padding-bottom: 40px;
       }
     }
     .panel-header {
-      background-color: $mail-section-color;
+      background-color: $main-section-color;
       height: 86px;
       header {
         h2 {
@@ -86,7 +86,6 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       }
     }
     .panel-body {
-      height: 215px;
       background-color: #FFF;
       .hashtag-nu a {
         font-size: 16px;
@@ -111,14 +110,14 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together .main-section {
   margin-top: 60px;
-  color: $mail-section-color;
+  color: $main-section-color;
 
   .description-panel {
     // padding-right: 130px;
   }
 
   h2 {
-    color: $mail-section-color;
+    color: $main-section-color;
     font-family: $head-font;
     font-weight: 300;
     margin: 30px 0;
@@ -133,7 +132,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
   p {
     font-size: 16px;
     font-family: $content-font;
-    color: $mail-section-color;
+    color: $main-section-color;
     font-weight: 400;
   }
 
