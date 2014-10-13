@@ -5,18 +5,24 @@ block layout
   div.navbar.navbar-default.navbar-fixed-top.together-navbar
     div.container
       div.navbar-header
+        button.navbar-toggle.callapsed(data-toggle="collapse", data-target="#navbar-menu")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
         a(href="/").navbar-brand
           img(src="/img/weareTogether-logo.svg")
-      div.navbar-collapse.collapse
+      div.navbar-collapse.collapse#navbar-menu
         ul.nav.navbar-nav.navbar-right.together-menu
           li
-            a(href="#venue") VENUE
+            a(href="#venue",data-toggle="collapse",data-target="#navbar-menu") VENUE
           li
-            a(href="#schedule") SCHEDULE
+            a(href="#schedule",data-toggle="collapse",data-target="#navbar-menu") SCHEDULE
           li
-            a(href="#speakers") SPEAKERS
+            a(href="#speakers",data-toggle="collapse",data-target="#navbar-menu") SPEAKERS
           li
             a(href="/") SKGTECH
+              span.glyphicon.glyphicon-share-alt
 
   //- include parts/oldie
   block content

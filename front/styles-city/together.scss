@@ -9,6 +9,10 @@ $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together-navbar {
+  .navbar-collapse {
+    background-color: #fff;
+    border: 0;
+  }
   .container {
     padding-top: 12px;
   }
@@ -248,5 +252,14 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       border-color: #eaeaea;
       margin: 20px 20px;
     }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .together-menu li a {
+    padding: 20px;
+    font-size: 22px;
+    display: block;
   }
 }
