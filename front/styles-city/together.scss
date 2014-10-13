@@ -77,7 +77,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
     }
     .panel-header {
       background-color: $main-section-color;
-      height: 86px;
+
       header {
         h2 {
           padding: 20px;
@@ -257,9 +257,25 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 @media (max-width: 767px) {
 
+  .together .top-section .main-panel .panel-header {
+    background: url('/img/together/black-opacity.png');
+  }
+
+  .together .top-section .main-panel .panel-body {
+    background: url('/img/together/white-opacity.png');
+  }
+
   .together-menu li a {
     padding: 20px;
     font-size: 22px;
     display: block;
+  }
+}
+
+
+@media (max-width: 460px) {
+
+  .together-navbar .navbar-brand img {
+    max-width: 200px;
   }
 }
