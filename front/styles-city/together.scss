@@ -3,7 +3,7 @@
 //
 
 $together-color: #79c9ab;
-$main-section-color: #000;
+$main-section-color: #555;
 $default-body-color: #555;
 $head-font: Lato, Helvetica, Arial, sans-serif;
 $content-font: "Open Sans", Helvetica, Arial, sans-serif;
@@ -129,7 +129,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
   h3 {
     color: $together-color;
-    font-weight: 300;
+    font-weight: 500 !important;
     font-family: $head-font;
   }
 
@@ -160,8 +160,8 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
       width: 50%;
       color: $together-color;
       font-size: 24px;
+      font-weight: 500;
       font-family: $head-font;
-      font-weight: 300;
     }
     .subevent-description {
       color: #c3c3c3;
