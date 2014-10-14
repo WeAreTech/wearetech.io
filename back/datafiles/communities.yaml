@@ -135,7 +135,7 @@ skg:
     maintainers:
       - name: "Stavros Korokithakis"
         email: "hi@stavros.io"
-- name: "Thessaloniki .NET Meetup"
+  - name: "Thessaloniki .NET Meetup"
     period: "Twice a month"
     happensAt: "Every second Sunday of each month"
     description: "This is a group for anyone interested in .NET programming and programming in general. Focused but not limited to people who are currently or were in the past employed as developers so we can discuss things about our proffession too. All skills and levels are welcome."
