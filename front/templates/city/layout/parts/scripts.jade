@@ -56,6 +56,14 @@ script(type="text/javascript").
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 
+//-
+//- Pass variables to jsapp
+//-
+script(type="text/javascript").
+  var serv = {
+    callendarId: '#{ city.calendarUrl }',
+    calendarApiKey: '#{ city.calendarApiKey }zzzzz'
+  };
 
 if glob.env == "development"
   script(type="text/javascript").

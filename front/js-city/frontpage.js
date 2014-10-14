@@ -25,8 +25,8 @@ Front.prototype.init = function() {
   this.$error = $('#agenda-error');
 
   this.calendarth = calendarth({
-    apiKey: 'AIzaSyC75rnKyEkGxmVyG7hlqFicwPBgDmQLN_w',
-    calendarId: '2ul10sd9g30mnk1vpmcnnp5qv4@group.calendar.google.com',
+    apiKey: window.serv.calendarApiKey,
+    calendarId: window.serv.callendarId,
     maxResults: 12
   });
 
