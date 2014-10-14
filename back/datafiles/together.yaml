@@ -54,6 +54,9 @@ skg:
         - name: Drupal
           url: "https://groups.drupal.org/node/401713"
           description: "Thessaloniki Drupal community"
+        - name: ".NET"
+          url: "http://www.meetup.com/Thessaloniki-NET-Meetup/"
+          description: "This is a group for anyone interested in .NET programming and programming in general."
       Global:
         - name: Mozilla
           url: "mozilla-greece.org"
