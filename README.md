@@ -54,6 +54,9 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
+- **v0.0.15**, *14/Oct/2014*
+    - Added footer on Together page.
+    - Fixed multi-city problems.
 - **v0.0.13**, *13/Oct/2014*
     - Update main panel styling.
     - Mobile improvements :
