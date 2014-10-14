@@ -26,10 +26,10 @@ block layout
   //- include parts/oldie
   block content
 
-  footer#f.footer-actual
+  footer.footer-together
     div.container
       div.row
-        div.col-lg-6.pull-left
+        div.col-lg-8.left-copy
           p &copy; 2014&nbsp;
             a(href="https://github.com/WeAreTech/wearetech.io/graphs/contributors") WeAreTech contributors
             |  source under the&nbsp;
@@ -38,6 +38,8 @@ block layout
           p.license The content property of their respective owners, the rest&nbsp;
             a(target="_blank", href="http://creativecommons.org/publicdomain/zero/1.0/") Creative Commons CC0
             | .
-        div.col-lg-4.pull-right.contribute-statement
+        div.col-lg-4.contribute-statement
           p
-            a(href="https://github.com/WeAreTech/wearetech.io", target="_blank") View the source of this site and contribute
+            a(href="https://github.com/WeAreTech/wearetech.io", target="_blank")
+              img(src="/img/github.png").github
+              | View the source of this site and contribute
