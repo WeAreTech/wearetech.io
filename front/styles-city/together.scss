@@ -203,7 +203,7 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 .together .speakers-section {
   background-color: #fff;
-
+  padding-bottom: 80px;
   h2 {
     font-family: $head-font;
     font-weight: 300;
@@ -273,15 +273,6 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
 
   .together .speakers-section .speakers-item {
     margin: 0 30px;
-  }
-
-  #f {
-    padding-top: 40px;
-
-    .contribute-statement {
-      padding-top: 20px;
-      float: none;
-    }
   }
 }
 
