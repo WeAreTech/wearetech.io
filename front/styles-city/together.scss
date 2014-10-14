@@ -293,3 +293,28 @@ $content-font: "Open Sans", Helvetica, Arial, sans-serif;
   }
 
 }
+
+.footer-together {
+  height: 140px;
+  background-color: #333333;
+  p, a {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 0;
+  }
+  a:hover {
+    color: #fff;
+  }
+
+  .left-copy {
+    margin-top: 80px;
+  }
+  .contribute-statement {
+    margin-top: 100px;
+    .github {
+      margin-top: -6px;
+      margin-right: 10px;
+    }
+  }
+
+}
