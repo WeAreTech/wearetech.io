@@ -65,7 +65,7 @@ skg:
         - name: Behance
           url: "http://www.meetup.com/BehanceReviews/Behance-Thessaloniki/"
           description: "Portfolio Review Week is a series of volunteer-organized events that has spread to hundreds of cities internationally, with a goal of bringing together creative professionals."
-        - name: Κ.Ε.Φ.Τ.Ε.δες
+        - name: "Κ.Ε.Φ.Τ.Ε.δες"
           url: "https://www.facebook.com/groups/944048262277738/"
           description: "A group that loves photography, meatballs & outings."
       Methodologies:
@@ -78,7 +78,7 @@ skg:
       Connectors:
         - name: SKG Startupers
           url: "http://www.meetup.com/SKG-Startupers/"
-          description: "A relaxed open discussion and networking event, where people can "pitch" their ideas, efforts, aspirations and... anything startup really!"
+          description: "A relaxed open discussion and networking event, where people can \"pitch\" their ideas, efforts, aspirations and... anything startup really!"
         - name: OKFN
           url: "http://okfn.gr/"
           description: "A group of teachers, hackers, developers, representatives of the State and citizens, joined forces to create the Greek part of the Open Knowledge Foundation."
