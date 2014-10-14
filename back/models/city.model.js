@@ -35,6 +35,7 @@ City.Schema = {
   twitter: {type: String},
   facebook: {type: String},
   calendarUrl: {type: String},
+  calendarApiKey: {type: String},
   forumUrl: {type: String},
   og: {
     title: {type: String},
