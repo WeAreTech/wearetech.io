@@ -120,6 +120,10 @@ City.prototype.getDomainName = function (hostname) {
  * @param {Function(Error=)} next passing control to the next middleware.
  */
 City.prototype.redirects = function (req, res, next) {
+  if (!req.city.redirects) {
+    next();
+    return;
+  }
   var parts = url.parse(req.url);
   var slashlessPathname = parts.pathname.substr(1);
   if (slashlessPathname in req.city.redirects) {
