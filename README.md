@@ -81,4 +81,4 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## License
 
-Copyright (c) 2014 Thanasis Polychronakis, [Contributors](https://github.com/WeAreTech/wearetech.io/graphs/contributors). Licensed under the MIT license.
+Copyright (c) 2014 Thanasis Polychronakis, [Contributors](https://github.com/WeAreTech/wearetech.io/graphs/contributors). Licensed under the [Mozilla Public License](LICENSE).
