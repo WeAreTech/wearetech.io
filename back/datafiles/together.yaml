@@ -79,6 +79,9 @@ skg:
         - name: SKG Startupers
           url: "http://www.meetup.com/SKG-Startupers/"
           description: "A relaxed open discussion and networking event, where people can \"pitch\" their ideas, efforts, aspirations and... anything startup really!"
+        - name: Startup Live Thessaloniki
+          url: "http://startuplive.in/thessaloniki/1/"
+          description: "Startup Live Thessaloniki is a weekend long event where geek people meet the marketing ones. Mentors put the guidelines and they, all together, work on tech projects using fresh tools and techniques."
         - name: OKFN
           url: "http://okfn.gr/"
           description: "A group of teachers, hackers, developers, representatives of the State and citizens, joined forces to create the Greek part of the Open Knowledge Foundation."
