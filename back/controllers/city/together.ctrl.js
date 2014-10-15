@@ -58,7 +58,8 @@ Home.prototype._populateOgTags = function(req, res, next) {
   }
   var origUrl = req.city.og.url;
   res.locals.city.og.url = 'http://' + origUrl + '/together';
-  res.locals.city.og.image = 'http://' + origUrl + '/img/we-are-together-logo.png';
+  res.locals.city.og.image = 'http://' + origUrl +
+    '/img/we-are-together-logo-social.png';
   res.locals.city.og.description = res.locals.together.tagline;
   next();
 };
