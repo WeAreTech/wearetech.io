@@ -22,7 +22,7 @@ skg:
       "4": "Global"
       "5": "Design"
       "6": "Methodologies"
-      "7": "Connectors"
+      "7": "Enablers"
     speakers:
       Keynote:
         - name: "SKGTech"
@@ -75,7 +75,7 @@ skg:
         - name: "#steki"
           url: "https://plus.google.com/u/0/communities/102219974234763232117"
           description: "#Steki brings together people who are fascinated by the open and co-operative mentality that the social web has brought upon humans as well as businesses."
-      Connectors:
+      Enablers:
         - name: SKG Startupers
           url: "http://www.meetup.com/SKG-Startupers/"
           description: "A relaxed open discussion and networking event, where people can \"pitch\" their ideas, efforts, aspirations and... anything startup really!"
