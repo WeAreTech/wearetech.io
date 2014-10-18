@@ -1,16 +1,25 @@
 /**
  * @fileOverview City Registration app
  */
-var Available = module.exports = function () {};
+var Available = module.exports = function () {
+  this.$mapContainer = null;
+  this.$searchCityForm = null;
+  this.$cityInput = null;
+  this.$autocompleteObject = null;
+};
 
 /**
  * Initialize the Available view.
  */
 Available.prototype.init = function () {
+  this.$mapContainer = null;
+  this.$searchCityForm = $('.search-city-form');
+  this.$cityInput = null;
 
-  $('.search-city-form').on('submit', function () { return false; });
+  this.$searchCityForm.on('submit', function () { return false; });
 
   this._initAutocomplete();
+  this._initMap();
 };
 
 /**
@@ -25,33 +34,39 @@ Available.prototype._initAutocomplete = function () {
 
   var cityInput = document.getElementById('city');
 
-  autocomplete = new google.maps.places.Autocomplete(cityInput, {
+  var options = {
     types: ['(cities)'],
     componentRestrictions: {country: 'gr'}
-  });
+  };
+  this.$autocompleteObject = new google.maps.places.Autocomplete(cityInput, options);
 
-  google.maps.event.addListener(autocomplete, 'place_changed', function () {
-    var place = autocomplete.getPlace();
-    if (place.geometry) {
-      map.panTo(place.geometry.location);
-      map.setZoom(15);
+  google.maps.event.addListener(this.$autocompleteObject, 'place_changed', this._changeMapLocation.bind(this));
 
-      var marker = new google.maps.Marker({
-        position: place.geometry.location,
-        animation: google.maps.Animation.DROP
-      });
+};
 
-      marker.setMap(map);
-    }
-
-  });
-
-  map = new google.maps.Map(document.getElementById('map-canvas'), myOptions = {
+Available.prototype._initMap = function () {
+  var mapOptions = {
     center: new google.maps.LatLng(54.8, -4.6),
     zoom: 5,
     mapTypeControl: false,
     panControl: false,
     zoomControl: false,
     streetViewControl: false
-  });
+  };
+  this.$mapContainer = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+};
+
+Available.prototype._changeMapLocation = function () {
+  var place = this.$autocompleteObject.getPlace();
+  if (place.geometry) {
+    this.$mapContainer.panTo(place.geometry.location);
+    this.$mapContainer.setZoom(15);
+
+    var marker = new google.maps.Marker({
+      position: place.geometry.location,
+      animation: google.maps.Animation.DROP
+    });
+
+    marker.setMap(this.$mapContainer);
+  }
 };
