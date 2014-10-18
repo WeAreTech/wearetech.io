@@ -1,11 +1,19 @@
 mixin searchCity
   .row
-    form.form-horizontal.search-city-form(role=form)
-      .col-md-6
-        .form-group
-          label.col-md-3(for="city") Type your city
-          .col-md-9
-            input.form-control#city(name="city")
-      .col-xs-12
-        .col-xs-12#map-canvas(style="height:200px")
+    form.col-xs-12.form-horizontal.search-city-form(action="/available", method="post", role="form")
+      .form-group.row
+        label.col-md-3.text-right(for="city") Type your city
+        .col-md-9
+          input.form-control#city(name="city")
+      .row.form-group
+        .col-xs-12
+          #map-canvas(style="height:400px")
+      .row.form-group
+        input.hidden(name="cityCanonicalName")
+        input.hidden(name="cityLat")
+        input.hidden(name="cityLng")
+        input.hidden(name="cityCountryCode")
+      .row.form-group
+        .col-xs-12.text-right
+          button.btn.btn-success.btn-lg.btn-block(type="submit") Register
   script(src="http://maps.googleapis.com/maps/api/js?libraries=places")
