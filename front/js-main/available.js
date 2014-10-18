@@ -4,7 +4,6 @@
 var Available = module.exports = function () {
   this.$mapContainer = null;
   this.$searchCityForm = null;
-  this.$cityInput = null;
   this.$autocompleteObject = null;
 };
 
@@ -14,7 +13,6 @@ var Available = module.exports = function () {
 Available.prototype.init = function () {
   this.$mapContainer = null;
   this.$searchCityForm = $('.search-city-form');
-  this.$cityInput = null;
 
   this.$searchCityForm.on('submit', function () { return false; });
 
