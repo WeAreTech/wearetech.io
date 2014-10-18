@@ -23,6 +23,7 @@ skg:
       "5": "Design"
       "6": "Methodologies"
       "7": "Enablers"
+      "8": "Science"
     speakers:
       Keynote:
         - name: "SKGTech"
@@ -91,3 +92,7 @@ skg:
         - name: "Open Coffee"
           url: "http://opencoffee.gr/"
           description: "OpenCoffee.gr aims to be the single point of reference for greek start-ups. In this context, we cover existing and, mainly, new developments on greek start-ups, as well as the relevant topics of entrepreneurship and technology."
+      Science:
+        - name: Omilos Filon Astronomias
+          url: "http://www.ofa.gr/"
+          description: "The amateur astronomy club of Thessaloniki! Already 17yo, OFA holds astroparties, monthly observations and weekly seminars among other things."
