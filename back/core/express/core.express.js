@@ -79,8 +79,9 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
 
     this.app.use(cookieParser());
     this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded());
 
-    // Init websockets
+      // Init websockets
     socketServer.init(webserver.http);
     // listen for websocket connections
     socketServer.listen(globals.WebsocketNamespace.WEBSITE);
