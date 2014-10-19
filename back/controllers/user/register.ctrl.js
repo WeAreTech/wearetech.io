@@ -63,7 +63,9 @@ Register.prototype._useRegister = function(req, res) {
  * @private
  */
 Register.prototype._getRegister = function(req, res) {
-  res.render('user/register');
+  res.render('user/register', {
+    cityCanonicalName: req.flash('cityCanonicalName')
+  });
 };
 
 /**
