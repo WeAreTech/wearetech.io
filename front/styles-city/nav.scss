@@ -1,2 +1,32 @@
 // Navigation related styles
 
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin-top: 0;
+
+  li a {
+    font-family: $font-titles;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  li a:hover, a:focus {
+    color: $main-color;
+    background: none;
+    border-bottom: 1px solid $main-color;
+    // border-bottom-width: 10px;
+  }
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-transparent {
+  // background: transparent;
+
+  text-transform: uppercase;
+}
