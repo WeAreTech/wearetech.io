@@ -6,28 +6,36 @@ extends layout/city
 
 block content
 
-  div.navbar-wrapper
-    div.container
-      div.navbar.navbar-static-top
-        div.container
-           div.navbar-header
-            div.navbar-collapse.collapse
-              ul.nav.navbar-nav
-                li.active
-                  a(href="#calendar") Calendar
-                li
-                  a(href="#communities") Communities
-                li
-                  a(href="#contact") Contact
-
-  div#city-header
+  div.city-header
     div.jumbotron.text-center
+      div.navbar.navbar-transparent
+        div.container
+          div.navbar-header
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+              span.sr-only(Toggle navigation)
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            //- a.navbar-brand(href="#") Project name
+          div.navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href="#calendar") Calendar
+              li
+                a(href="#communities") Communities
+              li
+                a(href="#contact") Contact
+
+
+
       div.container
-        div.logo-wrapper
-          img(src="assets/wearetech-logo.png")
-        div.city-name
-          h2 THESSALONIKI
-        div.city-description
-          h3 This is an open website about the community of Thessaloniki's developers and techies. Meet the community and find out about upcoming events and meetups.
-        div.social-circles-wrapper
-          div.social-circle
+        div.row
+          div.col-lg-6.col-lg-offset-3
+            div.logo-wrapper
+              img(src="assets/wearetech-logo.png")
+            div.city-name
+              h2 THESSALONIKI
+            div.city-description
+              h3 This is an open website about the community of Thessaloniki's developers and techies. Meet the community and find out about upcoming events and meetups.
+            div.social-circles-wrapper
+              div.social-circle
