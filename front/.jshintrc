@@ -138,6 +138,8 @@
     "after": false,
     "afterEach": false,
     "teardown": false,
-    "assert": false
+    "assert": false,
+
+    "serv": false
   }
 }

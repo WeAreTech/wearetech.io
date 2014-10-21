@@ -15,7 +15,7 @@ if !glob.isDev && city
       ga('send', 'pageview');
     }
 
-
+script(src='components/bootstrap-sass-official/assets/javascripts/bootstrap.js')
 script(type="text/javascript").
   window.JSON || document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min.js"><\/script>');
   var _csrf = '#{_csrf}';
@@ -56,6 +56,14 @@ script(type="text/javascript").
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 
+//-
+//- Pass variables to jsapp
+//-
+script(type="text/javascript").
+  var serv = {
+    callendarId: '#{ city.calendarUrl }',
+    calendarApiKey: '#{ city.calendarApiKey }'
+  };
 
 if glob.env == "development"
   script(type="text/javascript").

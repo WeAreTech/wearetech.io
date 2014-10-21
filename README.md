@@ -54,6 +54,18 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## Release History
 
+- **v0.0.15**, *14/Oct/2014*
+    - Added footer on Together page.
+    - Fixed multi-city problems.
+- **v0.0.13**, *13/Oct/2014*
+    - Update main panel styling.
+    - Mobile improvements :
+        - Opacity added to main panel
+        - Footer top padding removed
+        - Logo gets a max-width for lower resolutions
+        - Left/right margins decreased on lower resolutions
+- **v0.0.12**, *12/Oct/2014*
+    - Created the `/together` pages on cities.
 - **v0.0.11**, *07/Oct/2014*
     - Added city wide redirects (www.skgtech.io --> skgtech.io).
     - Added city specific redirects in the model (skgtech.io/together --> together.skgtech.io).
@@ -69,4 +81,4 @@ Because wearetech.io uses multiple hostnames on the same Node instance you need 
 
 ## License
 
-Copyright (c) 2014 Thanasis Polychronakis, [Contributors](https://github.com/WeAreTech/wearetech.io/graphs/contributors). Licensed under the MIT license.
+Copyright (c) 2014 Thanasis Polychronakis, [Contributors](https://github.com/WeAreTech/wearetech.io/graphs/contributors). Licensed under the [Mozilla Public License](LICENSE).

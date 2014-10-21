@@ -18,6 +18,14 @@ module.exports = function(grunt) {
         'front/static/img/**/*'
       ]
     },
+    browserify: {
+      files: [
+        'front/js-city/**/*.js'
+      ],
+      tasks: [
+        'browserify:city',
+      ],
+    },
     stylesMain: {
       files: [
         'front/styles/**/*.scss'

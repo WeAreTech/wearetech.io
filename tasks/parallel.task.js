@@ -21,6 +21,9 @@ module.exports = function(grunt) {
         args: ['watch:stylesCity']
       }, {
         grunt: true,
+        args: ['watch:browserify']
+      }, {
+        grunt: true,
         args: ['watch:web']
       }]
     },

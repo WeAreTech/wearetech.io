@@ -119,6 +119,7 @@ data:
     twitter: "SKG_Tech"
     facebook: "skgtech.io"
     calendarUrl: "2ul10sd9g30mnk1vpmcnnp5qv4@group.calendar.google.com"
+    calendarApiKey: "AIzaSyC75rnKyEkGxmVyG7hlqFicwPBgDmQLN_w"
     forumUrl: "https://groups.google.com/forum/#!forum/skg-developers"
     og:
       title: "Thessaloniki tech and developer Meetups"
@@ -130,9 +131,7 @@ data:
       type: "website"
     ga: "UA-41787746-3"
     redirects:
-      together: "http://together.skgtech.io"
       together-apr-2014: "http://together.skgtech.io/together-apr-2014/"
-
     - name: "Athens"
     headerTitle: "ATHTech"
     hostname: "ath.localhost"
@@ -140,6 +139,7 @@ data:
     twitter: "ATHTechGR"
     facebook: "athtech.org"
     calendarUrl: "oo1mlkql8sma2b3pkg6i23qtdc@group.calendar.google.com"
+    calendarApiKey: "AIzaSyCccutOwOmeR_0gKxpOk5YUbEPLyMC8WWM"
     forumUrl: "https://groups.google.com/forum/#!forum/ath-developers"
     og:
       title: "Athens tech and developer Meetups"

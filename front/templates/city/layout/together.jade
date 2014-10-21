@@ -1,0 +1,45 @@
+extends core
+
+block layout
+
+  div.navbar.navbar-default.navbar-fixed-top.together-navbar
+    div.container
+      div.navbar-header
+        button.navbar-toggle.callapsed(data-toggle="collapse", data-target="#navbar-menu")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href="/").navbar-brand
+          img(src="/img/weareTogether-logo.svg")
+      div.navbar-collapse.collapse#navbar-menu
+        ul.nav.navbar-nav.navbar-right.together-menu
+          li
+            a(href="#venue",data-toggle="collapse",data-target="#navbar-menu") VENUE
+          li
+            a(href="#schedule",data-toggle="collapse",data-target="#navbar-menu") SCHEDULE
+          li
+            a(href="#speakers",data-toggle="collapse",data-target="#navbar-menu") SPEAKERS
+          li
+            a(href="/") SKGTECH
+
+  //- include parts/oldie
+  block content
+
+  footer.footer-together
+    div.container
+      div.row
+        div.col-lg-8.left-copy
+          p &copy; 2014&nbsp;
+            a(href="https://github.com/WeAreTech/wearetech.io/graphs/contributors") WeAreTech contributors
+            |  source under the&nbsp;
+            a(target="_blank", href="https://github.com/WeAreTech/wearetech.io/blob/master/LICENSE") MPL 2.0 License
+            | .
+          p.license The content property of their respective owners, the rest&nbsp;
+            a(target="_blank", href="http://creativecommons.org/publicdomain/zero/1.0/") Creative Commons CC0
+            | .
+        div.col-lg-4.contribute-statement
+          p
+            a(href="https://github.com/WeAreTech/wearetech.io", target="_blank")
+              img(src="/img/github.png").github
+              | View the source of this site and contribute

@@ -92,6 +92,7 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
       this.app.use(vhost('skgtech.io', appApi));
       this.app.use(vhost('*.skgtech.io', appApi));
       this.app.use(vhost('athtech.org', appApi));
+      this.app.use(vhost('*.athtech.org', appApi));
     }
 
     this.app.use(vhost(config.hostname.website, appWebserver));

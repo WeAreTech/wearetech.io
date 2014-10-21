@@ -1,0 +1,98 @@
+skg:
+  - name: "2<sup>nd</sup> We Are Together"
+    dateText: "Friday, Nov 7th 18:30 - 22:00"
+    dateStart: "07 Apr 2014 18:30"
+    dateEnd: "07 Apr 2014 22:00"
+    upcoming: true
+    venueName: "Thessaloniki City Hall"
+    tagline: "All the tech communities of Thessaloniki in one place at the same time, presenting what they are passionate about in a relaxed and casual way. Let the geek inside you run wild in this pure tech mashup!"
+    mapLink: "https://maps.google.com/?ll=40.623831,22.955267&spn=0.003046,0.004973&t=m&z=18&iwloc=lyrftr:m,16051082708899861943,40.62346,22.95383"
+    hashtag: "#WeAreTogether"
+    whoWeAre: "SKGTech is a group of developers who aim to empower the local tech communities by <a href=\"http://skgtech.io/#communities\" target=\"_blank\">making teams aware of each other</a> and providing an easily accessible <a href=\"http://skgtech.io/#agenda\" target=\"_blank\">calendar of events & meetups of Thessaloniki.</a>"
+    contactEmail: "hello@skgtech.io"
+    schedule:
+      "~22:00 - Drunk": "Beers <p class=\"subevent-description\"><a href=\"https://maps.google.com/maps?hl=en&ll=40.625089,22.953537&spn=0.001254,0.002248&t=m&gl=US&mapclient=embed&cid=16051082708899861943&z=19&iwloc=lyrftr:m,17016892782352503993,40.625213,22.952939\" target=\"_blank\">@Terra Antiqua Art Cafe</a></p>"
+      "20:30 ~ 22:00": "Networking"
+      "19:00 - 20:30": "Main Event"
+      "18:30 - 19:00": "Warmup"
+    stacks:
+      "1": "Keynote"
+      "2": "Metal"
+      "3": "Developers"
+      "4": "Global"
+      "5": "Design"
+      "6": "Methodologies"
+      "7": "Enablers"
+      "8": "Science"
+    speakers:
+      Keynote:
+        - name: "SKGTech"
+          url: "http://skgtech.io"
+          description: "SKGTech is the organizer of the We Are Together event for Thessaloniki and the upkeeper of the skgtech.io city calendar of tech events."
+      Metal:
+        - name: "MAKE DIY"
+          url: "http://make.gr"
+          description: "MAKE is a co-working space, meeting point, a do It yourself community."
+        - name: "Arduino"
+          url: "http://www.meetup.com/Thessaloniki-Arduino/"
+          description: "Talks, presentations, panel discussions, hands-on workshops, open days, or show-and-tell events. Everybody is welcome."
+      Developers:
+        - name: Ruby
+          url: "https://github.com/thessrb/meetup"
+          description: "A group of (not just) geeks, who love Ruby (among other things), live (not just) in Thessaloniki and meet at least once a month."
+        - name: Java
+          url: "http://www.meetup.com/Thessaloniki-Java-Meetup-Group/"
+          description: "This is a group for anyone interested in java, j2ee, jvm languages, clean code practices, android development, etc. All skills levels are welcome."
+        - name: Node.js
+          url: "http://www.meetup.com/Thessaloniki-Node-js-Meetup/"
+          description: "Thessaloniki Node.js Meetup is an initiative to connect 'Noders' across Thessaloniki in order to exchange ideas, knowledge and experience"
+        - name: Python
+          url: "https://pythess.microco.sm/"
+          description: "The PyThess meetup goal is to get people who are interested in the Python programming language in the same room together, and then go for drinks."
+        - name: iOS
+          url: "http://www.meetup.com/iOS-Devs-Gr"
+          description: "A bunch of developers dedicated to the discussion of the Cocoa Framework for writing software on MacOS and iOS."
+        - name: Drupal
+          url: "https://groups.drupal.org/node/401713"
+          description: "The Thessaloniki Drupal community aims to support Greek users and help in its translation into Greek. Everyone is welcome!"
+        - name: ".NET"
+          url: "http://www.meetup.com/Thessaloniki-NET-Meetup/"
+          description: "This is a group for anyone interested in .NET programming and programming in general."
+      Global:
+        - name: Mozilla
+          url: "mozilla-greece.org"
+          description: "At Mozilla, we’re a global community of technologists, thinkers and builders working together to keep the Internet alive and accessible for everyone."
+      Design:
+        - name: Behance
+          url: "http://www.meetup.com/BehanceReviews/Behance-Thessaloniki/"
+          description: "Portfolio Review Week is a series of volunteer-organized events that has spread to hundreds of cities internationally, with a goal of bringing together creative professionals."
+        - name: "Κ.Ε.Φ.Τ.Ε.δες"
+          url: "https://www.facebook.com/groups/944048262277738/"
+          description: "A group that loves photography, meatballs & outings."
+      Methodologies:
+        - name: Agile
+          url: "http://www.meetup.com/Agile-Greece/"
+          description: "We believe that following a Lean thinking and growing an Agile mindset could help us improve and trigger some positive changes in our organisations."
+        - name: "#steki"
+          url: "https://plus.google.com/u/0/communities/102219974234763232117"
+          description: "#Steki brings together people who are fascinated by the open and co-operative mentality that the social web has brought upon humans as well as businesses."
+      Enablers:
+        - name: SKG Startupers
+          url: "http://www.meetup.com/SKG-Startupers/"
+          description: "A relaxed open discussion and networking event, where people can \"pitch\" their ideas, efforts, aspirations and... anything startup really!"
+        - name: Startup Live Thessaloniki
+          url: "http://startuplive.in/thessaloniki/1/"
+          description: "Startup Live Thessaloniki is a weekend long event where geek people meet the marketing ones. Mentors put the guidelines and they, all together, work on tech projects using fresh tools and techniques."
+        - name: OKFN
+          url: "http://okfn.gr/"
+          description: "A group of teachers, hackers, developers, representatives of the State and citizens, joined forces to create the Greek part of the Open Knowledge Foundation."
+        - name: "Open Thessaloniki"
+          url: "http://www.openthessaloniki.org/"
+          description: "OpenThessaloniki aspires to be a platform for collecting data related to the town of Thessaloniki and develop, in tandem, applications and services aiming at open government."
+        - name: "Open Coffee"
+          url: "http://opencoffee.gr/"
+          description: "OpenCoffee.gr aims to be the single point of reference for greek start-ups. In this context, we cover existing and, mainly, new developments on greek start-ups, as well as the relevant topics of entrepreneurship and technology."
+      Science:
+        - name: Omilos Filon Astronomias
+          url: "http://www.ofa.gr/"
+          description: "The amateur astronomy club of Thessaloniki! Already 17yo, OFA holds astroparties, monthly observations and weekly seminars among other things."
