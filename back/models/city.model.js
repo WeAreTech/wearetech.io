@@ -37,6 +37,7 @@ City.Schema = {
   calendarUrl: {type: String},
   forumUrl: {type: String},
   placeId: {type: String},
+  geo: {type: [Number], index: '2d'},
   og: {
     title: {type: String},
     siteName: {type: String},
