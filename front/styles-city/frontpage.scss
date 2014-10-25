@@ -62,3 +62,85 @@ h2.submit-event {
   margin-right: 20px; // review this rule later
   padding: 0;
 }
+
+.calendar-items-block {
+  margin: 30px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.calendar-item-outer {
+  margin: 15px 0;
+}
+
+.calendar-item-inner {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #e9eaec;
+  border-radius: 4px;
+  height: 260px;
+}
+
+.calendar-item-title {
+  background: $main-color;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+h3.date {
+  display: inline-block;
+  // float: left;
+  width: 60px;
+  text-align: center;
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+  font-family: $font-titles;
+  font-weight: 700;
+  font-size: 24px;
+
+  span.month {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+
+h3.event-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  font-weight: 300;
+  font-size: 24px;
+  font-family: $font-titles;
+  width: 250px;
+}
+
+.calendar-item-content {
+  color: #888;
+  margin: 20px 10px;
+  font-family: $font-content;
+  font-size: 14px;
+  height: 110px;
+
+  h4 {
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.calendar-item-footer {
+  margin: 20px 10px;
+}
+
+span.hashtag {
+  color: $main-color;
+  font-family: $font-content;
+  font-size: 14px;
+}
+
+.google-calendar-icons {
+  border-left: 1px solid #e9eaec;
+}
