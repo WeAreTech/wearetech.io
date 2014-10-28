@@ -3,7 +3,6 @@
  */
 
 // var __ = require('lodash');
-// var BPromise = require('bluebird');
 // var appError = require('nodeon-error');
 var EntityBase = require('nodeon-base').EntityBase;
 
@@ -20,6 +19,9 @@ var cityModel = CityModel.getInstance();
  */
 var City = module.exports = EntityBase.extendSingleton(function() {
   this.setModel(cityModel.Model);
+
+  this.method('register', this.create.bind(this));
+
 });
 
 City.STUB = 1;
