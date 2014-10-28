@@ -24,64 +24,75 @@ Available.prototype._registerNewCity = function (req, res) {
   }
 
   var userCity = CityEntity.getInstance();
-
   /**
    * @check if city is available
    */
-  var maxDistance = 10;
-  var geo = [22.944419100000005, 40.6400629];
 
-  var lonLat = {$geometry: {type: 'Point', coordinates: geo}};
+  /**
+   * Not sure about the 100. But it works for 10KM meters
+   * @see http://docs.mongodb.org/manual/tutorial/calculate-distances-using-spherical-geometry-with-2d-geospatial-indexes/
+   */
+  var distance = 1000  / 6371;
 
-  userCity.read({
-    geo: {
-      $near: lonLat,
-      $maxDistance: maxDistance
+  /**
+   * node-entity _read method does not support $near for some reason
+   */
+
+  var query = userCity.Model.findOne({'geo': {$near: [req.body.cityLat, req.body.cityLng], $maxDistance: distance}});
+  query.exec(function (err, city) {
+    if (err) {
+      log.error('_registerNewCity() :: Error while searching for city availability:', err);
+      throw err;
     }
-  }).bind(this)
-    .then(function (result) {
-      if (!result) {
 
-        /**
-         * Create new
-         */
-
-        // perform basic sanitizations, validation happens in model.
-        var params = {
+    if (!city) {
+      // perform basic sanitizations, validation happens in model.
+      var params = {
+        name: 'example',
+        headerTitle: 'example',
+        hostname: 'example',
+        domainName: 'example',
+        canonical: {
           fullName: validator.toWebstring(req.body.name, 32),
           canonicalName: validator.toWebstring(req.body.cityCanonicalName, 64),
           countryCode: validator.toWebstring(req.body.cityCountryCode, 2),
-          lat: req.body.cityLat,
-          lng: req.body.cityLng,
-        };
+        },
+        geo: [
+          req.body.cityLng,
+          req.body.cityLat
+        ]
+      };
 
-        log.info('_registerNewCity() :: New city register:', params.email);
+      log.info('_registerNewCity() :: New city register:', params.email);
+      var userCity = CityEntity.getInstance();
+      userCity.register(params)
+        .then(function (req, res, city) {
+          /**
+           * Pass the City Document to Register Controller
+           */
+          req.flash('cityCanonicalName', req.body.cityCanonicalName);
+          req.flash('cityDocument', city);
 
-        userCity.register(params)
-          .then(this._newUser.bind(this, req, res))
-          .catch(function (err) {
-            log.warn('_useRegister() :: New user fail:', err.message);
-            res.status(400).render('user/register', {
-              error: true,
-              errorMessage: err.message,
-            });
-            return;
+          res.redirect('/register');
+        }.bind(this, req, res))
+        .catch(function (err) {
+          log.warn('_registerNewCity() :: New city fail:', err.message);
+          res.status(400).render('user/register', {
+            error: true,
+            errorMessage: err.message,
           });
-
-        req.flash('cityCanonicalName', req.body.cityCanonicalName);
-
-        res.redirect('/register');
-
-      } else {
-        /**
-         * We have an overlap
-         */
-        res.render('city/available', {
-          available: false,
-          cityId: result
+          return;
         });
-      }
-    });
+
+    } else {
+      /**
+       * We have an overlap
+       */
+      res.render('city/preview', {
+        city: city
+      });
+    }
+  }.bind(this));
 
 };
 
