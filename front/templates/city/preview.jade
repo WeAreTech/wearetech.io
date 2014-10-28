@@ -1,0 +1,10 @@
+//- Check for city availability
+//-
+//-
+extends layout/city
+block content
+  div.page.container
+    div.page-header
+      h1 It seems like someone is already curating your hood.
+      h2 We have found
+        a(href='http://#{ city.domainName }')  #{ city.name }
