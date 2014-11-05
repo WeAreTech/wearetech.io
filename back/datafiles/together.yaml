@@ -89,6 +89,9 @@ skg:
         - name: "Open Thessaloniki"
           url: "http://www.openthessaloniki.org/"
           description: "OpenThessaloniki aspires to be a platform for collecting data related to the town of Thessaloniki and develop, in tandem, applications and services aiming at open government."
+        - name: WNA
+          url: "http://www.wna.gr"
+          description: "Wireless Network Association (WNA) is a grassroots wireless community, taking advantage of new, state of the art wireless technologies, to connect people, services, projects and communities all around Greece."
         - name: "Open Coffee"
           url: "http://opencoffee.gr/"
           description: "OpenCoffee.gr aims to be the single point of reference for greek start-ups. In this context, we cover existing and, mainly, new developments on greek start-ups, as well as the relevant topics of entrepreneurship and technology."
