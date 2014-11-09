@@ -129,7 +129,7 @@ data:
       image: "https://pbs.twimg.com/profile_images/453243331691020288/pk_2bTE9.png"
       appId: "698696243515776"
       type: "website"
-    geo: "22.944419100000005,40.6400629"
+    geo: [22.944419100000005,40.6400629]
     ga: "UA-41787746-3"
     redirects:
       together: "http://together.skgtech.io"
