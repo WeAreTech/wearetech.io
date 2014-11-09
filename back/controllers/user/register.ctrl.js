@@ -6,6 +6,7 @@ var log = require('logg').getLogger('app.ctrl.Register');
 var ControllerBase = require('nodeon-base').ControllerBase;
 
 var UserEntity = require('../../entities/user/user.ent');
+var CityEntity = require('../../entities/city.ent');
 
 /**
  * The registration API.
@@ -46,6 +47,7 @@ Register.prototype._useRegister = function(req, res) {
 
   userEntity.register(params)
     .then(this._newUser.bind(this, req, res))
+    .then(this._updateCity.bind(this, req, res))
     .catch(function(err) {
       log.warn('_useRegister() :: New user fail:', err.message);
       res.status(400).render('user/register', {
@@ -95,4 +97,20 @@ Register.prototype._newUser = function(req, res, udo) {
     self.addFlashSuccess(req, {newUser: true});
     res.redirect('/');
   });
+  return udo;
+};
+
+/**
+ * Put a reference in the city of the user that created the city
+ *
+ * @param {Object} req The request Object.
+ * @param {Object} res The response Object.
+ * @param {mongoose.Document} udo The user document.
+ * @private
+ */
+Register.prototype._updateCity = function(req, res, udo) {
+  var cityEntity = CityEntity.getInstance();
+  var cityCanonicalName = req.body.cityCanonicalName;
+  cityEntity.update({"canonical.canonicalName": cityCanonicalName},
+        {"createdBy": udo._id});
 };

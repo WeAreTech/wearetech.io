@@ -38,6 +38,11 @@ City.Schema = {
   forumUrl: {type: String},
   placeId: {type: String},
   geo: {type: [Number], index: '2d'},
+  canonical: {
+    fullName: {type: String},
+    canonicalName: {type: String},
+    countryCode: {type: String}
+  },
   og: {
     title: {type: String},
     siteName: {type: String},
