@@ -31,7 +31,6 @@ Front.prototype.init = function() {
   });
 
   this.calendarth.fetch(this._handleCalResult.bind(this));
-
   this._fixPanels();
 };
 
