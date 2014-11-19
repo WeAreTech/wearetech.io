@@ -54,16 +54,21 @@ block content
           h2.submit-event
             img(src="/img/submit-event.png")
             | &nbsp;How to submit an event
-    div.container.calendar-items-block
+    div#agenda-items.container.calendar-items-block
       div.row
         div.col-lg-10.col-md-10
-        img(src="/img/loader-bar.gif")
-        div.col-lg-4.calendar-item-outer
-          div.calendar-item-inner
-            div.calendar-item-title
-              h3.date 07
+          img(src="/img/loader-bar.gif")
+
+
+    div#agenda-tpl.hide
+      div.col-md-4.col-lg-4.calendar-item-outer
+        div.calendar-item-inner
+          div.calendar-item-title
+            h3.date
+              time(datetime="").agenda-tpl-when
+                span.day
                 br
-                span.month Nov
+                span.month
             h3.event-title 2nd "we are Together" event
           div.calendar-item-content
             h4 18:30-22:00 @Thessaloniki City Hall
@@ -72,6 +77,8 @@ block content
             a(href="https://twitter.com/search?f=realtime&q=%23wearetogether&src=typd", target="_blank").hashtag #wearetogether
             div.social-icons
             div.google-calendar-icons
+
+
   div.city-communities
     div.container
       div.row
