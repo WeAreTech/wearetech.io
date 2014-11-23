@@ -14,6 +14,7 @@ var VerifyCtrl = require('../controllers/user/verify.ctrl');
 var ProfileCtrl = require('../controllers/user/editProfile.ctrl');
 var ForgotCtrl = require('../controllers/user/forgot.ctrl');
 var AvailableCtrl = require('../controllers/available.ctrl');
+var ApplyCtrl = require('../controllers/apply.ctrl');
 
 var router = module.exports = {};
 
@@ -22,10 +23,11 @@ var router = module.exports = {};
  *
  * @param {express} app Express instance.
  */
-router.init = function(app) {
+router.init = function (app) {
   log.fine('init() :: initializing routes...');
   var homeCtrl = HomeCtrl.getInstance();
   var availableCtrl = AvailableCtrl.getInstance();
+  var applyCtrl = ApplyCtrl.getInstance();
   var registerCtrl = RegisterCtrl.getInstance();
   var loginCtrl = LoginCtrl.getInstance();
   var verifyCtrl = VerifyCtrl.getInstance();
@@ -44,11 +46,16 @@ router.init = function(app) {
     featureMidd.has('cityAvailable'),
     availableCtrl.use
   ];
-
   app.post('/available', availableMiddleware);
   app.get('/available', availableMiddleware);
 
-  app.get('/tpl/:tpl', function(req, res) {
+  var availableMiddleware = [
+    featureMidd.has('cityAvailable'),
+    applyCtrl.use
+  ];
+  app.post('/apply', availableMiddleware);
+
+  app.get('/tpl/:tpl', function (req, res) {
     var template = req.route.params.tpl;
     var tplBare = template.split('.')[0];
     res.render('tpl/' + tplBare);
