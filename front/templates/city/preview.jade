@@ -23,16 +23,17 @@ block content
         .row
           .col-sm-6.form-group
             label Firstname
-            input(type="text", name="firstName", placeholder="Enter your firstname")
+            input.form-control(type="text", name="firstName", placeholder="Enter your firstname")
           .col-sm-6.form-group
             label Lastname
-            input(type="text", name="lastName", placeholder="Enter your lastname")
-        .form-group
-          label Company Name ( Optional)
-          input(type="text", name="companyName", placeholder="Enter Company name")
-        .form-group
-          label Email
-          input(type="email", name="email", placeholder="Enter your email")
+            input.form-control(type="text", name="lastName", placeholder="Enter your lastname")
+        .row
+          .col-sm-6.form-group
+            label Company Name ( Optional)
+            input.form-control(type="text", name="companyName", placeholder="Enter Company name")
+          .col-sm-6.form-group
+            label Email
+            input.form-control(type="email", name="email", placeholder="Enter your email")
         .form-group
           input(type="hidden", value="#{_csrf}", name="_csrf")
           input(type="hidden", value="#{cityApplicationId}", name="cityApplicationId")
