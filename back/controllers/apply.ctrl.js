@@ -29,17 +29,10 @@ Apply.prototype._applyForCityCuration = function (req, res) {
     email: validator.toWebstring(req.body.email, 120),
   };
 
-  log.info('_useRegister() :: New user register:', params.email);
+  log.info('_applyForCityCuration() :: Application updated with curator details:', params.email);
 
-  var self = this;
   cityApplicationEntity.update({_id: req.body.cityApplicationId}, params)
-    .then(function () {
-      self.addFlashSuccess(req, {
-        successMessage: 'You have been successfully apply for a city curator. ' +
-                        'Wait till we approve your request and send your more info.'
-      });
-      res.redirect('/');
-    })
+    .then(this._applyForCityCurationDone.bind(this, req, res))
     .catch(function (err) {
       log.warn('_applyForCityCuration() :: New application fail:', err.message);
       res.status(400).render('city/preview', {
@@ -49,4 +42,12 @@ Apply.prototype._applyForCityCuration = function (req, res) {
       });
     });
 
+};
+
+Apply.prototype._applyForCityCurationDone = function (req, res) {
+  this.addFlashSuccess(req, {
+    successMessage: 'You have been successfully apply for a city curator. ' +
+                    'Wait till we approve your request and send your more info.'
+  });
+  res.redirect('/');
 };
