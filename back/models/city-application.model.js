@@ -23,6 +23,11 @@ var CityApplication = module.exports = ModelMongo.extendSingleton();
  */
 CityApplication.Schema = {
   geo: {type: [Number], index: '2d'},
+  firstName: {type: String, default: ''},
+  lastName: {type: String, default: ''},
+  companyName: {type: String, default: ''},
+  email: {type: String, trim: true, lowercase: true},
+  status: {type: String, default: 'Pending'},
   canonical: {
     canonicalName: {type: String},
     countryCode: {type: String}
