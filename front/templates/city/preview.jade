@@ -2,9 +2,38 @@
 //-
 //-
 extends layout/city
+
+include ../mixins/register.mix.jade
+
 block content
   div.page.container
     div.page-header
-      h1 It seems like someone is already curating your hood.
-      h2 We have found
-        a(href='http://#{ city.domainName }')  #{ city.name }
+      - if (error)
+        mixin alertMessage('danger', errorMessage)
+
+      - if (cities.length)
+        h1 It seems like someone is already curating your hood.
+        h2 We have found
+        each val in cities
+          a(href='http://#{ val.domainName }')  #{ val.name }
+
+
+      h2 You can apply for curation for this city
+      form.form(action="/apply", method="post")
+        .row
+          .col-sm-6.form-group
+            label Firstname
+            input(type="text", name="firstName", placeholder="Enter your firstname")
+          .col-sm-6.form-group
+            label Lastname
+            input(type="text", name="lastName", placeholder="Enter your lastname")
+        .form-group
+          label Company Name ( Optional)
+          input(type="text", name="companyName", placeholder="Enter Company name")
+        .form-group
+          label Email
+          input(type="email", name="email", placeholder="Enter your email")
+        .form-group
+          input(type="hidden", value="#{_csrf}", name="_csrf")
+          input(type="hidden", value="#{cityApplicationId}", name="cityApplicationId")
+          button.btn.btn-success.btn-lg.btn-block(type="submit") Register
