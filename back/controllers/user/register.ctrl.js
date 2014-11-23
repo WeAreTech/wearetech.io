@@ -6,7 +6,7 @@ var log = require('logg').getLogger('app.ctrl.Register');
 var ControllerBase = require('nodeon-base').ControllerBase;
 
 var UserEntity = require('../../entities/user/user.ent');
-var CityEntity = require('../../entities/city.ent');
+var CityApplicationEntity = require('../../entities/city-application.ent');
 
 /**
  * The registration API.
@@ -14,7 +14,7 @@ var CityEntity = require('../../entities/city.ent');
  * @contructor
  * @extends {app.ControllerBase}
  */
-var Register = module.exports = ControllerBase.extendSingleton(function(){
+var Register = module.exports = ControllerBase.extendSingleton(function () {
   // Add the request handling middleware controllers
   this.use.push(this._useRegister.bind(this));
 });
@@ -26,7 +26,7 @@ var Register = module.exports = ControllerBase.extendSingleton(function(){
  * @param {Object} res The response Object.
  * @private
  */
-Register.prototype._useRegister = function(req, res) {
+Register.prototype._useRegister = function (req, res) {
   if (req.method === 'GET') {
     this._getRegister(req, res);
     return;
@@ -48,7 +48,7 @@ Register.prototype._useRegister = function(req, res) {
   userEntity.register(params)
     .then(this._newUser.bind(this, req, res))
     .then(this._updateCity.bind(this, req, res))
-    .catch(function(err) {
+    .catch(function (err) {
       log.warn('_useRegister() :: New user fail:', err.message);
       res.status(400).render('user/register', {
         error: true,
@@ -64,9 +64,9 @@ Register.prototype._useRegister = function(req, res) {
  * @param {Object} res The response Object.
  * @private
  */
-Register.prototype._getRegister = function(req, res) {
+Register.prototype._getRegister = function (req, res) {
   res.render('user/register', {
-    cityCanonicalName: req.flash('cityCanonicalName')
+    cityApplicationId: req.flash('cityApplicationId')
   });
 };
 
@@ -78,18 +78,18 @@ Register.prototype._getRegister = function(req, res) {
  * @param {mongoose.Document} udo The user document.
  * @private
  */
-Register.prototype._newUser = function(req, res, udo) {
+Register.prototype._newUser = function (req, res, udo) {
   log.fine('_newUser() :: New user created:', udo.email);
 
   var self = this;
-  req.login(udo, function(err) {
+  req.login(udo, function (err) {
     if (err) {
       log.warn('_newUser() :: Session Login Error:', err);
       res.render(self.viewLogin, {
         error: true,
         errorMsg: 'You have successfully registered but unfortunately an' +
-          ' error has occured. Please try to login and check your email for' +
-          ' the verification email we have sent you.',
+                  ' error has occured. Please try to login and check your email for' +
+                  ' the verification email we have sent you.',
       });
 
       return;
@@ -108,9 +108,16 @@ Register.prototype._newUser = function(req, res, udo) {
  * @param {mongoose.Document} udo The user document.
  * @private
  */
-Register.prototype._updateCity = function(req, res, udo) {
-  var cityEntity = CityEntity.getInstance();
-  var cityCanonicalName = req.body.cityCanonicalName;
-  cityEntity.update({"canonical.canonicalName": cityCanonicalName},
-        {"createdBy": udo._id});
+Register.prototype._updateCity = function (req, res, udo) {
+  var cityApplicationEntity = CityApplicationEntity.getInstance();
+  var cityApplicationId = req.body.cityApplicationId;
+  console.log(cityApplicationId);
+  cityApplicationEntity.update(
+    {
+      '_id': cityApplicationId
+    },
+    {
+      'createdBy': udo._id
+    }
+  );
 };
