@@ -89,36 +89,33 @@ block content
     div.container
       div.row
         div.col-lg-10.communities-block
+      - var i = -2
+      while i <= communities.length
+        - i += 2
+        each community in communities.slice(i, i + 2)
           div.container.community
             div.row
               div.col-lg-3
                 div.community-img
                   div.community-gradient
-                    h3.community-title Open Coffee Thessaloniki
+                    h3.community-title #{ community.name }
               div.col-lg-7
                 div.community-details
-                  h4.community-meetup-frequency We meet monthly every 3rd Tuesday of the month.
+                  h4.community-meetup-frequency #{ community.period }
                   h5.community-details-subtitle What we do
-                  p.community-details-subcontent OpenCoffee.gr aims to be the single point of reference for greek start-ups. In this context, we cover existing and, mainly, new developments on greek start-ups, as well as the relevant topics of entrepreneurship and technology. Moreover, the blog is the original outlet of information on the Open Coffee meetings happening around Greece, which offer a place to network and a platform for exchange that aims to inform, connect and inspire.
+                  p.community-details-subcontent #{ community.description }
                   h5.community-details-subtitle Our maintainers
-                  p.community-details-subcontent Georgios Gatos, Apostolos Kritikos, John Doe, Random Name, Georgios Gatos, John Doe, Random Name
+                  p.community-details-subcontent
+                    ul.community-maintainers
+                      each maintainer in community.maintainers
+                        li
+                          if maintainer.email
+                            a(href="mailto:#{ maintainer.email }") #{ maintainer.name }
+                          else if maintainer.website
+                            a(href="#{ maintainer.website }") #{ maintainer.name }
+                          else
+                            | #{ maintainer.name }
                   h5.community-details-subtitle Learn more about us
                   p.community-details-subcontent
-                    a(href="http://opencoffee.gr") http://opencoffee.gr
+                    a(href="#{ community.website }", target="_blank") #{ community.website }
           hr
-          div.container.community
-            div.row
-              div.col-lg-3
-                div.community-img
-                  div.community-gradient
-                    h3.community-title Thessaloniki Node.js
-              div.col-lg-7
-                div.community-details
-                  h4.community-meetup-frequency We meet ... whenever :)
-                  h5.community-details-subtitle What we do
-                  p.community-details-subcontent Thessaloniki Node.js Meetup is an initiative to connect "Noders" across Thessaloniki in order to exchange ideas, knowledge and experience.
-                  h5.community-details-subtitle Our maintainers
-                  p.community-details-subcontent Konstantinos Margaritis, Thanasis Polychronakis
-                  h5.community-details-subtitle Learn more about us
-                  p.community-details-subcontent
-                    a(href="http://www.meetup.com/Thessaloniki-Node-js-Meetup") http://www.meetup.com/Thessaloniki-Node-js-Meetup
