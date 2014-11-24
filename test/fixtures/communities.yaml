@@ -27,10 +27,14 @@ skg:
     website: "http://www.meetup.com/Agile-Greece/"
     twitter: "https://twitter.com/AgileGRmeetup"
     maintainers:
-      - name: "Yiannis Mavraganis (ymavra at gmail dot com)"
-      - name: "George Psistakis (g.psistakis at gmail dot com)"
-      - name: "Nikos Batsios (nbatsios at gmail dot com)"
-      - name: "Patroklos Papapetrou (ppapapetrou76 at gmail dot com)"
+      - name: "Yiannis Mavraganis"
+        email: "ymavra@gmail.com"
+      - name: "George Psistakis"
+        email: "g.psistakis@gmail.com"
+      - name: "Nikos Batsios"
+        email: "nbatsios@gmail.com"
+      - name: "Patroklos Papapetrou"
+        email: "ppapapetrou76@gmail.com"
   - name: "OpenThessaloniki"
     period: "Weekly"
     happensAt: "Every Thursday"
@@ -287,4 +291,3 @@ ath:
     maintainers:
       - name: "Spiros Tzavellas"
         twitter: "https://twitter.com/sptz45"
-
