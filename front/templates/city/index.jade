@@ -107,15 +107,16 @@ block content
                   h5.community-details-subtitle Our maintainers
                   p.community-details-subcontent
                     ul.community-maintainers
-                      each maintainer in community.maintainers
+                      each maintainer, index in community.maintainers
                         li
+                          if index > 0
+                            |,
                           if maintainer.email
                             a(href="mailto:#{ maintainer.email }") #{ maintainer.name }
                           else if maintainer.website
                             a(href="#{ maintainer.website }") #{ maintainer.name }
                           else
                             | #{ maintainer.name }
-                          | ,
                   h5.community-details-subtitle Learn more about us
                   p.community-details-subcontent
                     a(href="#{ community.website }", target="_blank") #{ community.website }
