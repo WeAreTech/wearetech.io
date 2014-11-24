@@ -130,6 +130,14 @@ h3.event-title {
     font-weight: 600;
     font-size: 18px;
   }
+
+  a {
+    color: #888;
+  }
+  a:focus,
+  a:hover {
+    color: $main-color;
+  }
 }
 
 .calendar-item-footer {
