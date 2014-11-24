@@ -230,14 +230,29 @@ h3.event-title {
   a {
     color: #888;
   }
+  a:focus,
+  a:hover {
+    color: $main-color;
+  }
 }
 
 ul.community-maintainers {
   list-style: none;
-  margin: 0;
   padding: 0;
+  font-family: $font-content;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
 
   li {
-    display: inline-block
+    display: inline-block;
+
+    a {
+      color: #888;
+    }
+    a:focus,
+    a:hover {
+      color: $main-color;
+    }
   }
 }
