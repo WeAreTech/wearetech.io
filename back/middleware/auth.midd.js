@@ -12,6 +12,7 @@ var log = require('logg').getLogger('app.midd.Auth');
 
 var UserModel = require('../models/user.model');
 var userModel = UserModel.getInstance();
+var globals = require('../core/globals');
 
 /** @type {Object.<app.midd.Auth} Auth middleware instances. */
 var singletons = {};
@@ -26,6 +27,9 @@ var singletons = {};
  * @extends {app.Middleware}
  */
 var Auth = module.exports = MiddlewareBase.extend(function (role) {
+  if (!role) {
+    role = globals.Roles.WEBSITE;
+  }
   if (singletons[role]) {
     singletons[role].zit = 1;
     return singletons[role];
@@ -134,12 +138,7 @@ Auth.prototype._localAuth = function(email, password, done) {
  * @param {Object} opts An optional hash of options.
  *   @param {string} resource REQUIRED Free text to describe the resource that requires
  *       proper credentials, will be used for logging purposes.
- *   @param {boolean} ownUser Set to true to check if the user is the owner of the
- *       resource. This check will compare the value of req.params.id so the
- *       incoming route needs to follow the /path/:id scheme.
- *   @param ownUserField {string} By default when "ownUser" is enabled the field
- *       to compare from the UDO is the "id", set this option to define
- *       another one.
+ *   @param {boolean} isAdmin Set to true to only allow Admin users.
  *   @param {boolean} noAccess Do not allow anyone to enter.
  *   @param {boolean} socket If this is a socket middleware.
  */
@@ -164,6 +163,7 @@ Auth.prototype.requiresAuth = function(opts) {
       ':: Reason:', reason,
       ':: Resource:', opts.resource,
       ':: uid:', udo.id,
+      ':: isAdmin:', opts.isAdmin,
       ':: email:', udo.email
     );
   }
@@ -232,17 +232,10 @@ Auth.prototype.requiresAuth = function(opts) {
       return onFail('no access');
     }
 
-    if (opts.ownUser) {
-      var resourceOwnerId = ownUid;
-
-      if (!resourceOwnerId) {
-        return onFail('no ownUid');
-      }
-
-      var field = opts.ownUserField || 'id';
-
-      if (resourceOwnerId !== udo[field]) {
-        return onFail('not owner');
+    if (opts.isAdmin) {
+      if (!udo.isAdmin) {
+        onFail('No Access');
+        return;
       }
     }
 

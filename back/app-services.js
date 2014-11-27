@@ -7,6 +7,7 @@ var cip = require('cip');
 var __ = require('lodash');
 var sequence = require('when/sequence');
 var config = require('config');
+var BPromise = require('bluebird');
 
 var log = require('logg').getLogger('app.boot.services');
 
@@ -56,7 +57,7 @@ AppServices.prototype.setup = function(optOptions) {
 
     // Run initdb
     // ENV: NOINITDB
-    initDb: true,
+    initdb: true,
 
     // Stub email facilities
     // Env: APP_STUBMAIL
@@ -73,7 +74,7 @@ AppServices.prototype.setup = function(optOptions) {
  *
  * @return {BPromise} a promise.
  */
-AppServices.prototype.initServices = function() {
+AppServices.prototype.initServices = BPromise.method(function() {
   log.info('initServices() :: Init...');
 
   var email = Email.getInstance();
@@ -111,4 +112,4 @@ AppServices.prototype.initServices = function() {
       });
     }
   });
-};
+});

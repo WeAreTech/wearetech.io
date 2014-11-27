@@ -1,7 +1,7 @@
 /**
- * @fileOverview Augment the nodeon-error package.
+ * @fileOverview Extends nodeon-error package with project custom error types.
  */
 
-var appError = require('nodeon-error');
+var appError = module.exports = require('nodeon-error');
 
 appError.setName('weAreTech');

@@ -80,6 +80,7 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
     this.app.use(cookieParser());
     this.app.use(bodyParser.urlencoded({extended: false}));
     this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({extended: true}));
 
     // Init websockets
     socketServer.init(webserver.http);
@@ -96,9 +97,7 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
       this.app.use(vhost('*.athtech.org', appApi));
     }
 
-    this.app.use(vhost(config.hostname.website, appWebserver));
-
-    // ultimate fallback if no vhost triggers, use main web app again:
+    // ultimate fallback if no vhost triggers, use main web app
     this.app.use(appWebserver);
 
     // development only

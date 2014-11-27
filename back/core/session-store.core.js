@@ -36,7 +36,7 @@ var Session = module.exports = cip.extend(function(role) {
   switch (role) {
   case globals.Roles.WEBSITE:
     this.params.cookie = config.cookies.website;
-    this.params.redis = config.redis.sessionWebsite;
+    this.params.redis = config.redis.sessionWeb;
     break;
   case globals.Roles.CITY:
     this.params.cookie = config.cookies.city;
