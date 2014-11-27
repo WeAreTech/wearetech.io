@@ -62,6 +62,15 @@ h2.submit-event {
   border-radius: 40px;
   margin-right: 20px; // review this rule later
   padding: 0;
+
+  a {
+    color: #888;
+  }
+  a:focus,
+  a:hover {
+    color: $main-color;
+    text-decoration: none;
+  }
 }
 
 .calendar-items-block {
