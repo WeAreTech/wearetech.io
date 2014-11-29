@@ -50,11 +50,8 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
 
   var boot = [
     this.expressWebsite.init(opts),
+    this.expressCity.init(opts),
   ];
-
-  if (config.usevhosts) {
-    boot.push(this.expressCity.init(opts));
-  }
 
   return BPromise.all(boot)
   .bind(this)
