@@ -7,7 +7,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var appError = require('nodeon-error');
 var MiddlewareBase = require('nodeon-base').MiddlewareBase;
 var ControllerBase = require('nodeon-base').ControllerBase;
-var basicAuth = require('basic-auth');
 
 var log = require('logg').getLogger('app.midd.Auth');
 
@@ -244,24 +243,4 @@ Auth.prototype.requiresAuth = function(opts) {
   }
 
   return opts.socket ? socketAuth : expressAuth;
-};
-
-/**
- * Apply Basic authentication to requests.
- *
- * @param {Object} req The request Object.
- * @param {Object} res The response Object.
- * @param {Function(Error=)} next passing control to the next middleware.
- */
-Auth.prototype.basicAuth = function(req, res, next) {
-  var credentials = basicAuth(req);
-
-  if (!credentials || credentials.name !== 'skgtech' || credentials.pass !== 'skgtech') {
-    res.writeHead(401, {
-      'WWW-Authenticate': 'Basic realm="example"'
-    });
-    res.end();
-  } else {
-    next();
-  }
 };

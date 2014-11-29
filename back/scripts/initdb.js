@@ -162,6 +162,8 @@ Initdb.prototype._createCommunities = Promise.method(function () {
   return Promise.all([
     Promise.resolve(this.communities.skg)
       .map(this._createCommunity.bind(this, this.citySkg)),
+    Promise.resolve(this.communities.ath)
+      .map(this._createCommunity.bind(this, this.cityAth)),
   ]);
 });
 
