@@ -98,7 +98,8 @@ Front.prototype._handleCalResult = function(err, data) {
  */
 Front.prototype._assignValues = function($item, item) {
   $item.removeClass('hide');
-  $item.find('h3.event-title').text(item.summary);
+  var truncatedEventTitle = util.truncateEventTitle(item.summary);
+  $item.find('h3.event-title').text(truncatedEventTitle);
   var data = this._parseDesc(item.description);
 
   var $dateEl = $item.find('.agenda-tpl-when');
