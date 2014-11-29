@@ -113,19 +113,20 @@ util.twoDigit = function(num) {
 };
 
 /**
- * Truncates event title to less than 50 characters/two lines
+ * Truncates string to given num of characters at word end
  *
- * @param {string} title Event title
- * @return {string} Truncated event title
+ * @param {string} text To be truncated
+ * @param {number} num Character limit
+ * @return {string} Truncated text
  */
-util.truncateEventTitle = function(title) {
-  if (title.length >= 35) {
-    var index = 50;
-    while (title.charAt(index) !== ' ') {
+util.truncateString = function(text, num) {
+  if (text.length >= num) {
+    var index = num;
+    while (text.charAt(index) !== ' ') {
       index--;
     };
-    return title.substring(0, index);
+    return text.substring(0, index);
   } else {
-    return title;
+    return text;
   };
 };
