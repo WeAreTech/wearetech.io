@@ -113,16 +113,17 @@ Front.prototype._assignValues = function($item, item) {
 
 
   var location = '';
+  var truncatedVenue = util.truncateText(data.venue, 40);
   if (data.mapUrl) {
     location = '<a href="' + data.mapUrl + '" target="_blank">';
-    location += data.venue || '';
+    location += truncatedVenue || '';
     location += '</a>';
   } else {
-    location = data.venue || '';
+    location = truncatedVenue || '';
   }
   // $item.find('.agenda-tpl-address span').html(location);
 
-  if (data.venue) {
+  if (truncatedVenue) {
     $item.find('span.tpl-venue-copy').html(' @' + location);
   } else {
     // $item.find('.agenda-tpl-venue').addClass('hide');
