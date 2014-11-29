@@ -16,6 +16,7 @@ var socketServer = SocketServer.getInstance();
 var globals = require('../globals');
 var ExpressCity = require('./city.express');
 var ExpressWebsite = require('./website.express');
+var AuthMidd = require('../../middleware/auth.midd');
 
 var log = require('logg').getLogger('app.core.express');
 
@@ -48,6 +49,8 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
   // initialize webserver
   webserver.init(this.app);
 
+  var authMidd = new AuthMidd();
+
   var boot = [
     this.expressWebsite.init(opts),
     this.expressCity.init(opts),
@@ -73,6 +76,11 @@ ExpressApp.prototype.init = BPromise.method(function(opts) {
     this.app.set('port', port);
     // remove x-powered-by header
     this.app.set('x-powered-by', false);
+
+    // Require Basic auth if on heroku
+    if (globals.isHeroku) {
+      this.app.use(authMidd.basicAuth);
+    }
 
     this.app.use(cookieParser());
     this.app.use(bodyParser.urlencoded({extended: false}));
