@@ -33,7 +33,7 @@ logger:
 
 mongo:
   hostname: localhost
-  database: app
+  database: weroots
   # Attempt to reconnect interval in ms.
   reconnectTime: 500
 
