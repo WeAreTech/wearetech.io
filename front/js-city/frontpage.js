@@ -98,7 +98,7 @@ Front.prototype._handleCalResult = function(err, data) {
  */
 Front.prototype._assignValues = function($item, item) {
   $item.removeClass('hide');
-  var truncatedEventTitle = util.truncateEventTitle(item.summary);
+  var truncatedEventTitle = util.truncateText(item.summary, 35);
   $item.find('h3.event-title').text(truncatedEventTitle);
   var data = this._parseDesc(item.description);
 
