@@ -111,3 +111,21 @@ util.twoDigit = function(num) {
     return str;
   }
 };
+
+/**
+ * Truncates event title to less than 50 characters/two lines
+ *
+ * @param {string} title Event title
+ * @return {string} Truncated event title
+ */
+util.truncateEventTitle = function(title) {
+  if (title.length >= 35) {
+    var index = 50;
+    while (title.charAt(index) !== ' ') {
+      index--;
+    };
+    return title.substring(0, index);
+  } else {
+    return title;
+  };
+};
