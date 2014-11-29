@@ -119,7 +119,7 @@ util.twoDigit = function(num) {
  * @param {number} num Character limit
  * @return {string} Truncated text
  */
-util.truncateString = function(text, num) {
+util.truncateText = function(text, num) {
   if (text.length >= num) {
     var index = num;
     while (text.charAt(index) !== ' ') {
