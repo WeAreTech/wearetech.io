@@ -86,7 +86,7 @@ AppServices.prototype.initServices = BPromise.method(function() {
     database.init.bind(database),
   ];
 
-  if (this.options.initDb && !process.env.NOINITDB) {
+  if (this.options.initdb && !process.env.NOINITDB) {
     var initdb = new Initdb();
     boot.push(initdb.start.bind(initdb));
   }

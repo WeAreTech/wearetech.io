@@ -1,6 +1,6 @@
 webserver:
-  port: 3000
-  url: "http://localhost:3000"
+  port: 3006
+  url: "http://localhost:3006"
 
 hostname:
   city: "*.localhost"
@@ -33,12 +33,12 @@ logger:
 
 mongo:
   hostname: localhost
-  database: app
+  database: weroots
   # Attempt to reconnect interval in ms.
   reconnectTime: 500
 
 redis:
-  namespace: "wetech:"
+  namespace: "weroots:"
   main:
     host: "localhost"
     port: 6379
@@ -113,40 +113,17 @@ websocket:
 data:
   city:
     - name: "Thessaloniki"
-    headerTitle: "SKGTech"
+    headerTitle: "ThesAct"
     hostname: "skg.localhost"
     domainName: "skg.localhost"
-    twitter: "SKG_Tech"
-    facebook: "skgtech.io"
     calendarUrl: "2ul10sd9g30mnk1vpmcnnp5qv4@group.calendar.google.com"
     calendarApiKey: "AIzaSyC75rnKyEkGxmVyG7hlqFicwPBgDmQLN_w"
-    forumUrl: "https://groups.google.com/forum/#!forum/skg-developers"
     og:
-      title: "Thessaloniki tech and developer Meetups"
-      siteName: "SKGTech"
+      title: "Thessaloniki Grassroot Communities"
+      siteName: "thessact"
       url: "skg.localhost"
-      description: "Thessaloniki tech and developer Meetups"
-      image: "https://pbs.twimg.com/profile_images/453243331691020288/pk_2bTE9.png"
-      appId: "698696243515776"
+      description: "Thessaloniki Grassroot Communities"
+      image: ""
+      appId: ""
       type: "website"
-    ga: "UA-41787746-3"
-    redirects:
-      together-apr-2014: "http://together.skgtech.io/together-apr-2014/"
-    - name: "Athens"
-    headerTitle: "ATHTech"
-    hostname: "ath.localhost"
-    domainName: "ath.localhost"
-    twitter: "ATHTechGR"
-    facebook: "athtech.org"
-    calendarUrl: "oo1mlkql8sma2b3pkg6i23qtdc@group.calendar.google.com"
-    calendarApiKey: "AIzaSyCccutOwOmeR_0gKxpOk5YUbEPLyMC8WWM"
-    forumUrl: "https://groups.google.com/forum/#!forum/ath-developers"
-    og:
-      title: "Athens tech and developer Meetups"
-      siteName: "ATHTech"
-      url: "ath.localhost"
-      description: "Athens tech and developer Meetups"
-      image: "https://pbs.twimg.com/profile_images/460206458559139840/JAVly4k1.jpeg"
-      appId: "698696243515776"
-      type: "website"
-    ga: "UA-50423318-1"
+    ga: "xxx"
