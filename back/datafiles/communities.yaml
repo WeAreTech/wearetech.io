@@ -297,7 +297,7 @@ ath:
         twitter: "https://twitter.com/sptz45"
   - name: "Athens Clojure Meetup"
     period: "Monthly"
-    description: "This is a group for anyone interested in the Scala programming language, functional programming and programming languages in general."
+    description: "Meet and talk about Clojure programming language, various functional programming concepts and practices."
     maintainers:
       - name: "Giorgos Tsiftsis"
         twitter: "https://twitter.com/giorgostsiftsis"
