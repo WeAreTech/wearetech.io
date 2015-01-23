@@ -295,4 +295,12 @@ ath:
     maintainers:
       - name: "Spiros Tzavellas"
         twitter: "https://twitter.com/sptz45"
+  - name: "Athens Clojure Meetup"
+    period: "Monthly"
+    description: "This is a group for anyone interested in the Scala programming language, functional programming and programming languages in general."
+    maintainers:
+      - name: "Giorgos Tsiftsis"
+        twitter: "https://twitter.com/giorgostsiftsis"
+      - name: "Alex Podaras"
+        twitter: "https://twitter.com/apodaras"
 
