@@ -16,7 +16,7 @@ logger:
   # FINE:   400
   # FINER:  200
   # FINEST: 100
-  level: 200
+  level: 100
   syslog: false
   file: false
   console: true
