@@ -25,4 +25,7 @@ router.init = function(app) {
   app.get('/submit-event', staticsCtrl.use);
 
   app.get('/together', togetherCtrl.use);
+  app.get('/hackerspace', function (req, res) {
+    res.render('static/hs');
+  });
 };
