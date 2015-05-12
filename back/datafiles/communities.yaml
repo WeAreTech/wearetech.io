@@ -206,6 +206,8 @@ ath:
     maintainers:
       - name: "Ale Murray"
       - name: "Brady Gentile"
+      - name: "Dini Martini"
+        twitter: "https://twitter.com/irene_white_"
   - name: "Athens F# User Group"
     description: "Our goal is to promote the usage of functional programming and especially F# (FSharp) in Greece."
     website: "http://www.meetup.com/Athens-FSharp/"
