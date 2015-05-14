@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "wearetech",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "The Sources of http://wearetech.io website.",
   "main": "back/app.js",
   "scripts": {
