@@ -2,5 +2,15 @@
 // Definitions for social icons
 //
 //
-//
 
+.social-share {
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    display: inline-block;
+    margin: 30px 20px;
+  }
+
+}

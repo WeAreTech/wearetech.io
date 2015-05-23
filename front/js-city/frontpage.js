@@ -23,7 +23,6 @@ Front.prototype.init = function() {
   this.$agendaContainer = $('#agenda-items');
   this.$agendaItem = $('#agenda-tpl');
   this.$error = $('#agenda-error');
-
   this.calendarth = calendarth({
     apiKey: window.serv.calendarApiKey,
     calendarId: window.serv.callendarId,
@@ -31,7 +30,6 @@ Front.prototype.init = function() {
   });
 
   this.calendarth.fetch(this._handleCalResult.bind(this));
-
   this._fixPanels();
 };
 
@@ -78,7 +76,7 @@ Front.prototype._handleCalResult = function(err, data) {
       meetups.push(item.summary);
     }
 
-    if (displayed && displayed % 2 === 0) {
+    if (displayed && displayed % 3 === 0) {
       // rows
       elements += '</div><div class="row">';
     }
@@ -100,25 +98,35 @@ Front.prototype._handleCalResult = function(err, data) {
  */
 Front.prototype._assignValues = function($item, item) {
   $item.removeClass('hide');
-  $item.find('.panel-title').text(item.summary);
+  var truncatedEventTitle = util.truncateText(item.summary, 35);
+  $item.find('h3.event-title').text(truncatedEventTitle);
   var data = this._parseDesc(item.description);
 
-  $item.find('.agenda-tpl-when span').text(util.formatDate(item.start, item.end));
+  var $dateEl = $item.find('.agenda-tpl-when');
+
+  var formatedDate = util.parseDate(item.start);
+  $dateEl.attr('datetime', item.start.dateTime);
+  $dateEl.find('span.day').text(formatedDate.date);
+  $dateEl.find('span.month').text(formatedDate.monthStr);
+
+  $item.find('span.tpl-full-time').text(util.formatDate(item.start, item.end));
+
 
   var location = '';
+  var truncatedVenue = util.truncateText(data.venue, 40);
   if (data.mapUrl) {
     location = '<a href="' + data.mapUrl + '" target="_blank">';
-    location += item.location;
+    location += truncatedVenue || '';
     location += '</a>';
   } else {
-    location = item.location;
+    location = truncatedVenue || '';
   }
-  $item.find('.agenda-tpl-address span').html(location);
+  // $item.find('.agenda-tpl-address span').html(location);
 
-  if (data.venue) {
-    $item.find('.agenda-tpl-venue span').text(data.venue);
+  if (truncatedVenue) {
+    $item.find('span.tpl-venue-copy').html(' @' + location);
   } else {
-    $item.find('.agenda-tpl-venue').addClass('hide');
+    // $item.find('.agenda-tpl-venue').addClass('hide');
   }
 
   if (data.infoUrl) {
@@ -134,9 +142,9 @@ Front.prototype._assignValues = function($item, item) {
   }
 
   if (data.about) {
-    $item.find('.agenda-tpl-about span').html(data.about);
+    $item.find('p.tpl-about').html(data.about);
   } else {
-    $item.find('.agenda-tpl-about').addClass('hide');
+    $item.find('p.tpl-about').addClass('hide');
   }
 
   if (data.language) {

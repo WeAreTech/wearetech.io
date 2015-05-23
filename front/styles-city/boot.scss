@@ -1,11 +1,6 @@
 /**
- * Styles for thanpol.as
+ * Styles for wearetech.io / City
  */
-
-// Third party
-@import "../static/components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
-
-@import "bolt-theme.scss";
 
 // wearetech city styles
 @import "variables.scss";
@@ -21,3 +16,6 @@
 @import "together.scss";
 // @import "syntaxHighlight-solar.scss";
 // @import "responsive.scss";
+
+// Third party
+@import "../static/components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss";

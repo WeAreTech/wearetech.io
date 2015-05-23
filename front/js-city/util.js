@@ -18,6 +18,32 @@ util.nl2br = function(str) {
 };
 
 /**
+ * Parse the date object comming form google calendar.
+ *
+ * @param {Object} dtObj The google calendar date object.
+ * @return {Object} Properly formated date object.
+ */
+util.parseDate = function(dtObj) {
+  var dtObjDate;
+  if (dtObj.dateTime) {
+    dtObjDate = new Date(dtObj.dateTime);
+  } else {
+    dtObjDate = new Date(dtObj.date);
+  }
+
+  var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sub'];
+  var months =['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+    'Oct', 'Nov', 'Dec'];
+
+  return {
+    dayStr: days[dtObjDate.getDay()],
+    monthStr: months[dtObjDate.getMonth()],
+    date: dtObjDate.getDate(),
+    dt: dtObjDate,
+  };
+};
+
+/**
  * Format a calendar start / end date to a single string
  *
  * @param {Object} start Start Object.
@@ -84,4 +110,23 @@ util.twoDigit = function(num) {
   } else {
     return str;
   }
+};
+
+/**
+ * Truncates string to given num of characters at word end
+ *
+ * @param {string} text To be truncated
+ * @param {number} num Character limit
+ * @return {string} Truncated text
+ */
+util.truncateText = function(text, num) {
+  if (text && text.length >= num) {
+    var index = num;
+    while (text.charAt(index) !== ' ') {
+      index--;
+    };
+    return text.substring(0, index);
+  } else {
+    return text;
+  };
 };

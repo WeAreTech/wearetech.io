@@ -1,2 +1,303 @@
 // Frontpage specific styles
 
+.city-header {
+
+  // background: url(/assets/header-city.png);
+
+  .jumbotron {
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+
+    // background: #29435e; /* Old browsers */
+    // background: -moz-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* FF3.6+ */
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(41, 67, 94, 0.85)), color-stop(100%, rgba(56, 87, 76, 0.85))); /* Chrome,Safari4+ */
+    // background: -webkit-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* Chrome10+,Safari5.1+ */
+    // background: -o-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* Opera 11.10+ */
+    // background: -ms-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* IE10+ */
+    // background: linear-gradient(to bottom, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* W3C */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29435e', endColorstr='#38574c',GradientType=0 ); /* IE6-9 */
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 600;
+  }
+}
+
+.city-image-wrapper {
+}
+
+.city-image {
+  // position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 518px;
+}
+
+.city-image-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: #29435e; /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(41, 67, 94, 0.85)), color-stop(100%, rgba(56, 87, 76, 0.85))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(41, 67, 94, 0.85) 0%, rgba(56, 87, 76, 0.85) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29435e', endColorstr='#38574c',GradientType=0 ); /* IE6-9 */
+}
+
+.city-name h3 {
+  font-family: $font-titles;
+  font-size: 48px;
+}
+
+.city-description  h3 {
+  font-family: $font-content;
+  font-size: 18px;
+}
+
+.city-events {
+  background: #f4f5f6; // review later; background should be at least city wide
+  padding-bottom: 90px;
+}
+
+.calendar-title h2 {
+  font-family: $font-titles;
+  font-weight: 300;
+  font-size: 36px;
+  color: #888;
+}
+
+.subtle-note {
+  color: #cecece;
+  margin-left: 10px;
+}
+
+h2.submit-event {
+  font-family: $font-content;
+  font-size: 18px;
+  color: #888;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #e9eaec;
+  border-radius: 40px;
+  margin-right: 20px; // review this rule later
+  padding: 0;
+
+  a {
+    color: #888;
+  }
+  a:focus,
+  a:hover {
+    color: $main-color;
+    text-decoration: none;
+  }
+}
+
+.calendar-items-block {
+  margin: 30px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.calendar-item-outer {
+  margin: 15px 0;
+}
+
+.calendar-item-inner {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #e9eaec;
+  border-radius: 4px;
+  height: 260px;
+}
+
+.calendar-item-title {
+  background: $main-color;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+h3.date {
+  display: inline-block;
+  // float: left;
+  width: 60px;
+  text-align: center;
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+  font-family: $font-titles;
+  font-weight: 700;
+  font-size: 24px;
+
+  span.month {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+
+h3.event-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  font-weight: 300;
+  font-size: 24px;
+  font-family: $font-titles;
+  width: 250px;
+}
+
+.calendar-item-content {
+  color: #888;
+  margin: 20px 10px;
+  font-family: $font-content;
+  font-size: 14px;
+  height: 110px;
+
+  h4 {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  a {
+    color: #888;
+  }
+  a:focus,
+  a:hover {
+    color: $main-color;
+  }
+}
+
+.calendar-item-footer {
+  margin: 20px 10px;
+}
+
+.hashtag {
+  color: $main-color;
+  font-family: $font-content;
+  font-size: 14px;
+}
+
+.google-calendar-icons {
+  border-left: 1px solid #e9eaec;
+}
+
+@mixin gradient-community {
+  background: #486176; /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(72, 97, 118, 0.85) 0%, rgba(74, 104, 83, 0.85) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(72, 97, 118, 0.85)), color-stop(100%, rgba(74, 104, 83, 0.85))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(72, 97, 118, 0.85) 0%, rgba(74, 104, 83, 0.85) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(72, 97, 118, 0.85) 0%, rgba(74, 104, 83, 0.85) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(72, 97, 118, 0.85) 0%, rgba(74, 104, 83, 0.85) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(72, 97, 118, 0.85) 0%, rgba(74, 104, 83, 0.85) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#486176', endColorstr='#4a6853',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-80%);
+  -ms-transform: translateY(-80%);
+  transform: translateY(-80%);
+}
+
+.city-communities {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.communities-title {
+  font-family: $font-titles;
+  font-size: 36px;
+  font-weight: 300;
+  color: #888;
+  margin-bottom: 60px;
+}
+
+.community-gradient {
+  display: inline-block;
+  width: 255px;
+  height: 255px;
+  border-radius: 50%;
+  @include gradient-community;
+}
+
+.community-img {
+  display: inline-block;
+  width: 255px;
+  height: 255px;
+  border-radius: 50%;
+}
+
+.community-title {
+  color: #fff;
+  text-align: center;
+  @include vertical-align;
+  font-family: $font-titles;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.community-meetup-frequency {
+  font-family: $font-titles;
+  font-size: 24px;
+  font-weight: 300;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.community-details-subtitle {
+  font-family: $font-content;
+  font-size: 16px;
+  font-weight: 400;
+  color: $main-color;
+  margin-bottom: 3px;
+}
+
+.community-details-subcontent {
+  font-family: $font-content;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+
+  a {
+    color: #888;
+  }
+  a:focus,
+  a:hover {
+    color: $main-color;
+  }
+}
+
+ul.community-maintainers {
+  list-style: none;
+  padding: 0;
+  font-family: $font-content;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: #888;
+    }
+    a:focus,
+    a:hover {
+      color: $main-color;
+    }
+  }
+}
